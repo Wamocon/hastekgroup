@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "siteName": "HAS Teknoloji",
+    "titleSuffix": "HAS Teknoloji | Hastek Group Alanya"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Segments",
+    "trust": "Trust Center",
+    "faq": "FAQ",
+    "booking": "Book a visit",
+    "contact": "Contact",
+    "admin": "Team login"
+  },
+  "common": {
+    "whatsapp": "WhatsApp us",
+    "callUs": "Call us",
+    "bookNow": "Book a free site visit",
+    "learnMore": "Learn more",
+    "backToSegments": "Back to all segments",
+    "language": "Language",
+    "languages": { "tr": "Turkce", "en": "English", "ru": "Russkiy", "de": "Deutsch" },
+    "since2017": "Installing smart-home & security systems in Alanya since 2017",
+    "readMore": "Read more"
+  },
+  "footer": {
+    "about": "Hastek Group (HAS Teknoloji) designs and installs smart-home, security and connectivity systems for homes, developments and businesses across Alanya and the Antalya province.",
+    "quickLinksTitle": "Segments",
+    "legalTitle": "Legal",
+    "contactTitle": "Contact",
+    "impressum": "Legal notice",
+    "agb": "Terms & conditions",
+    "datenschutz": "Privacy policy",
+    "rights": "All rights reserved.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "draftNotice": "Demo build for internal review - content, pricing and legal texts are drafts pending client sign-off."
+  },
+  "cookie": {
+    "message": "We use only technically necessary cookies to run this demo site and remember your language and theme preference.",
+    "accept": "Accept",
+    "decline": "Decline non-essential",
+    "settings": "Privacy policy"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Smart-home & security systems - Alanya",
+      "title": "The quiet, precise way to secure and automate your property in Alanya",
+      "subtitle": "Hastek Group has installed smart-home, security and connectivity systems across Alanya since 2017. One local team, eleven disciplines, a calmer way to feel safe.",
+      "primaryCta": "Book a free site visit",
+      "secondaryCta": "Talk to our assistant"
+    },
+    "trustBar": {
+      "founded": "Founded 2017",
+      "segments": "6 client segments served",
+      "local": "Based in Alanya, working across Antalya province",
+      "languages": "Service in Turkish, English, Russian & German"
+    },
+    "interest": {
+      "eyebrow": "What we install",
+      "title": "Eleven disciplines, one accountable team",
+      "subtitle": "From a single smart lock to a fully monitored gated community: every system is specified, installed and maintained by the same Hastek team."
+    },
+    "services": {
+      "smartHome": "Smart-home automation",
+      "smartLock": "Smart door-lock systems",
+      "videoIntercom": "Video intercom",
+      "cctv": "CCTV & camera systems",
+      "alarm": "Alarm systems",
+      "fire": "Fire detection & suppression",
+      "barrier": "Parking barriers",
+      "sound": "Public-address & sound systems",
+      "internet": "Internet & guest Wi-Fi hotspots",
+      "retailPos": "Retail barcode & POS systems",
+      "restaurantPos": "Restaurant POS (Adisyon) systems"
+    },
+    "desire": {
+      "eyebrow": "Why Hastek",
+      "title": "A calmer, more precise standard for Alanya",
+      "items": [
+        {
+          "title": "One team, full accountability",
+          "body": "No subcontractor hand-offs. The engineer who designs your system is the one who installs and services it."
+        },
+        {
+          "title": "Built for international owners",
+          "body": "Consultations, contracts and support available in Turkish, English, Russian and German - not just at handover, but for the life of the system."
+        },
+        {
+          "title": "Quiet, considered design",
+          "body": "We specify equipment that fits the property, not the loudest alarm on the market. Discretion is part of the brief."
+        },
+        {
+          "title": "Maintenance that keeps working",
+          "body": "Scheduled servicing and rapid response keep systems reliable long after installation day."
+        }
+      ]
+    },
+    "segmentsCta": {
+      "eyebrow": "Find your segment",
+      "title": "Tell us what you're protecting, we'll show you the right system",
+      "subtitle": "Every property is different. Choose the segment closest to yours for tailored recommendations."
+    },
+    "loveShare": {
+      "eyebrow": "Trust signals (example content)",
+      "title": "What clients say",
+      "demoNotice": "Example quotes for this demo - replaced with verified Google reviews once the review-collection process is live.",
+      "quotes": [
+        { "quote": "Clear explanations, tidy installation, and they actually answered the phone on a Sunday.", "author": "Example client, second-home owner" },
+        { "quote": "Our whole site (CCTV, barrier, fire panel) is now on one dashboard instead of three vendors.", "author": "Example client, commercial property" }
+      ]
+    },
+    "finalCta": {
+      "title": "Ready to see it on your property?",
+      "subtitle": "Book a free, no-obligation site visit or start with our assistant to get an instant recommendation.",
+      "primary": "Book a free site visit",
+      "secondary": "WhatsApp us now"
+    }
+  },
+  "segments": {
+    "sectionTitle": "Segments",
+    "privateHomes": {
+      "slug": "private-homes",
+      "label": "Private homes & second-home owners",
+      "shortLabel": "Private homes",
+      "heroTitle": "Smart, secure living for owners near and far",
+      "heroSubtitle": "Built for Alanya's large community of foreign second-home owners: monitor and control your property from anywhere, in your own language.",
+      "painPoints": [
+        "The property sits empty for months - you need to know it's safe without being there.",
+        "Local providers rarely explain systems in your language, so you're never quite sure what you signed up for.",
+        "Off-the-shelf DIY kits feel cheap and don't suit a premium villa or apartment."
+      ],
+      "solutions": [
+        "smartHome",
+        "smartLock",
+        "videoIntercom",
+        "cctv",
+        "alarm"
+      ],
+      "cta": "Get a home security consultation"
+    },
+    "newBuild": {
+      "slug": "new-build-developers",
+      "label": "New-build villas, residential complexes & developers",
+      "shortLabel": "New-build & developers",
+      "heroTitle": "Security and automation specified in at the design stage",
+      "heroSubtitle": "For developers and gated communities: consistent smart-home and security standards across every unit, coordinated with your construction timeline.",
+      "painPoints": [
+        "Retrofitting security after handover is expensive and disrupts finished units.",
+        "Buyers increasingly expect smart-home readiness as standard, not an upsell.",
+        "Common areas (gates, entrances, shared Wi-Fi) need one coordinated system, not unit-by-unit fixes."
+      ],
+      "solutions": [
+        "smartHome",
+        "smartLock",
+        "videoIntercom",
+        "cctv",
+        "alarm",
+        "internet"
+      ],
+      "cta": "Talk to us about your development"
+    },
+    "hospitality": {
+      "slug": "hospitality",
+      "label": "Hotels & tourism businesses",
+      "shortLabel": "Hospitality",
+      "heroTitle": "Guest safety and smooth operations, without the visible clutter",
+      "heroSubtitle": "Camera coverage, fire safety and guest connectivity designed to protect your rating as much as your property.",
+      "painPoints": [
+        "Guest reviews suffer immediately if Wi-Fi is unreliable or safety feels neglected.",
+        "Fire and life-safety compliance is non-negotiable, but systems are often outdated.",
+        "Public areas need discreet camera coverage that doesn't feel like a security compound."
+      ],
+      "solutions": [
+        "cctv",
+        "fire",
+        "alarm",
+        "internet",
+        "sound"
+      ],
+      "cta": "Request a property assessment"
+    },
+    "retail": {
+      "slug": "retail-markets",
+      "label": "Retail & grocery markets",
+      "shortLabel": "Retail & markets",
+      "heroTitle": "Fewer losses, faster checkout, one support number",
+      "heroSubtitle": "Camera systems, alarms and point-of-sale/barcode systems that work together instead of running on separate contracts.",
+      "painPoints": [
+        "Shrinkage and till discrepancies are hard to investigate without reliable camera footage.",
+        "Checkout and stock systems from different vendors rarely talk to each other.",
+        "Store Wi-Fi for staff devices and customers is often an afterthought."
+      ],
+      "solutions": [
+        "cctv",
+        "alarm",
+        "retailPos",
+        "internet"
+      ],
+      "cta": "Get a retail systems quote"
+    },
+    "gastronomy": {
+      "slug": "gastronomy",
+      "label": "Restaurants, cafes & bars",
+      "shortLabel": "Gastronomy",
+      "heroTitle": "Faster service, safer kitchens, calmer dining rooms",
+      "heroSubtitle": "Adisyon/POS systems, sound and camera coverage tuned for busy service, not generic retail setups.",
+      "painPoints": [
+        "Order and billing (Adisyon) systems that slow staff down during peak service.",
+        "Kitchen fire risk needs proper detection, not just a smoke alarm from a hardware store.",
+        "Background sound and guest areas need even coverage without harsh speakers on show."
+      ],
+      "solutions": [
+        "restaurantPos",
+        "cctv",
+        "alarm",
+        "sound",
+        "internet"
+      ],
+      "cta": "Get a restaurant systems quote"
+    },
+    "commercial": {
+      "slug": "commercial-parking",
+      "label": "Commercial property, offices & parking areas",
+      "shortLabel": "Commercial & parking",
+      "heroTitle": "One system for access, safety and parking control",
+      "heroSubtitle": "Offices, mixed-use buildings and parking areas managed through a single, accountable installer instead of three separate vendors.",
+      "painPoints": [
+        "Access control, fire safety and parking barriers are usually quoted and serviced separately.",
+        "Multi-tenant buildings need clear accountability when something needs fixing fast.",
+        "Parking areas without barriers or cameras invite disputes and unauthorised use."
+      ],
+      "solutions": [
+        "barrier",
+        "cctv",
+        "alarm",
+        "fire",
+        "internet"
+      ],
+      "cta": "Request a commercial site assessment"
+    }
+  },
+  "trust": {
+    "title": "Trust Center",
+    "intro": "Everything you need to verify before choosing an installer for your property: who we are, how we handle your data, and what to expect from a Hastek installation.",
+    "aboutTitle": "About Hastek Group",
+    "aboutBody": "HAS Teknoloji (trading as Hastek Group) was founded in 2017 by Emre Altuntas and Harun Coban, and has operated as a smart-home and security-systems installer in Alanya since. The company works across the eleven service lines listed on this site.",
+    "dataTitle": "Data protection (KVKK / GDPR)",
+    "dataBody": "Enquiries submitted through this site (booking requests, chat messages) are processed only to respond to your request. See our Privacy Policy for full details. Final legal texts are pending confirmation of company registration details and legal review.",
+    "certificatesTitle": "Certificates & documentation",
+    "certificatesNotice": "Insurance certificates, trade registrations and installer certifications will be listed here once provided and verified by Hastek Group. Placeholder section - no figures are shown until confirmed.",
+    "reviewsTitle": "Reviews & reputation",
+    "reviewsBody": "Hastek Group is building a verified Google review profile as part of this relaunch. Once live, genuine, dated customer reviews will be linked directly from this page.",
+    "contactTitle": "Verify us directly",
+    "contactBody": "Prefer to check us out yourself? Message us on WhatsApp or book a free site visit - no obligation."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Straight answers to the questions we hear most from private owners, developers and businesses in Alanya.",
+    "items": [
+      {
+        "q": "Which areas do you serve?",
+        "a": "We install and service systems across Alanya and the wider Antalya province. If you're unsure whether your property is in range, message us on WhatsApp with your location."
+      },
+      {
+        "q": "Do you work with owners who are not currently in Turkey?",
+        "a": "Yes - a large share of our clients are second-home owners abroad. We can scope a project, agree specifications and schedule installation remotely, in English, Russian or German, ahead of your arrival."
+      },
+      {
+        "q": "Can you combine several systems, like cameras, alarm and a smart lock, in one project?",
+        "a": "Yes, this is the most common request. One Hastek team specifies and installs all systems together, so they work as one coordinated setup rather than separate contracts."
+      },
+      {
+        "q": "Do you offer ongoing maintenance after installation?",
+        "a": "Yes. Scheduled maintenance and rapid-response service are part of our standard offering, particularly important for fire-safety and alarm systems."
+      },
+      {
+        "q": "How do I get a price?",
+        "a": "Pricing depends on the property and the systems required. Book a free, no-obligation site visit or message our assistant with your segment (home, hotel, retail, etc.) for a first estimate."
+      },
+      {
+        "q": "Is my data safe when I submit a booking request?",
+        "a": "Yes. Your details are used only to respond to your enquiry. See our Privacy Policy on the Trust Center page for full details."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book a free site visit",
+    "subtitle": "Tell us a little about your property and preferred timing - a member of the Hastek team will confirm your appointment.",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "phone": "Phone / WhatsApp number",
+      "segment": "Property type",
+      "serviceType": "What are you interested in?",
+      "preferredDate": "Preferred date",
+      "message": "Anything else we should know?"
+    },
+    "serviceTypeOptions": {
+      "consultation": "Site visit / consultation",
+      "installation": "New installation",
+      "maintenance": "Maintenance on an existing system"
+    },
+    "submit": "Request appointment",
+    "submitting": "Sending...",
+    "successTitle": "Request received",
+    "successBody": "Thank you - this is a demo build, so no appointment has actually been scheduled yet. In the live system, our team would confirm your slot by phone or WhatsApp within one business day.",
+    "demoNotice": "Demo mode: submissions are stored only in this browser session and are not sent anywhere.",
+    "whatsappAlt": "Prefer WhatsApp? Message us directly instead."
+  },
+  "chat": {
+    "launcherLabel": "Chat with Hastek",
+    "windowTitle": "Hastek Assistant",
+    "placeholder": "Ask about services, pricing or booking...",
+    "send": "Send",
+    "demoBadge": "Demo",
+    "disclaimer": "This assistant answers questions about Hastek Group services and booking only.",
+    "greeting": "Hello! I'm the Hastek assistant. I can explain our services and help you request a site visit. What are you looking to protect or automate?",
+    "offlineNotice": "Demo mode: the assistant is running on scripted sample answers because no live AI key is configured for this preview.",
+    "quickReplies": ["What services do you offer?", "I own a villa near Alanya", "How much does CCTV cost?"]
+  },
+  "admin": {
+    "loginTitle": "Team login",
+    "demoNotice": "Demo access only - this is a preview build with no real backend. Use the demo credentials below.",
+    "demoCredentialsHint": "Demo credentials: admin@hastekgroup.com / hastek-demo-2026",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "loginButton": "Sign in",
+    "loginError": "Incorrect demo credentials.",
+    "dashboardTitle": "Bookings & leads",
+    "logout": "Sign out",
+    "tabs": { "bookings": "Bookings", "reviews": "Reviews" },
+    "emptyBookings": "No bookings submitted yet in this session. Try the booking form to see one appear here.",
+    "reviewsDemoNotice": "Example reviews shown for this demo - replace with live Google Business Profile data once connected.",
+    "columns": { "name": "Name", "contact": "Contact", "segment": "Segment", "type": "Type", "date": "Preferred date", "status": "Status" },
+    "statusNew": "New"
+  }
+}

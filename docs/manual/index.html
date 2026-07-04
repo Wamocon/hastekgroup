@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--
     HANDBOOK META - updated by Copilot on every relevant change
-    APP_NAME        : [APP_NAME]
+    APP_NAME        : HAS Teknoloji - Website & Demo-Plattform (Hastek Group)
     APP_VERSION     : 0.1.0
-    LAST_UPDATED    : [LAST_UPDATED]
-    PRIMARY_COLOR   : [PRIMARY_COLOR]   e.g. #3b82f6
-    PRIMARY_DARK    : [PRIMARY_DARK]    e.g. #2563eb
-    LOGO_EMOJI      : [LOGO_EMOJI]      e.g. &#128230;
+    LAST_UPDATED    : Juli 2026
+    PRIMARY_COLOR   : #b9975b   (Gold-Akzent, siehe --color-gold in src/app/globals.css)
+    PRIMARY_DARK    : #8f7238   (Gold-Deep, siehe --color-gold-deep)
+    LOGO_EMOJI      : &#128737; (Schild - Sicherheitssysteme + Smart Home)
   -->
-  <title>[APP_NAME] &ndash; Produkthandbuch | WAMOCON</title>
+  <title>HAS Teknoloji &ndash; Website &amp; Demo-Plattform &ndash; Produkthandbuch | WAMOCON</title>
   <style>
     /* ── Reset & Base ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Brand colors - Copilot updates these to match the app */
-      --primary:      #3b82f6;
-      --primary-dark: #2563eb;
-      --primary-glow: rgba(59,130,246,0.18);
+      /* Brand colors - Hastek Group / HAS Teknoloji: navy + gold */
+      --primary:      #b9975b;
+      --primary-dark: #8f7238;
+      --primary-glow: rgba(185,151,91,0.18);
       --success:      #10b981;
       --warning:      #f59e0b;
       --danger:       #ef4444;
 
       /* Dark-theme background layers */
-      --bg-page:   #0d1526;
+      --bg-page:   #0e1a2b;
       --bg-card:   rgba(255,255,255,0.03);
       --bg-code:   rgba(255,255,255,0.06);
 
@@ -63,10 +63,10 @@
       body { background: #fff !important; color: #000 !important; }
       :root {
         --text: #000; --text-muted: #333; --bg-page: #fff;
-        --bg-card: #f5f5f5; --border: #ddd; --primary: #1d4ed8;
+        --bg-card: #f5f5f5; --border: #ddd; --primary: #8f7238;
       }
-      .cover { background: #f0f4ff !important; border-color: #1d4ed8 !important; }
-      h2 { color: #1d4ed8 !important; border-color: #1d4ed8 !important; }
+      .cover { background: #faf6ec !important; border-color: #8f7238 !important; }
+      h2 { color: #8f7238 !important; border-color: #8f7238 !important; }
       .page-footer { position: static !important; border-top: 1px solid #ddd; }
     }
 
@@ -125,8 +125,8 @@
     /* ── PDF download / OneDrive buttons ─────────────────────────── */
     .download-bar {
       display: flex; align-items: center; gap: 0.5rem;
-      background: rgba(59,130,246,0.06);
-      border: 1px solid rgba(59,130,246,0.2);
+      background: rgba(185,151,91,0.06);
+      border: 1px solid rgba(185,151,91,0.2);
       border-radius: 10px; padding: 0.5rem 1rem;
       font-size: 0.8rem; color: var(--text-muted);
     }
@@ -178,7 +178,7 @@
     /* ── Cover page ───────────────────────────────────────────────── */
     .cover {
       background: linear-gradient(160deg, rgba(30,60,130,0.2) 0%, rgba(13,21,38,0.9) 100%);
-      border: 1px solid rgba(59,130,246,0.25);
+      border: 1px solid rgba(185,151,91,0.25);
       border-radius: 24px; padding: 4rem;
       margin-bottom: 4rem; position: relative; overflow: hidden;
     }
@@ -186,7 +186,7 @@
       content: '';
       position: absolute; top: -40px; right: -40px;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(185,151,91,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -231,13 +231,13 @@
       font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
     }
     .badge-success { background: rgba(16,185,129,0.1); color: var(--success); border: 1px solid rgba(16,185,129,0.2); }
-    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(59,130,246,0.2); }
+    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(185,151,91,0.2); }
     .badge-warning { background: rgba(245,158,11,0.1); color: var(--warning); border: 1px solid rgba(245,158,11,0.2); }
     .badge-danger  { background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.2); }
 
     .info-box {
       padding: 1.2rem 1.5rem; border-radius: 12px; margin: 2rem 0;
-      border-left: 4px solid var(--primary); background: rgba(59,130,246,0.05);
+      border-left: 4px solid var(--primary); background: rgba(185,151,91,0.05);
     }
     .info-box-title { font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 0.5rem; }
 
@@ -263,7 +263,7 @@
       font-weight: 800; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;
     }
     td { padding: 1rem; border-top: 1px solid var(--border); vertical-align: top; }
-    tr:hover td { background: rgba(59,130,246,0.02); }
+    tr:hover td { background: rgba(185,151,91,0.02); }
 
     .yes { color: var(--success); font-weight: 700; }
     .no  { color: var(--text-dim); }
@@ -298,10 +298,10 @@
 <!-- ── Header ──────────────────────────────────────────────────────── -->
 <header class="page-header no-print">
   <div class="brand">
-    <!-- LOGO: Copilot updates the emoji/letter and gradient to match the app -->
-    <div class="logo-mark" aria-label="App logo">&#128230;</div>
+    <!-- LOGO: shield mark - gold on navy, echoing the real logo-mark (roofline + signal arc + security notch) -->
+    <div class="logo-mark" aria-label="App logo">&#128737;</div>
     <div>
-      <div class="brand-name">[APP_NAME]</div>
+      <div class="brand-name">HAS Teknoloji &ndash; Website &amp; Demo-Plattform</div>
       <div class="brand-sub">WAMOCON &middot; Produkthandbuch</div>
     </div>
   </div>
@@ -350,22 +350,22 @@
     <a class="toc-link l1" href="#uebersicht">01 &Uuml;bersicht</a>
     <a class="toc-link l1" href="#features">02 Funktionen</a>
     <a class="toc-link l2" href="#feature-list">2.1 Feature-Liste</a>
-    <a class="toc-link l2" href="#plaene">2.2 Pl&auml;ne &amp; Preise</a>
+    <a class="toc-link l2" href="#segmente">2.2 Segmente &amp; Systeme</a>
     <a class="toc-link l1" href="#tutorials">03 Erste Schritte</a>
-    <a class="toc-link l2" href="#tut-konto">3.1 Konto erstellen</a>
-    <a class="toc-link l2" href="#tut-start">3.2 Loslegen</a>
-    <a class="toc-link l2" href="#tut-upgrade">3.3 Upgrade</a>
+    <a class="toc-link l2" href="#tut-team-login">3.1 Team-Login (Demo)</a>
+    <a class="toc-link l2" href="#tut-besucher">3.2 Als Besucher loslegen</a>
+    <a class="toc-link l2" href="#tut-sprache-theme">3.3 Sprache &amp; Darstellung</a>
     <a class="toc-link l1" href="#howto">04 How-to Guides</a>
-    <a class="toc-link l2" href="#ht-profil">4.1 Profil verwalten</a>
-    <a class="toc-link l2" href="#ht-loeschen">4.2 Konto l&ouml;schen</a>
+    <a class="toc-link l2" href="#ht-buchungen">4.1 Demo-Buchungen pr&uuml;fen</a>
+    <a class="toc-link l2" href="#ht-reset">4.2 Demo-Zustand zur&uuml;cksetzen</a>
     <a class="toc-link l1" href="#referenz">05 Funktionsreferenz</a>
     <a class="toc-link l2" href="#routen">5.1 Routen</a>
     <a class="toc-link l2" href="#api">5.2 API &amp; Hooks</a>
     <a class="toc-link l1" href="#tech">06 Technische Architektur</a>
     <a class="toc-link l2" href="#tech-stack">6.1 Stack</a>
-    <a class="toc-link l2" href="#tech-schema">6.2 Datenbank-Schema</a>
+    <a class="toc-link l2" href="#tech-schema">6.2 Datenhaltung (Demo)</a>
     <a class="toc-link l1" href="#ci-cd">07 CI/CD &amp; Tests</a>
-    <a class="toc-link l1" href="#compliance">08 DSGVO &amp; Compliance</a>
+    <a class="toc-link l1" href="#compliance">08 KVKK &amp; DSGVO</a>
     <a class="toc-link l1" href="#glossar">09 Glossar</a>
   </nav>
 
@@ -375,13 +375,13 @@
     <!-- ── Cover ─────────────────────────────────────────────────── -->
     <div class="cover">
       <div class="doc-type">Offizielles Produkthandbuch &middot; WAMOCON GmbH</div>
-      <h1>[APP_NAME]</h1>
-      <div class="cover-sub">[APP_TAGLINE]</div>
+      <h1>HAS Teknoloji &ndash; Website &amp; Demo-Plattform</h1>
+      <div class="cover-sub">Mehrsprachige Premium-Website &amp; Kundenplattform f&uuml;r Smart-Home- und Sicherheitssysteme in Alanya (Hastek Group)</div>
       <div class="cover-meta">
-        <div><div class="meta-label">Version</div><div class="meta-value">[APP_VERSION]</div></div>
-        <div><div class="meta-label">Status</div><div class="meta-value"><span class="badge badge-success">Produktiv</span></div></div>
-        <div><div class="meta-label">Pl&auml;ne</div><div class="meta-value">[PLAN_NAMES]</div></div>
-        <div><div class="meta-label">Datum</div><div class="meta-value">[LAST_UPDATED]</div></div>
+        <div><div class="meta-label">Version</div><div class="meta-value">0.1.0</div></div>
+        <div><div class="meta-label">Status</div><div class="meta-value"><span class="badge badge-warning">Demo-Vorschau</span></div></div>
+        <div><div class="meta-label">Sprachen</div><div class="meta-value">TR &middot; EN &middot; RU &middot; DE</div></div>
+        <div><div class="meta-label">Datum</div><div class="meta-value">Juli 2026</div></div>
       </div>
     </div>
 
@@ -389,42 +389,57 @@
     <section id="uebersicht">
       <h2><span class="num">01</span> &Uuml;bersicht</h2>
       <p>
-        [APP_NAME] ist eine webbasierte SaaS-Plattform, die [APP_DESCRIPTION].
+        Diese Plattform ist eine mehrsprachige Marketing- und Demo-Website f&uuml;r <strong>Hastek Group</strong>
+        (Markenname <strong>HAS Teknoloji</strong>), einen seit 2017 in Alanya t&auml;tigen Installateur f&uuml;r
+        Smart-Home- und Sicherheitssysteme. Sie f&uuml;hrt Interessenten anhand von sechs Kundensegmenten zur
+        passenden L&ouml;sung aus elf Service-Disziplinen und erm&ouml;glicht die Anfrage einer kostenlosen
+        Besichtigung &ndash; auf T&uuml;rkisch, Englisch, Russisch und Deutsch.
       </p>
+      <div class="info-box">
+        <div class="info-box-title">Wichtig: Demo-/Vorschau-Build</div>
+        <p>
+          Dies ist ein <strong>Demo-Build ohne echtes Backend</strong> f&uuml;r die interne Kundenpr&auml;sentation.
+          Terminbuchung und Admin-Dashboard nutzen ausschlie&szlig;lich Browser-Storage
+          (<code>localStorage</code>/<code>sessionStorage</code>), es gibt kein Supabase, kein Zahlungssystem und
+          keinen produktiv konfigurierten KI-Schl&uuml;ssel. Alle Angaben in diesem Handbuch beschreiben den
+          tats&auml;chlichen Demo-Zustand, nicht einen sp&auml;teren Produktivbetrieb.
+        </p>
+      </div>
       <div class="card">
-        <strong>Was [APP_NAME] l&ouml;st:</strong> [PROBLEM_STATEMENT]
+        <strong>Welches Problem die Website l&ouml;st:</strong> Interessenten aus vier Sprachr&auml;umen &ndash;
+        insbesondere Alanyas gro&szlig;e Gruppe ausl&auml;ndischer Zweitwohnsitzbesitzer &ndash; sollen ohne
+        Umwege verstehen, welches der elf Hastek-Systeme zu ihrer Immobilie passt, Vertrauen in die lokale Marke
+        aufbauen und niedrigschwellig einen ersten Kontakt (Besichtigungstermin oder WhatsApp) herstellen k&ouml;nnen.
       </div>
       <div class="feature-grid">
-        <!-- Copilot fills these cards based on actual implemented features -->
         <div class="feature-card">
-          <div class="feature-icon">&#128269;</div>
-          <div class="feature-title">[FEATURE_1_TITLE]</div>
-          <div class="feature-desc">[FEATURE_1_DESC]</div>
+          <div class="feature-icon">&#127968;</div>
+          <div class="feature-title">Segment-gef&uuml;hrte Navigation</div>
+          <div class="feature-desc">6 statische Landingpages (Privathaushalte, Neubau/Bautr&auml;ger, Hotellerie, Handel, Gastronomie, Gewerbe/Parkfl&auml;chen) mit jeweils eigenen Pain Points, empfohlenen Systemen und CTA.</div>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">&#9889;</div>
-          <div class="feature-title">[FEATURE_2_TITLE]</div>
-          <div class="feature-desc">[FEATURE_2_DESC]</div>
+          <div class="feature-icon">&#128172;</div>
+          <div class="feature-title">KI-Chat-Assistent (Demo)</div>
+          <div class="feature-desc">Schwebendes Chat-Widget auf jeder Seite. Ruft bei gesetztem <code>ANTHROPIC_API_KEY</code> das Modell <code>claude-haiku-4-5</code> auf, sonst einen lokalisierten Demo-Fallback-Text.</div>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">&#128202;</div>
-          <div class="feature-title">[FEATURE_3_TITLE]</div>
-          <div class="feature-desc">[FEATURE_3_DESC]</div>
+          <div class="feature-icon">&#128197;</div>
+          <div class="feature-title">Terminbuchung (Demo)</div>
+          <div class="feature-desc">Buchungsformular unter <code>/booking</code> mit WhatsApp-Alternative; Eintr&auml;ge landen nur in <code>localStorage</code> des Browsers, keine echte &Uuml;bertragung.</div>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">&#128276;</div>
-          <div class="feature-title">[FEATURE_4_TITLE]</div>
-          <div class="feature-desc">[FEATURE_4_DESC]</div>
+          <div class="feature-icon">&#127760;</div>
+          <div class="feature-title">Viersprachige Lokalisierung</div>
+          <div class="feature-desc">next-intl mit 4 Locales (tr Standard, en, ru, de), Locale-Pr&auml;fix immer in der URL, plus nutzergesteuerter Hell-/Dunkelmodus.</div>
         </div>
       </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Nutzerrolle</th><th>Beschreibung</th></tr></thead>
           <tbody>
-            <!-- Copilot updates rows to reflect actual roles -->
-            <tr><td><strong>Free-Nutzer</strong></td><td>[FREE_ROLE_DESC]</td></tr>
-            <tr><td><strong>Pro-Nutzer</strong></td><td>[PRO_ROLE_DESC]</td></tr>
-            <tr><td><strong>Admin (WAMOCON)</strong></td><td>Nutzerverwaltung, Systemkonfiguration, Monitoring</td></tr>
+            <tr><td><strong>Website-Besucher</strong></td><td>Alle &ouml;ffentlichen Seiten, Buchungsformular und Chat-Assistent &ndash; kein Login erforderlich.</td></tr>
+            <tr><td><strong>Team-Login (Demo-Admin)</strong></td><td>Zugriff auf <code>/admin/dashboard</code> mit hartcodierten Demo-Zugangsdaten; Session nur in <code>sessionStorage</code>, kein echtes Auth-Backend.</td></tr>
+            <tr><td><strong>WAMOCON (Entwicklung)</strong></td><td>Codepflege, Deployment-Konfiguration &uuml;ber GitHub Actions, Pflege dieses Handbuchs.</td></tr>
           </tbody>
         </table>
       </div>
@@ -435,22 +450,32 @@
       <h2><span class="num">02</span> Funktionen</h2>
 
       <h3 id="feature-list">2.1 Feature-Liste</h3>
-      <p>[FEATURE_LIST_INTRO]</p>
-      <div class="info-box">
-        <div class="info-box-title">Hinweis</div>
-        <p>Diese Liste wird von Copilot automatisch aktualisiert, wenn neue Features implementiert werden.</p>
-      </div>
+      <p>Die folgenden Funktionen sind in der aktuellen Demo-Version vollst&auml;ndig implementiert und pr&auml;sentationsbereit:</p>
+      <ul>
+        <li><strong>AIDA-Startseite:</strong> Hero, Trust-Bar, 11 Service-Kacheln, Differenzierungsargumente, 6 Segment-Kacheln, Beispiel-Testimonials, Abschluss-CTA.</li>
+        <li><strong>6 Segment-Landingpages</strong> mit segmentspezifischen Pain Points, empfohlenen Systemen und eigenem CTA.</li>
+        <li><strong>Trust Center</strong> (<code>/trust</code>): &Uuml;ber uns, KVKK/DSGVO-Datenschutzhinweis, Zertifikate-Platzhalter, Bewertungs-Platzhalter, Kontakt.</li>
+        <li><strong>FAQ-Akkordeon</strong> mit den h&auml;ufigsten Kundenfragen.</li>
+        <li><strong>Terminbuchung (Demo)</strong> inkl. WhatsApp-Alternative, Speicherung nur in <code>localStorage</code>.</li>
+        <li><strong>Team-Login + Admin-Dashboard (Demo)</strong> mit Buchungsliste und Beispiel-Bewertungen.</li>
+        <li><strong>KI-Chat-Widget</strong> auf jeder Seite, mit lokalisiertem Demo-Fallback ohne API-Schl&uuml;ssel.</li>
+        <li><strong>Hell-/Dunkelmodus</strong>, nutzergesteuert per Umschalter im Header (nicht nur OS-basiert).</li>
+        <li><strong>SEO/GEO-Grundlagen:</strong> <code>sitemap.xml</code>, <code>robots.txt</code>, site-weites <code>LocalBusiness</code>-JSON-LD.</li>
+        <li><strong>3 Rechtsseiten je Sprache</strong> (Impressum, AGB, Datenschutz) &ndash; klar als Entwurf gekennzeichnet.</li>
+      </ul>
 
-      <h3 id="plaene">2.2 Pl&auml;ne &amp; Preise</h3>
+      <h3 id="segmente">2.2 Segmente &amp; Systeme</h3>
+      <p>Es gibt kein Abo-/Preismodell in dieser Demo &ndash; stattdessen strukturiert die Website Interessenten &uuml;ber sechs Kundensegmente, denen jeweils passende Systeme aus den elf Service-Disziplinen zugeordnet sind:</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Feature</th><th>Free</th><th>Pro ([PRO_PRICE])</th></tr></thead>
+          <thead><tr><th>Segment</th><th>Route</th><th>Empfohlene Systeme</th></tr></thead>
           <tbody>
-            <!-- Copilot updates this table when pricing/plans change -->
-            <tr><td>[FEATURE_A]</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>[FEATURE_B]</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>[FEATURE_C_PRO]</td><td class="no">&#10007;</td><td class="yes">&#10003;</td></tr>
-            <tr><td>[FEATURE_D_PRO]</td><td class="no">&#10007;</td><td class="yes">&#10003;</td></tr>
+            <tr><td>Privathaushalte &amp; ausl&auml;ndische Zweitwohnsitzbesitzer</td><td><code>/segments/private-homes</code></td><td>Smart Home, Smart-Schloss, Video-Gegensprechanlage, CCTV, Alarm</td></tr>
+            <tr><td>Neubau-Villen, Wohnanlagen &amp; Bautr&auml;ger</td><td><code>/segments/new-build-developers</code></td><td>Smart Home, Smart-Schloss, Video-Gegensprechanlage, CCTV, Alarm, Internet/WLAN</td></tr>
+            <tr><td>Hotellerie &amp; Tourismusbetriebe</td><td><code>/segments/hospitality</code></td><td>CCTV, Brandmeldung, Alarm, Internet/WLAN, Beschallung</td></tr>
+            <tr><td>Einzelhandel &amp; Lebensmittelm&auml;rkte</td><td><code>/segments/retail-markets</code></td><td>CCTV, Alarm, Handels-Kassensysteme, Internet/WLAN</td></tr>
+            <tr><td>Restaurants, Caf&eacute;s &amp; Bars</td><td><code>/segments/gastronomy</code></td><td>Adisyon-/Kassensysteme, CCTV, Alarm, Beschallung, Internet/WLAN</td></tr>
+            <tr><td>Gewerbeimmobilien, B&uuml;ro &amp; Parkfl&auml;chen</td><td><code>/segments/commercial-parking</code></td><td>Parkschranken, CCTV, Alarm, Brandmeldung, Internet/WLAN</td></tr>
           </tbody>
         </table>
       </div>
@@ -460,31 +485,29 @@
     <section id="tutorials">
       <h2><span class="num">03</span> Erste Schritte</h2>
 
-      <h3 id="tut-konto">3.1 Konto erstellen</h3>
+      <h3 id="tut-team-login">3.1 Team-Login (Demo-Zugang)</h3>
       <ol>
-        <!-- Copilot updates steps to match actual auth flow and routes -->
-        <li><code>[APP_URL]/auth/registrieren</code> aufrufen</li>
-        <li>E-Mail-Adresse und Passwort (min. 8 Zeichen) eingeben</li>
-        <li>AGB und Datenschutzerkl&auml;rung akzeptieren</li>
-        <li><strong>&bdquo;Kostenlos starten&ldquo;</strong> klicken</li>
-        <li>Best&auml;tigungslink in der E-Mail anklicken</li>
-        <li>Weiterleitung zum Dashboard</li>
+        <li><code>/[locale]/admin</code> aufrufen (z.&nbsp;B. <code>/de/admin</code>)</li>
+        <li>Demo-Zugangsdaten eingeben: E-Mail <code>admin@hastekgroup.com</code>, Passwort <code>hastek-demo-2026</code></li>
+        <li>Nach erfolgreichem Login: Weiterleitung zu <code>/[locale]/admin/dashboard</code></li>
+        <li>Die Sitzung liegt nur in <code>sessionStorage</code> &ndash; Tab schlie&szlig;en oder der <strong>&bdquo;Abmelden&ldquo;</strong>-Button beendet sie</li>
+        <li>Hinweis: Es gibt kein echtes Auth-Backend &ndash; jede Person mit den Demo-Zugangsdaten kann sich anmelden</li>
       </ol>
 
-      <h3 id="tut-start">3.2 Loslegen</h3>
+      <h3 id="tut-besucher">3.2 Als Besucher loslegen</h3>
       <ol>
-        <!-- Copilot fills this section with the actual first-run workflow -->
-        <li>[STEP_1]</li>
-        <li>[STEP_2]</li>
-        <li>[STEP_3]</li>
+        <li>Startseite <code>/[locale]</code> besuchen &ndash; Hero mit Hauptangebot, Sprachumschalter und Theme-Toggle oben im Header</li>
+        <li>Passenden Bereich unter &bdquo;Bereiche&ldquo; im Men&uuml; w&auml;hlen oder direkt zu <code>/segments/[slug]</code> navigieren (6 Optionen)</li>
+        <li>Auf der Segmentseite Pain Points und empfohlene Systeme lesen</li>
+        <li>&Uuml;ber den KI-Chat-Assistenten (unten rechts) Fragen stellen oder direkt <strong>&bdquo;Kostenlose Besichtigung buchen&ldquo;</strong> klicken</li>
+        <li>Buchungsformular unter <code>/[locale]/booking</code> ausf&uuml;llen und absenden (Demo: nur lokal gespeichert, keine echte &Uuml;bertragung)</li>
       </ol>
 
-      <h3 id="tut-upgrade">3.3 Auf Pro upgraden</h3>
+      <h3 id="tut-sprache-theme">3.3 Sprache &amp; Darstellung wechseln</h3>
       <ol>
-        <li>Im Dashboard auf <strong>&bdquo;Auf Pro upgraden&ldquo;</strong> klicken</li>
-        <li>Stripe Checkout &ouml;ffnet sich im selben Fenster</li>
-        <li>Zahlungsdaten eingeben (Kreditkarte, SEPA-Lastschrift)</li>
-        <li>Nach Zahlung: automatische R&uuml;ckleitung zum Dashboard mit aktiviertem Pro-Status</li>
+        <li>Sprachumschalter im Header nutzen, um zwischen T&uuml;rkisch (Standard), Englisch, Russisch und Deutsch zu wechseln &ndash; die URL wechselt entsprechend zu <code>/tr/...</code>, <code>/en/...</code>, <code>/ru/...</code> bzw. <code>/de/...</code></li>
+        <li>Theme-Toggle im Header nutzen, um manuell zwischen Hell- und Dunkelmodus zu wechseln (nutzergesteuert &uuml;ber die <code>.dark</code>-Klasse auf <code>&lt;html&gt;</code>, nicht nur OS-Einstellung)</li>
+        <li>Beide Einstellungen bleiben f&uuml;r die laufende Sitzung erhalten</li>
       </ol>
     </section>
 
@@ -492,28 +515,25 @@
     <section id="howto">
       <h2><span class="num">04</span> How-to Guides</h2>
 
-      <h3 id="ht-profil">4.1 Profil &amp; Abonnement verwalten</h3>
+      <h3 id="ht-buchungen">4.1 Demo-Buchungen im Admin-Dashboard pr&uuml;fen</h3>
       <ol>
-        <li><code>/[locale]/profil</code> aufrufen</li>
-        <li>Stammdaten (Name, E-Mail) &auml;ndern &rarr; <strong>&bdquo;Speichern&ldquo;</strong></li>
-        <li>Passwort &auml;ndern &rarr; Best&auml;tigungs-E-Mail wird versandt</li>
-        <li>Abo-Status und n&auml;chstes Abrechnungsdatum einsehen</li>
-        <li>Zahlungsmethode &auml;ndern &rarr; Weiterleitung zum Stripe Customer Portal</li>
-        <li>Pro-Abo k&uuml;ndigen &rarr; Weiterleitung zum Stripe Customer Portal (K&uuml;ndigung zum Periodenende)</li>
+        <li>Buchungsformular unter <code>/[locale]/booking</code> einmal testweise ausf&uuml;llen und absenden</li>
+        <li>Bei <code>/[locale]/admin</code> mit den Demo-Zugangsdaten anmelden (siehe 3.1)</li>
+        <li>Im Dashboard-Tab <strong>&bdquo;Buchungen&ldquo;</strong> erscheint der neue Eintrag mit Name, Kontakt, Bereich, Art, Wunschtermin und Status &bdquo;Neu&ldquo;</li>
+        <li>Tab <strong>&bdquo;Bewertungen&ldquo;</strong> zeigt drei Beispiel-Bewertungen (Platzhalter, bis ein echtes Google-Unternehmensprofil angebunden ist)</li>
+        <li>Hinweis: Buchungen werden pro Browser in <code>localStorage</code> (Key <code>hastek-demo-bookings</code>) gespeichert &ndash; ein anderer Browser/ein anderes Ger&auml;t zeigt keine Eintr&auml;ge</li>
       </ol>
 
-      <h3 id="ht-loeschen">4.2 Konto l&ouml;schen (DSGVO)</h3>
+      <h3 id="ht-reset">4.2 Demo-Zustand zur&uuml;cksetzen</h3>
       <ol>
-        <li><code>/[locale]/profil</code> aufrufen &rarr; Abschnitt <strong>&bdquo;Konto l&ouml;schen&ldquo;</strong></li>
-        <li>Best&auml;tigungsdialog &ouml;ffnet sich &ndash; Vorgang ist <strong>nicht r&uuml;ckg&auml;ngig zu machen</strong></li>
-        <li>Best&auml;tigung eingeben und <strong>&bdquo;Konto unwiderruflich l&ouml;schen&ldquo;</strong> klicken</li>
-        <li>Alle personenbezogenen Daten werden gel&ouml;scht (DSGVO Art. 17)</li>
-        <li>Aktives Pro-Abo wird bei Stripe sofort gek&uuml;ndigt</li>
+        <li>F&uuml;r eine &bdquo;frische&ldquo; Pr&auml;sentation: Browser-DevTools &ouml;ffnen &rarr; Application/Storage &rarr; <code>localStorage</code> und <code>sessionStorage</code> der Domain leeren (Keys <code>hastek-demo-bookings</code>, <code>hastek-admin-session</code>, <code>hastek-cookie-consent</code>)</li>
+        <li>Alternativ: Seite in einem Inkognito-/Privatfenster &ouml;ffnen, um ohne vorherige Demo-Buchungen, Cookie-Zustimmung oder Admin-Sitzung zu starten</li>
+        <li>Ein einfaches Neuladen der Seite gen&uuml;gt nicht &ndash; die Daten liegen im Browser-Storage, nicht auf einem Server</li>
       </ol>
 
       <div class="warn-box">
-        <div class="warn-box-title">Unumkehrbarer Vorgang</div>
-        <p>Die Konto-L&ouml;schung kann nicht r&uuml;ckg&auml;ngig gemacht werden. Alle Daten werden dauerhaft entfernt.</p>
+        <div class="warn-box-title">Kein Server-seitiges L&ouml;schen n&ouml;tig</div>
+        <p>Da diese Demo-Version keine Datenbank verwendet, existieren keine serverseitig gespeicherten personenbezogenen Daten. Alle Demo-Daten (Buchungen, Admin-Session, Cookie-Zustimmung) leben ausschlie&szlig;lich im Browser-Speicher der jeweiligen Sitzung und gehen beim L&ouml;schen dieses Speichers unwiderruflich verloren.</p>
       </div>
     </section>
 
@@ -522,36 +542,38 @@
       <h2><span class="num">05</span> Funktionsreferenz</h2>
 
       <h3 id="routen">5.1 Routen-&Uuml;bersicht</h3>
+      <p>Alle Seiten liegen unter <code>src/app/[locale]/</code>; <code>localePrefix: "always"</code> bedeutet, dass jede URL immer ein Locale-Pr&auml;fix tr/en/ru/de tr&auml;gt (auch f&uuml;r die Standardsprache T&uuml;rkisch).</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Route</th><th>Beschreibung</th><th>Zugriff</th></tr></thead>
           <tbody>
-            <!-- Copilot updates this table to match actual app routes from src/app/ -->
-            <tr><td><code>/[locale]</code></td><td>Startseite / Marketing</td><td>Alle</td></tr>
-            <tr><td><code>/[locale]/auth/anmelden</code></td><td>Login</td><td>&Ouml;ffentlich</td></tr>
-            <tr><td><code>/[locale]/auth/registrieren</code></td><td>Registrierung</td><td>&Ouml;ffentlich</td></tr>
-            <tr><td><code>/[locale]/dashboard</code></td><td>Nutzer-Dashboard</td><td>Eingeloggt</td></tr>
-            <tr><td><code>/[locale]/profil</code></td><td>Profil, Abo, Konto</td><td>Eingeloggt</td></tr>
-            <tr><td><code>/[locale]/admin</code></td><td>Admin-Dashboard</td><td>Admin only</td></tr>
-            <tr><td><code>/[locale]/impressum</code></td><td>Impressum</td><td>Alle</td></tr>
-            <tr><td><code>/[locale]/datenschutz</code></td><td>Datenschutzerkl&auml;rung</td><td>Alle</td></tr>
-            <tr><td><code>/[locale]/agb</code></td><td>AGB</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]</code></td><td>Startseite &ndash; AIDA-Aufbau: Hero, Trust-Bar, Service-Grid, Differenzierung, 6-Segment-Grid, Testimonials, Abschluss-CTA</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/segments/[slug]</code></td><td>6 statische Segmentseiten: private-homes, new-build-developers, hospitality, retail-markets, gastronomy, commercial-parking</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/trust</code></td><td>Trust Center: &Uuml;ber uns, KVKK/DSGVO-Datenschutzhinweis, Zertifikate-Platzhalter, Bewertungen-Platzhalter, Kontakt</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/faq</code></td><td>FAQ-Akkordeon</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/booking</code></td><td>Terminbuchung (Demo, Speicherung in <code>localStorage</code>)</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/legal/impressum</code></td><td>Impressum &ndash; Entwurf</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/legal/agb</code></td><td>AGB &ndash; Entwurf</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/legal/datenschutz</code></td><td>Datenschutzerkl&auml;rung (KVKK/DSGVO) &ndash; Entwurf</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/admin</code></td><td>Team-Login (Demo, hartcodierte Zugangsdaten)</td><td>&Ouml;ffentlich erreichbar, per <code>robots.txt</code> von Suchmaschinen ausgeschlossen</td></tr>
+            <tr><td><code>/[locale]/admin/dashboard</code></td><td>Admin-Dashboard: Demo-Buchungen + Beispiel-Bewertungen</td><td>Nur nach Demo-Login (<code>sessionStorage</code>)</td></tr>
+            <tr><td><code>/sitemap.xml</code></td><td>SEO-Sitemap &uuml;ber alle Locales &times; Routen</td><td>Alle</td></tr>
+            <tr><td><code>/robots.txt</code></td><td>Crawler-Regeln, schlie&szlig;t <code>/admin</code> und <code>/api</code> aus</td><td>Alle</td></tr>
+            <tr><td><code>/icon.svg</code></td><td>Favicon/App-Icon (Logo-Mark)</td><td>Alle</td></tr>
           </tbody>
         </table>
       </div>
 
       <h3 id="api">5.2 API &amp; Hooks</h3>
       <div class="info-box">
-        <div class="info-box-title">Lebende Dokumentation</div>
-        <p>Copilot erg&auml;nzt diese Tabelle automatisch, wenn neue API-Routen oder Hooks hinzugef&uuml;gt werden.</p>
+        <div class="info-box-title">Aktueller Stand</div>
+        <p>Es existiert genau eine API-Route. Alle anderen Funktionen (Buchung, Admin, Cookie-Zustimmung) laufen rein clientseitig ohne Server-Endpunkt.</p>
       </div>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Endpunkt / Hook</th><th>Methode</th><th>Beschreibung</th><th>Zugriff</th></tr></thead>
           <tbody>
-            <!-- Copilot updates rows when API routes are added/changed -->
-            <tr><td><code>/api/health</code></td><td>GET</td><td>Health-Check</td><td>Alle</td></tr>
-            <tr><td><code>/api/stripe/webhook</code></td><td>POST</td><td>Stripe-Webhook (intern)</td><td>Stripe only</td></tr>
+            <tr><td><code>/api/chat</code></td><td>POST</td><td>KI-Chat-Assistent: ruft bei gesetztem <code>ANTHROPIC_API_KEY</code> das Modell <code>claude-haiku-4-5</code> auf; ohne Schl&uuml;ssel oder bei Fehler liefert es einen lokalisierten Demo-Fallback-Text aus <code>messages/[locale].json</code> (<code>chat.offlineNotice</code>)</td><td>&Ouml;ffentlich, wird vom Chat-Widget auf jeder Seite aufgerufen</td></tr>
           </tbody>
         </table>
       </div>
@@ -566,44 +588,56 @@
         <table>
           <thead><tr><th>Schicht</th><th>Technologie</th><th>Aufgabe</th></tr></thead>
           <tbody>
-            <tr><td>Frontend &amp; Backend</td><td>Next.js 16 (App Router), TypeScript</td><td>SSR, API-Routen, Middleware</td></tr>
-            <tr><td>Styling</td><td>Tailwind CSS v4</td><td>Utility-First, Dark/Light Mode</td></tr>
-            <tr><td>Datenbank &amp; Auth</td><td>Supabase (PostgreSQL, RLS)</td><td>Schema <code>[DB_SCHEMA]</code></td></tr>
-            <tr><td>i18n</td><td>next-intl v4</td><td>Deutsch (prim&auml;r) &amp; Englisch</td></tr>
-            <tr><td>Payment</td><td>Stripe</td><td>Abonnement, Customer Portal</td></tr>
-            <tr><td>E-Mail</td><td>Resend</td><td>Transaktions-E-Mails, Benachrichtigungen</td></tr>
-            <tr><td>Tests</td><td>Vitest, Testing Library</td><td>Unit-Tests, Coverage-Threshold</td></tr>
-            <tr><td>CI/CD</td><td>GitHub Actions</td><td>Tests, Lint, Typecheck, Vercel Deploy</td></tr>
-            <tr><td>Hosting</td><td>Vercel (Frontend), Supabase EU-Frankfurt</td><td>DSGVO-konforme EU-Region</td></tr>
+            <tr><td>Frontend &amp; Backend</td><td>Next.js 16.2.1 (App Router), TypeScript, React 19.2</td><td>SSR, eine API-Route (<code>/api/chat</code>), Locale-Middleware (<code>src/proxy.ts</code>)</td></tr>
+            <tr><td>Styling</td><td>Tailwind CSS v4</td><td>Utility-First, nutzergesteuerter Hell-/Dunkelmodus, Geist Sans/Mono &uuml;ber <code>next/font</code></td></tr>
+            <tr><td>i18n</td><td>next-intl v4.13</td><td>4 Locales (tr Standard, en, ru, de), Locale-Pr&auml;fix immer in der URL</td></tr>
+            <tr><td>KI-Chat</td><td><code>@anthropic-ai/sdk</code> (Modell <code>claude-haiku-4-5</code>)</td><td>Optional aktiv &uuml;ber <code>ANTHROPIC_API_KEY</code>; ohne Schl&uuml;ssel l&auml;uft ein lokalisierter Scripted-Fallback</td></tr>
+            <tr><td>Datenhaltung (Demo)</td><td>Browser <code>localStorage</code> / <code>sessionStorage</code></td><td>Buchungen, Admin-Session, Cookie-Zustimmung &ndash; <strong>kein Server-Backend, kein Supabase</strong> in dieser Demo-Version</td></tr>
+            <tr><td>SEO/GEO</td><td><code>sitemap.ts</code>, <code>robots.ts</code>, <code>LocalBusinessSchema</code></td><td>JSON-LD (<code>LocalBusiness</code>) site-weit im <code>&lt;head&gt;</code> jeder Locale-Seite</td></tr>
+            <tr><td>CI/CD</td><td>GitHub Actions (Reusable Workflows von <code>Wamocon/github_workflow</code>)</td><td>Lint/Typecheck bei PRs, manuelles Vercel-Deployment (siehe Abschnitt 07)</td></tr>
+            <tr><td>Hosting</td><td>Vercel (geplant, noch nicht produktiv deployed)</td><td><code>NEXT_PUBLIC_APP_URL</code> steuert Sitemap- und Schema-URLs</td></tr>
           </tbody>
         </table>
+      </div>
+      <div class="info-box">
+        <div class="info-box-title">Kein automatisierter Test-Suite</div>
+        <p>In dieser Demo-Version ist kein Test-Framework (z.&nbsp;B. Vitest) konfiguriert. Qualit&auml;tssicherung erfolgt aktuell &uuml;ber TypeScript-Typecheck und ESLint (siehe Abschnitt 07).</p>
       </div>
 
-      <h3 id="tech-schema">6.2 Datenbank-Schema</h3>
-      <p>Supabase-Schema: <code>[DB_SCHEMA_DEV]</code> (Entwicklung) / <code>[DB_SCHEMA_PROD]</code> (Produktion). Row Level Security (RLS) ist auf allen Tabellen aktiv.</p>
+      <h3 id="tech-schema">6.2 Datenhaltung in der Demo-Version</h3>
+      <p>Es gibt <strong>kein Backend und keine Datenbank</strong> in dieser Demo-Version &ndash; also auch kein Supabase-Schema. Alle in Abschnitt 5 genannten Funktionen mit &bdquo;gespeicherten&ldquo; Daten legen diese ausschlie&szlig;lich im Browser-Speicher ab:</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Tabelle</th><th>Inhalt</th><th>RLS</th></tr></thead>
+          <thead><tr><th>Storage-Key</th><th>Inhalt</th><th>Geltungsbereich</th></tr></thead>
           <tbody>
-            <!-- Copilot updates this table when Supabase migrations are applied -->
-            <tr><td><code>profiles</code></td><td>Nutzerprofile, Plan (free/pro)</td><td>Nur eigener Datensatz</td></tr>
+            <tr><td><code>hastek-demo-bookings</code> (<code>localStorage</code>)</td><td>Liste der &uuml;ber <code>/booking</code> eingereichten Demo-Buchungen</td><td>Pro Browser/Ger&auml;t</td></tr>
+            <tr><td><code>hastek-admin-session</code> (<code>sessionStorage</code>)</td><td>Login-Status f&uuml;r <code>/admin/dashboard</code></td><td>Pro Browser-Tab-Sitzung</td></tr>
+            <tr><td><code>hastek-cookie-consent</code> (<code>localStorage</code>)</td><td>Zustimmung/Ablehnung im Cookie-Banner</td><td>Pro Browser/Ger&auml;t</td></tr>
           </tbody>
         </table>
       </div>
+      <p>In einer sp&auml;teren Produktivversion w&uuml;rde dieser Abschnitt das reale Supabase-Schema (Tabellen, RLS-Policies, Schema-Namen) dokumentieren.</p>
     </section>
 
     <!-- ── 7. CI/CD & Tests ───────────────────────────────────────── -->
     <section id="ci-cd">
       <h2><span class="num">07</span> CI/CD &amp; Tests</h2>
-      <p>Jeder Code-Push durchl&auml;uft automatisch Qualit&auml;ts-Gates. Ein Vercel-Deployment erfolgt nur bei Pull Requests (Preview) oder Merge in <code>main</code> (Produktion).</p>
+      <p>
+        Alle vier Workflows in <code>.github/workflows/</code> sind schlanke &bdquo;Caller&ldquo;-Workflows, die auf
+        zentrale, wiederverwendbare Workflows im Repository <code>Wamocon/github_workflow</code> verweisen. Nur die
+        PR-Pipeline l&auml;uft automatisch; Deployment, Launch-Checkliste und Landingpage-Generator werden bewusst
+        manuell &uuml;ber den Reiter &bdquo;Actions&ldquo; ausgel&ouml;st. Es gibt aktuell keinen eigenen
+        <code>docs.yml</code>-Workflow, der dieses Handbuch automatisch auf GitHub Pages ver&ouml;ffentlicht &ndash;
+        es wird als statische Datei unter <code>docs/manual/</code> gepflegt.
+      </p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Workflow</th><th>Trigger</th><th>Befehl</th></tr></thead>
+          <thead><tr><th>Workflow</th><th>Trigger</th><th>Beschreibung</th></tr></thead>
           <tbody>
-            <!-- Copilot updates this table when GitHub Actions workflows change -->
-            <tr><td><code>deploy.yml</code></td><td>Manuell (workflow_dispatch)</td><td>Vercel Production/Preview Deploy</td></tr>
-            <tr><td><code>pr-pipeline.yml</code></td><td>Pull Request &rarr; main</td><td>Typecheck, Lint, Build, Tests</td></tr>
-            <tr><td><code>docs.yml</code></td><td>Push &rarr; main (docs/)</td><td>GitHub Pages (dieses Handbuch)</td></tr>
+            <tr><td><code>deploy.yml</code></td><td>Manuell (workflow_dispatch, Ziel &bdquo;production&ldquo; oder &bdquo;preview&ldquo; w&auml;hlbar)</td><td>Deployment zu Vercel &uuml;ber die Vercel-CLI &ndash; l&auml;uft nie automatisch</td></tr>
+            <tr><td><code>pr-pipeline.yml</code></td><td>Pull Request &rarr; main/master (+ manuell)</td><td>Auto-Fix (ESLint/Prettier, committet zur&uuml;ck) und PR-Checks (TypeScript-Typecheck + ESLint) &ndash; einzige automatisch laufende Pipeline; f&uuml;hrt keinen Build und keine Tests aus</td></tr>
+            <tr><td><code>launch-checklist.yml</code></td><td>GitHub Release ver&ouml;ffentlicht oder manuell</td><td>Pr&uuml;ft Vercel-, Supabase-, Landingpage- und Handbuch-Setup vor einem Go-Live</td></tr>
+            <tr><td><code>lp-generator.yml</code></td><td>Manuell (workflow_dispatch)</td><td>Generiert per KI-Prompt eine separate Landingpage-Repo-Vorlage (WAMOCON-internes Tooling, nicht Teil dieser App)</td></tr>
           </tbody>
         </table>
       </div>
@@ -611,21 +645,35 @@
 
     <!-- ── 8. DSGVO & Compliance ──────────────────────────────────── -->
     <section id="compliance">
-      <h2><span class="num">08</span> DSGVO &amp; Compliance</h2>
-      <p>[APP_NAME] verarbeitet personenbezogene Daten ausschlie&szlig;lich in der EU (Supabase, Region Frankfurt). Alle Verarbeitungen sind nach DSGVO dokumentiert.</p>
+      <h2><span class="num">08</span> KVKK &amp; DSGVO / Compliance</h2>
+      <p>
+        Hastek Group (HAS Teknoloji) ist ein t&uuml;rkisches Unternehmen mit Sitz in Alanya. Prim&auml;rer
+        Rechtsrahmen ist daher das t&uuml;rkische Datenschutzgesetz <strong>KVKK</strong> (Kişisel Verilerin
+        Korunması Kanunu, Gesetz Nr. 6698), erg&auml;nzt um DSGVO-Grunds&auml;tze f&uuml;r Kund:innen mit Wohnsitz
+        in der EU/im EWR. Da diese Demo-Version <strong>kein Backend</strong> besitzt, verlassen Buchungs- und
+        Chat-Daten in aller Regel den Browser der Nutzerin/des Nutzers gar nicht erst.
+      </p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>DSGVO-Anforderung</th><th>Umsetzung</th></tr></thead>
+          <thead><tr><th>Anforderung</th><th>Umsetzung</th></tr></thead>
           <tbody>
-            <tr><td>Recht auf Auskunft (Art. 15)</td><td>Profil-Seite zeigt alle gespeicherten Daten</td></tr>
-            <tr><td>Recht auf L&ouml;schung (Art. 17)</td><td>Konto-L&ouml;schung im Profil, sofortige Datenlöschung inkl. Stripe-K&uuml;ndigung</td></tr>
-            <tr><td>Datenportabilit&auml;t (Art. 20)</td><td>Datenexport (JSON) im Profil</td></tr>
-            <tr><td>Cookie-Einwilligung</td><td>Cookie-Banner mit Opt-in bei erstem Besuch</td></tr>
-            <tr><td>Datensicherheit (Art. 32)</td><td>RLS auf allen Supabase-Tabellen, HTTPS, kein Client-seitiges Secret</td></tr>
-            <tr><td>Impressum &amp; Datenschutzerkl&auml;rung</td><td>Verf&uuml;gbar unter <code>/[locale]/impressum</code> und <code>/[locale]/datenschutz</code></td></tr>
-            <tr><td>AGB</td><td>Verf&uuml;gbar unter <code>/[locale]/agb</code></td></tr>
+            <tr><td>Verantwortlicher (Veri Sorumlusu, KVKK)</td><td>Hastek Group Yazılım Ve Otomasyon Sistemleri İth.İhr.Tur.Tic.Ltd.Şti. (HAS Teknoloji), Alanya &ndash; vollst&auml;ndige Kontaktdaten (Steuernummer/VKN, MERSİS-Nummer, finale Hausnummer, Telefon/WhatsApp) stehen unter Vorbehalt der Kundenbest&auml;tigung</td></tr>
+            <tr><td>Verarbeitete Daten</td><td>Buchungsformular (Name, E-Mail, Telefon/WhatsApp, Immobilientyp, Wunschtermin, Nachricht) und KI-Chat-Verlauf &ndash; beide nur lokal im Browser (<code>localStorage</code>/<code>sessionStorage</code>), keine &Uuml;bertragung an einen Hastek-Server</td></tr>
+            <tr><td>KI-Chat &amp; Datenschutz</td><td>Ohne konfigurierten <code>ANTHROPIC_API_KEY</code> verlassen keine Chat-Inhalte den Server (nur lokalisierter Fallback-Text); mit Schl&uuml;ssel werden Nachrichten zur Beantwortung an die Anthropic-API gesendet</td></tr>
+            <tr><td>Auskunfts-/L&ouml;schungs-/Widerspruchsrecht (KVKK Art. 11; erg&auml;nzend DSGVO Art. 15-21 f&uuml;r EU-Kund:innen)</td><td>Wird in der Datenschutzerkl&auml;rung beschrieben; in dieser Demo gibt es keine serverseitig gespeicherten Nutzerdaten, auf die sich das Recht praktisch beziehen w&uuml;rde</td></tr>
+            <tr><td>Cookie-Einwilligung</td><td>Cookie-Banner mit Opt-in/Opt-out beim ersten Besuch, ausschlie&szlig;lich technisch notwendige Cookies (Sprache, Theme, Zustimmung selbst)</td></tr>
+            <tr><td>Impressum, AGB &amp; Datenschutzerkl&auml;rung</td><td>Je Sprache verf&uuml;gbar unter <code>/[locale]/legal/impressum</code>, <code>/[locale]/legal/agb</code>, <code>/[locale]/legal/datenschutz</code> &ndash; siehe Warnhinweis unten</td></tr>
           </tbody>
         </table>
+      </div>
+      <div class="warn-box">
+        <div class="warn-box-title">Rechtstexte sind Entw&uuml;rfe</div>
+        <p>
+          Impressum, AGB und Datenschutzerkl&auml;rung sind vorl&auml;ufig und tragen auf jeder Seite einen
+          Entwurfs-Hinweis. Firmendaten (Steuernummer/VKN, MERSİS-Nummer, finale Hausnummer, Telefon/WhatsApp-Nummer)
+          stehen unter Vorbehalt der Kundenbest&auml;tigung. Vor Ver&ouml;ffentlichung ist eine Pr&uuml;fung durch
+          eine in der T&uuml;rkei zugelassene Rechtsanwaltschaft (KVKK-Konformit&auml;t) erforderlich.
+        </p>
       </div>
     </section>
 
@@ -636,13 +684,14 @@
         <table>
           <thead><tr><th>Begriff</th><th>Erkl&auml;rung</th></tr></thead>
           <tbody>
-            <!-- Copilot extends this glossary with domain-specific terms as features are added -->
-            <tr><td><strong>RLS</strong></td><td>Row Level Security &ndash; Datenbankebenen-Zugriffsschutz in Supabase/PostgreSQL</td></tr>
-            <tr><td><strong>SSR</strong></td><td>Server-Side Rendering &ndash; Seitenrendering auf dem Server (Next.js App Router Standard)</td></tr>
-            <tr><td><strong>SaaS</strong></td><td>Software as a Service &ndash; webbasierte Software, die als Abonnement bereitgestellt wird</td></tr>
-            <tr><td><strong>WAMOCON</strong></td><td>WAMOCON GmbH &ndash; Betreiber und Entwickler von [APP_NAME]</td></tr>
-            <tr><td><strong>Feature-Gate</strong></td><td>Serverseitiger Mechanismus, der Pro-Funktionen f&uuml;r Free-Nutzer sperrt</td></tr>
-            <tr><td><strong>CAC</strong></td><td>Customer Acquisition Cost &ndash; Kosten zur Gewinnung eines neuen Kunden</td></tr>
+            <tr><td><strong>AIDA</strong></td><td>Attention &ndash; Interest &ndash; Desire &ndash; Action: Marketing-Struktur, nach der die Startseite aufgebaut ist</td></tr>
+            <tr><td><strong>KVKK</strong></td><td>Kişisel Verilerin Korunması Kanunu &ndash; t&uuml;rkisches Datenschutzgesetz Nr. 6698, das t&uuml;rkische Pendant zur DSGVO</td></tr>
+            <tr><td><strong>Segment</strong></td><td>Eines der sechs Kundensegmente (Privathaushalte, Neubau/Bautr&auml;ger, Hotellerie, Handel, Gastronomie, Gewerbe/Parkfl&auml;chen) mit eigener Landingpage unter <code>/segments/[slug]</code></td></tr>
+            <tr><td><strong>Demo-Modus</strong></td><td>Zustand, in dem eine Funktion (Buchung, Admin-Login, KI-Chat) ohne echtes Backend rein clientseitig simuliert wird</td></tr>
+            <tr><td><strong>LocalBusiness (JSON-LD)</strong></td><td>Strukturierte Schema.org-Daten f&uuml;r lokale Unternehmen; hier site-weit f&uuml;r SEO/GEO (Generative Engine Optimization) eingebunden</td></tr>
+            <tr><td><strong>i18n / next-intl</strong></td><td>Internationalisierung; next-intl verwaltet die vier Locales tr/en/ru/de inkl. Routing-Pr&auml;fix</td></tr>
+            <tr><td><strong>SSR</strong></td><td>Server-Side Rendering &ndash; Seitenrendering auf dem Server (Next.js App-Router-Standard)</td></tr>
+            <tr><td><strong>WAMOCON</strong></td><td>WAMOCON GmbH &ndash; Umsetzungspartner und Entwickler dieser Demo-Plattform f&uuml;r Hastek Group</td></tr>
           </tbody>
         </table>
       </div>
@@ -654,7 +703,7 @@
 <!-- ── Footer ───────────────────────────────────────────────────────── -->
 <footer class="page-footer">
   <div>&copy; 2026 WAMOCON GmbH &ndash; Alle Rechte vorbehalten</div>
-  <div>[APP_NAME] Produkthandbuch v[APP_VERSION] &middot; Vertraulich &middot; [LAST_UPDATED]</div>
+  <div>HAS Teknoloji &ndash; Website &amp; Demo-Plattform Produkthandbuch v0.1.0 &middot; Vertraulich &middot; Juli 2026</div>
 </footer>
 
 <!-- ── Smooth active TOC highlighting ───────────────────────────────── -->

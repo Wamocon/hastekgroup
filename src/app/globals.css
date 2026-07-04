@@ -1,26 +1,101 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-ink: #0e1a2b;
+  --color-ink-soft: #16273d;
+  --color-ink-line: #24374f;
+
+  --color-paper: #faf9f6;
+  --color-paper-soft: #f1efe8;
+  --color-paper-line: #e4e1d6;
+
+  --color-brand: #c1272d;
+  --color-brand-soft: #e2574f;
+  --color-brand-deep: #8c1d1d;
+
+  --color-slate-900: #10182a;
+  --color-slate-700: #2c384a;
+  --color-slate-500: #5b6b7f;
+  --color-slate-300: #a9b4c2;
+
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --surface: #ffffff;
+  --surface-muted: var(--color-paper-soft);
+  --border-color: var(--color-paper-line);
+  --accent: var(--color-brand);
+  --accent-contrast: #ffffff;
+  --muted-foreground: var(--color-slate-500);
+}
+
+.dark {
+  --background: var(--color-ink);
+  --foreground: #f4f1e9;
+  --surface: var(--color-ink-soft);
+  --surface-muted: #122031;
+  --border-color: var(--color-ink-line);
+  --accent: var(--color-brand-soft);
+  --accent-contrast: var(--color-ink);
+  --muted-foreground: var(--color-slate-300);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border-color);
+  --color-accent: var(--accent);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ink: #0e1a2b;
+  --color-brand: #c1272d;
+  --color-brand-soft: #e2574f;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--border-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.container-hastek {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-hastek {
+    padding-inline: 2.5rem;
+  }
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  background: var(--background);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-input:focus {
+  border-color: var(--accent);
 }
