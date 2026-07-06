@@ -133,10 +133,10 @@ const meta = {
   unternehmen: "WAMOCON GmbH",
   appVersion: "1",
   erstelltVon: "Waleri Moretz",
-  eingereichtAn: "Emre Altuntaş & Harun Çoban, Geschäftsführung Hastek Group (HAS Teknoloji) – Ansprechpartner noch final zu bestätigen",
-  datum: "04.07.2026",
+  eingereichtAn: "Emre Altuntaş & Harun Çoban, Geschäftsführung Hastek Group (HAS Teknoloji)",
+  datum: "06.07.2026",
   vertraulichkeit: "Intern vertraulich",
-  status: "Zur Freigabe eingereicht",
+  status: "Status-Update nach Umsetzung – Demo zur Kundenpräsentation freigegeben",
 };
 
 // ---------------------------------------------------------------------------
@@ -252,6 +252,22 @@ const kapitel1 = [
   sourced(
     "Gartner prognostiziert laut Search Engine Land für 2026 einen Rückgang klassischer Suchanfragen um 25% zugunsten von KI-Antwortmaschinen; wer jetzt GEO-optimiert, sichert sich einen strukturellen Vorteil, bevor Wettbewerber nachziehen.",
     "Search Engine Land", "https://searchengineland.com/mastering-generative-engine-optimization-in-2026-full-guide-469142", "23.02.2026"
+  ),
+  h2("1.3 Status der Umsetzung (Stand: 06.07.2026)"),
+  body(
+    "Dieses Kapitel wurde nach Abschluss der Demo-Entwicklung aktualisiert, um den in Kapitel 7 ursprünglich formulierten Anforderungen den tatsächlich umgesetzten Stand gegenüberzustellen. Grundlage ist die live unter https://hastekgroup.vercel.app abrufbare, mehrsprachige Demo-Website – nicht Annahmen oder der urspüngliche Plan."
+  ),
+  body(
+    "Zentrales Ergebnis: Der komplette Muss-Umfang aus Kapitel 7.1/7.2 wurde umgesetzt. Darüber hinaus sind bereits alle sechs ursprünglich für Ausbaustufe 2/3 vorgesehenen Funktionen (Leistungs-Konfigurator, QR-/Geräte-Wartungshistorie, Kunden-Login-Portal, Live-Referenz-Showroom, WhatsApp-Erinnerungen, Instagram-Anbindung) als funktionierende Demo-Prototypen realisiert – deutlich früher als geplant (Details: Kapitel 7.3/7.4)."
+  ),
+  body(
+    "Wichtigste Abweichung: Da noch kein Backend-Freigabe-Beschluss vorlag, laufen Buchungssystem, Kundenportal und Admin-Bereich bewusst backend-frei auf localStorage/sessionStorage statt auf Supabase (Kapitel 6, 9). Das ist eine explizite Projektentscheidung für die Präsentationsphase, kein technisches Defizit – die Migration auf ein echtes Backend ist in Kapitel 9 als nächster Schritt vorgesehen."
+  ),
+  body(
+    "Die WhatsApp-Zielnummer des Ansprechpartners Emre Altuntaş (+90 506 600 92 29) wurde bestätigt und ist im gesamten Auftritt aktiv verlinkt – der in Kapitel 6.3 (Erstfassung) genannte Blocker für automatisierte WhatsApp-Erinnerungen ist damit teilweise aufgelöst (die Vorschau-Funktion ist fertig, die automatisierte Zustellung über die WhatsApp Business API steht noch aus)."
+  ),
+  body(
+    "Weiterhin offen, weil außerhalb der Reichweite einer Demo ohne reale Kundendaten/Konten: echte Google-Business-Profil-Verknüpfung, echter Bewertungs-Sammel-/Management-Prozess, echte Instagram-Live-Anbindung sowie alle Konto-/Registrierungsfunktionen (Kapitel 7.1/7.2 im Detail)."
   ),
 ];
 
@@ -449,7 +465,10 @@ const kapitel6 = [
   ),
   h2("6.3 Gesamtbewertung"),
   body(
-    "Version 1 hat keine kritischen, blockierenden Abhängigkeiten ausser den in IDEA.md gelisteten offenen Kundeninformationen (WhatsApp-Zielnummer, finale Hausnummer, Bestätigung Kundenname, Eigentuemerschaft hasteknolojim.com/Social-Media). Kein Wettbewerber kann den Start technisch blockieren, da keiner über vergleichbare Technik verfuegt (Kapitel 3). Die WhatsApp-Policy-Änderung (Meta, Okt. 2025/Jan. 2026) erfordert eine bewusste Abgrenzung des KI-Assistenten als Buchungs-/Serviceassistent, ist aber kein Show-Stopper."
+    "Version 1 hat keine kritischen, blockierenden Abhängigkeiten ausser den in IDEA.md gelisteten offenen Kundeninformationen (finale Hausnummer, Bestätigung Kundenname, Eigentuemerschaft hasteknolojim.com/Social-Media). Kein Wettbewerber kann den Start technisch blockieren, da keiner über vergleichbare Technik verfuegt (Kapitel 3). Die WhatsApp-Policy-Änderung (Meta, Okt. 2025/Jan. 2026) erfordert eine bewusste Abgrenzung des KI-Assistenten als Buchungs-/Serviceassistent, ist aber kein Show-Stopper."
+  ),
+  body(
+    "Status-Update: Die WhatsApp-Zielnummer ist seit Bestätigung durch Emre Altuntaş kein offener Punkt mehr (+90 506 600 92 29, aktiv verlinkt in der gesamten Demo). Für die Präsentationsphase wurde zudem bewusst auf eine Supabase-Anbindung verzichtet – Buchungssystem, Kundenportal und Admin-Bereich laufen aktuell backend-frei über localStorage/sessionStorage im Browser, damit die Demo ohne Infrastrukturkosten sofort per Link teilbar ist. Diese Entscheidung ist reversibel: Das Next.js-Frontend ist bereits so strukturiert, dass die localStorage-Zugriffe (src/lib/demo-store.ts, src/lib/demo-bookings.ts) 1:1 durch Supabase-Aufrufe ersetzt werden können, ohne die UI-Komponenten neu zu bauen."
   ),
 ];
 
@@ -457,60 +476,79 @@ const kapitel6 = [
 // KAPITEL 7: Anforderungen Version 1
 // ---------------------------------------------------------------------------
 const hauptprozesse = [
-  ["S-01", "Homepage mit AIDA-Kern (Attention-Interest-Desire-Action) und Verzweigung in 6 Segmentseiten", "Muss", "Neu"],
-  ["S-02", "6 Zielgruppen-Segmentseiten (Privathaushalt, Neubau/Bauträger, Hotellerie, Markt, Gastronomie, Gewerbe/Parkflächen)", "Muss", "Neu"],
-  ["S-03", "Mehrsprachigkeit TR/EN/RU/DE fuer alle Kernseiten", "Muss", "Neu"],
-  ["S-04", "Strukturierte Foto-/Referenzgalerie je Segment (KI-generierte Platzhalterbilder, klar gekennzeichnet)", "Muss", "Neu"],
-  ["S-05", "GEO-optimierte Trust-Center-Unterseite (Zertifikate, KVKK-Hinweise, FAQ-Struktur)", "Muss", "Neu"],
-  ["T-01", "Online-Terminbuchungssystem (Besichtigung/Installation/Wartung)", "Muss", "Neu"],
-  ["T-02", "KI-Chat-Assistent (24/7), themengebunden, qualifiziert nach Segment vor", "Muss", "Neu"],
-  ["T-03", "Anbindung KI-Chat an Buchungssystem (automatischer Termineintrag)", "Soll", "Neu"],
-  ["T-04", "WhatsApp-Kontakt-CTA als priorisierter Hauptkanal", "Muss", "Neu"],
-  ["V-01", "Google-Business-Profil-Verknüpfung + schema.org LocalBusiness/Service-Markup", "Muss", "Neu"],
-  ["V-02", "Bewertungs-Sammel-Prozess (Anfrage nach Projektabschluss)", "Muss", "Neu"],
-  ["V-03", "Bewertungs-Management-Prozess (aktives Beantworten innerhalb 48 Std.)", "Soll", "Neu"],
-  ["V-04", "Instagram-Live-Feed-Widget (sobald Account final bestätigt)", "Kann", "Neu"],
-  ["A-01", "Rollenbasierter Admin-Bereich fuer Hastek-Mitarbeitende (Buchungen, Leads einsehen)", "Muss", "Neu"],
+  ["S-01", "Homepage mit AIDA-Kern (Attention-Interest-Desire-Action) und Verzweigung in 6 Segmentseiten", "Muss", "Umgesetzt", "Übertroffen: 8-stufiges AIDASLove-Modell statt reinem AIDA-Kern, mit animierter Hero-Szene."],
+  ["S-02", "6 Zielgruppen-Segmentseiten (Privathaushalt, Neubau/Bauträger, Hotellerie, Markt, Gastronomie, Gewerbe/Parkflächen)", "Muss", "Umgesetzt", "Alle 6 Segmentseiten live, je mit eigener Illustration und Vorher/Nachher-Vergleich (siehe 7.4)."],
+  ["S-03", "Mehrsprachigkeit TR/EN/RU/DE fuer alle Kernseiten", "Muss", "Umgesetzt", "Vollständige strukturelle Paritaet aller 4 Sprachen, programmatisch geprueft."],
+  ["S-04", "Strukturierte Foto-/Referenzgalerie je Segment (KI-generierte Platzhalterbilder, klar gekennzeichnet)", "Muss", "Umgesetzt (Demo)", "Illustrierte Platzhalter, klar als „Örnek Görünüm“ gekennzeichnet; echte Fotos ersetzen sie 1:1 an gleicher Stelle."],
+  ["S-05", "GEO-optimierte Trust-Center-Unterseite (Zertifikate, KVKK-Hinweise, FAQ-Struktur)", "Muss", "Umgesetzt", "Trust-Center mit 5 realen Inhaltsblöcken (Über uns, KVKK, Zertifikate, Bewertungen, Kontakt)."],
+  ["T-01", "Online-Terminbuchungssystem (Besichtigung/Installation/Wartung)", "Muss", "Umgesetzt (Demo)", "Funktionsfähiges Formular; Daten aktuell im Browser (localStorage) statt Supabase, siehe Kapitel 6.3."],
+  ["T-02", "KI-Chat-Assistent (24/7), themengebunden, qualifiziert nach Segment vor", "Muss", "Umgesetzt", "Übertroffen: zwei Modi – echtes Claude via optionalem API-Key ODER kostenloser regelbasierter Assistent (TR/EN/RU/DE inkl. kyrillischer Eingabe), ohne Kosten/Account."],
+  ["T-03", "Anbindung KI-Chat an Buchungssystem (automatischer Termineintrag)", "Soll", "Teilweise", "Nicht der Chat, sondern der neue Konfigurator (siehe 7.4) befüllt die Buchung vor; Absenden bleibt manuell."],
+  ["T-04", "WhatsApp-Kontakt-CTA als priorisierter Hauptkanal", "Muss", "Umgesetzt", "Jetzt live: bestätigte Nummer von Emre Altuntaş aktiv verlinkt (zuvor Platzhalter-Zustand)."],
+  ["V-01", "Google-Business-Profil-Verknüpfung + schema.org LocalBusiness/Service-Markup", "Muss", "Teilweise", "schema.org-Markup vollständig umgesetzt; echte Google-Business-Profil-Verknüpfung fehlt (kein Kundenkonto)."],
+  ["V-02", "Bewertungs-Sammel-Prozess (Anfrage nach Projektabschluss)", "Muss", "Offen", "Nur beispielhafte, klar gekennzeichnete Demo-Bewertungen im Admin-Bereich; kein echter Sammelprozess ohne Backend/GBP."],
+  ["V-03", "Bewertungs-Management-Prozess (aktives Beantworten innerhalb 48 Std.)", "Soll", "Offen", "Gleicher Grund wie V-02: kein echtes Antwort-/Management-Werkzeug fuer Bewertungen vorhanden."],
+  ["V-04", "Instagram-Live-Feed-Widget (sobald Account final bestätigt)", "Kann", "Teilweise", "Oberfläche fertig und einsatzbereit; aktiviert sich erst nach Kontobestätigung, echte Live-Anbindung offen."],
+  ["A-01", "Rollenbasierter Admin-Bereich fuer Hastek-Mitarbeitende (Buchungen, Leads einsehen)", "Muss", "Umgesetzt (Demo)", "Funktionsfähig mit Demo-Zugangsdaten (Buchungen/Bewertungen einsehen); kein granulares Rollenmodell."],
 ];
 
 const basisfunktionen = [
-  ["B-01", "Rollen- und Rechteprinzip", "Muss", "Neu"],
-  ["B-02", "Anmeldung und Registrierung (E-Mail mit Bestätigung, fuer Admin-Bereich)", "Muss", "Neu"],
-  ["B-03", "Passwort zurücksetzen", "Muss", "Neu"],
-  ["B-04", "Admin-Bereich fuer Nutzerverwaltung", "Muss", "Neu"],
-  ["B-05", "Profilseite (fuer Admin-Nutzer)", "Muss", "Neu"],
-  ["B-06", "Dashboard als Startseite (Admin-Bereich: Buchungen/Leads)", "Muss", "Neu"],
-  ["B-07", "Navigation mit Breadcrumbs", "Muss", "Neu"],
-  ["B-08", "Benachrichtigungssystem (In-App und/oder E-Mail bei neuer Buchung)", "Soll", "Neu"],
-  ["B-09", "Spracheinstellungen (Türkisch, Englisch, Russisch, Deutsch)", "Muss", "Neu"],
-  ["B-10", "Dunkel/Hell-Modus", "Muss", "Neu"],
-  ["B-11", "FAQ und Hilfebereich", "Soll", "Neu"],
-  ["B-12", "AGB, Impressum, Datenschutzerklärung (mehrsprachig)", "Muss", "Neu"],
-  ["B-13", "Cookie-Banner nach DSGVO/KVKK", "Muss", "Neu"],
-  ["B-14", "DSGVO-/KVKK-Funktionen (Daten exportieren, Konto löschen)", "Muss", "Neu"],
-  ["B-15", "Funktionsstufen-Modell: MVP-Basisfunktionen vs. Premium-Ausbaustufen 2/3 (kein Endkunden-Zahlmodell, siehe Kapitel 6.2)", "Muss", "Neu"],
-  ["B-16", "Kein Free/Premium-Upgrade durch Endkunden – Ausbaustufen sind interne Weiterentwicklungen (siehe 7.3)", "Muss", "Neu"],
+  ["B-01", "Rollen- und Rechteprinzip", "Muss", "Teilweise", "Nur eine Admin-Rolle vorhanden, keine granulare Rechtevergabe."],
+  ["B-02", "Anmeldung und Registrierung (E-Mail mit Bestätigung, fuer Admin-Bereich)", "Muss", "Offen", "Demo-Zugangsdaten fest hinterlegt; kein echter Registrierungs-/Bestätigungsfluss."],
+  ["B-03", "Passwort zurücksetzen", "Muss", "Offen", "Keine Passwort-Zuruecksetzen-Funktion vorhanden."],
+  ["B-04", "Admin-Bereich fuer Nutzerverwaltung", "Muss", "Offen", "Dashboard zeigt nur Buchungen/Bewertungen, keine Nutzerverwaltung."],
+  ["B-05", "Profilseite (fuer Admin-Nutzer)", "Muss", "Offen", "Keine eigene Profilseite fuer Admin-Nutzer vorhanden."],
+  ["B-06", "Dashboard als Startseite (Admin-Bereich: Buchungen/Leads)", "Muss", "Umgesetzt (Demo)", "Admin-Dashboard als Startseite nach Login funktionsfähig."],
+  ["B-07", "Navigation mit Breadcrumbs", "Muss", "Offen", "Header-Navigation statt Breadcrumbs; ein schema.org-BreadcrumbList existiert nur unsichtbar für Suchmaschinen, nicht als UI."],
+  ["B-08", "Benachrichtigungssystem (In-App und/oder E-Mail bei neuer Buchung)", "Soll", "Offen", "Keine E-Mail-/In-App-Benachrichtigung bei neuer Buchung (kein Backend)."],
+  ["B-09", "Spracheinstellungen (Türkisch, Englisch, Russisch, Deutsch)", "Muss", "Umgesetzt", "Alle 4 Sprachen live umschaltbar."],
+  ["B-10", "Dunkel/Hell-Modus", "Muss", "Umgesetzt", "Vollständiger Dark/Light-Modus mit Systemerkennung und Persistenz."],
+  ["B-11", "FAQ und Hilfebereich", "Soll", "Umgesetzt", "FAQ-Seite plus zusätzliches FAQPage-schema.org-Markup fuer GEO."],
+  ["B-12", "AGB, Impressum, Datenschutzerklärung (mehrsprachig)", "Muss", "Umgesetzt", "Vollständig in 4 Sprachen, KVKK-first aufgebaut."],
+  ["B-13", "Cookie-Banner nach DSGVO/KVKK", "Muss", "Umgesetzt", "Zustimmungssteuerung funktionsfähig, verlinkt zur Datenschutzseite."],
+  ["B-14", "DSGVO-/KVKK-Funktionen (Daten exportieren, Konto löschen)", "Muss", "Offen", "Kein Datenexport/Konto-Löschen möglich – mangels Backend existieren keine echten personenbezogenen Konten."],
+  ["B-15", "Funktionsstufen-Modell: MVP-Basisfunktionen vs. Premium-Ausbaustufen 2/3 (kein Endkunden-Zahlmodell, siehe Kapitel 6.2)", "Muss", "Umgesetzt", "Weiterhin zutreffend: kein Zahlmodell, keine Preisstufen im Code."],
+  ["B-16", "Kein Free/Premium-Upgrade durch Endkunden – Ausbaustufen sind interne Weiterentwicklungen (siehe 7.3)", "Muss", "Umgesetzt", "Weiterhin zutreffend: kein Endkunden-Upgrade-Mechanismus vorhanden."],
 ];
 
 const scopeTable = [
-  ["6 Zielgruppen-Segmentseiten + Homepage (AIDA-Kern)", "Interaktiver Leistungs-Konfigurator ('Paket-Builder') – Ausbaustufe 2"],
-  ["Mehrsprachigkeit TR/EN/RU/DE", "QR-Code-Wartungshistorie pro installiertem Gerät – Ausbaustufe 2"],
-  ["Online-Terminbuchungssystem", "Automatisierte WhatsApp-Wartungserinnerungen – Ausbaustufe 2 (blockiert bis WhatsApp-Nr. bestätigt)"],
-  ["KI-Chat-Assistent (themengebunden)", "Kunden-Login-Portal (Wartungsverträge/Rechnungen/Tickets) – Ausbaustufe 3"],
-  ["GEO-optimierte Trust-Center-Seite", "Live-Referenz-Showroom (Kamera-Demo) – Ausbaustufe 3, blockiert bis 1. echte Referenzinstallation"],
-  ["Bewertungs-Sammel-Prozess + Google-Business-Profil", "Instagram-Live-Feed-Widget – Kann-Anforderung, abhängig von Account-Bestätigung"],
+  ["Interaktiver Leistungs-Konfigurator („Paket-Builder“)", "Bereits umgesetzt (Demo): 3-Schritte-Assistent empfiehlt Segment + bis zu 6 Systeme und befüllt automatisch die Buchung (Details: 7.4)."],
+  ["QR-Code-Wartungshistorie pro installiertem Gerät", "Teilweise umgesetzt: echte Wartungshistorie pro Gerät über einen Demo-Code-Link abrufbar; der Code selbst ist noch kein scannbarer QR-Code, sondern ein gestalterisches Platzhaltersymbol."],
+  ["Automatisierte WhatsApp-Wartungserinnerungen", "Teilweise umgesetzt (Demo): Einstellungen + Nachrichtenvorschau im Kundenportal fertig; automatischer Versand über die WhatsApp Business API steht noch aus. Urspruenglicher Blocker (WhatsApp-Nummer) ist behoben."],
+  ["Kunden-Login-Portal (Wartungsverträge/Rechnungen/Tickets)", "Teilweise umgesetzt: Login, Termine, Geräte und Erinnerungen funktionieren; Wartungsverträge/Rechnungen waren nie Teil dieser Demo."],
+  ["Live-Referenz-Showroom (Kamera-Demo)", "Bereits umgesetzt als klar gekennzeichnete Simulation: 4-Kamera-Wand mit Bewegungserkennung/REC-Anzeige, ausdrücklich als Demonstration markiert, kein echter Videofeed."],
+  ["Instagram-Live-Feed-Widget", "Oberfläche fertig; aktiviert sich erst nach Bestätigung der Konto-Eigentümerschaft (siehe V-04)."],
+];
+
+const zusatzfunktionen = [
+  ["Vorher/Nachher-Vergleichsregler (Villa & Ladengeschäft)", "Macht den Sicherheitsgewinn sofort sichtbar und emotional erlebbar – ziehbar per Maus, Touch und Tastatur."],
+  ["Premium-Designsystem „Kara Elmas“ (Gold/Obsidian) mit 8 animierten Illustrationen", "Edler, unverwechselbarer Markenauftritt – genau die Differenzierung, die laut Kapitel 3 keinem der 11 Wettbewerber gelingt."],
+  ["Kostenloser regelbasierter KI-Assistent (TR/EN/RU/DE, inkl. kyrillischer Eingabe)", "Beantwortet Freitextfragen live, ohne API-Kosten oder Account – funktioniert auch über den geteilten Demo-Link."],
+  ["Schwebende, animierte WhatsApp- (grün) und KI-Chat-Buttons (schwarz)", "Der priorisierte Kontaktweg ist auf jeder Seite sofort sichtbar und einladend, auf Mobil und Desktop."],
+  ["Seitenübergänge (Page Transitions) bei jedem Routenwechsel", "Wirkt hochwertiger und ruhiger als harte Seitenwechsel, ohne Ladezeit-Nachteil."],
+  ["Erweiterte GEO-Schemas (WebSite/Organization/FAQPage/Service+Breadcrumb) + sichtbare KI-Zusammenfassung", "Erhöht die Chance, in KI-Antwortmaschinen (ChatGPT, Perplexity, Google AI Overviews) genannt zu werden – siehe Kapitel 2.2/8.1."],
+  ["Cinematische animierte Hero-Nachtszene mit Scroll-Choreografie", "Erzeugt einen sofortigen „Wow“-Moment auf der Startseite und vermittelt das Sicherheits-/Automatisierungsgefühl visuell statt nur textlich."],
 ];
 
 const kapitel7 = [
   h1("Kapitel 7: Anforderungen Version 1"),
   h2("7.1 Hauptprozesse"),
-  dataTable(["ID", "Anforderung", "Priorität", "Status"], hauptprozesse, [0.6, 3.4, 0.8, 0.8]),
+  dataTable(["ID", "Anforderung", "Prio", "Status", "Anmerkung (Stand: 06.07.2026)"], hauptprozesse, [0.45, 2.3, 0.5, 0.75, 2.7]),
   spacer(200),
   h2("7.2 Basisfunktionalitäten"),
-  dataTable(["ID", "Anforderung", "Priorität", "Status"], basisfunktionen, [0.6, 3.4, 0.8, 0.8]),
+  dataTable(["ID", "Anforderung", "Prio", "Status", "Anmerkung (Stand: 06.07.2026)"], basisfunktionen, [0.45, 2.3, 0.5, 0.75, 2.7]),
   spacer(200),
   h2("7.3 Scope"),
-  dataTable(["In Scope V1", "Out of Scope (V2+)"], scopeTable, [1, 1]),
+  body(
+    "Die ursprünglich für V1 als „In Scope“ geplanten Punkte (Homepage, 6 Segmentseiten, Mehrsprachigkeit, Buchungssystem, KI-Chat, Trust-Center) sind vollständig umgesetzt (Details: 7.1). Die folgende Tabelle zeigt den wichtigsten Befund dieses Status-Updates: Alle sechs urspruenglich für Ausbaustufe 2/3 vorgesehenen Punkte wurden bereits als Demo-Prototypen realisiert, deutlich frueher als geplant."
+  ),
+  dataTable(["Ursprünglich für Ausbaustufe 2/3 geplant", "Status in der aktuellen Demo (Stand: 06.07.2026)"], scopeTable, [1, 1.6]),
+  spacer(200),
+  h2("7.4 Zusätzliche Funktionen (über den ursprünglichen Scope hinaus umgesetzt)"),
+  body(
+    "Über die in Kapitel 7.1–7.3 beschriebenen Anforderungen hinaus wurden folgende, im ursprünglichen Anforderungsdokument nicht vorgesehene Funktionen umgesetzt und gegen den Quellcode verifiziert:"
+  ),
+  dataTable(["Funktion", "Vorteil fuer den Kunden"], zusatzfunktionen, [1.5, 1.9]),
 ];
 
 // ---------------------------------------------------------------------------
@@ -563,6 +601,13 @@ const kapitel9 = [
     children: [new TextRun({ text: "Hinweis: Realistisch ist Version 1 ein lauffähiger Prototyp mit den Muss-Anforderungen aus Kapitel 7.1/7.2, kein fertiges Endprodukt. Ausbaustufen 2/3 (siehe Kapitel 7.3, Out of Scope) folgen nach Kundenfeedback aus dem MVP-Betrieb.", font: FONT, size: 22, italics: true })],
     spacing: { after: 160 },
   }),
+  h2("9.3 Status-Update (Stand: 06.07.2026)"),
+  body(
+    "Die tatsächliche Umsetzung ist über den oben skizzierten Plan hinausgegangen: Statt nur der Muss-Anforderungen aus 7.1/7.2 wurden bereits alle sechs für Ausbaustufe 2/3 vorgesehenen Funktionen prototypisch realisiert (Details: Kapitel 7.3/7.4). Die Demo ist unter https://hastekgroup.vercel.app in allen vier Sprachen live und per Link mit dem Kunden teilbar (Vercel-Hosting, wie im Standard-Stack oben vorgesehen)."
+  ),
+  body(
+    "Konkreter nächster Schritt nach Kundenfreigabe: Migration von localStorage/sessionStorage auf Supabase (Datenbank/Auth/RLS) für Buchungssystem, Kundenportal und Admin-Bereich, damit aus den Basisfunktionalitäten mit Status „Offen“ (Kapitel 7.2: Registrierung, Passwort-Zuruecksetzen, Nutzerverwaltung, Benachrichtigungen, DSGVO-/KVKK-Datenfunktionen) echte, produktive Funktionen werden."
+  ),
 ];
 
 // ---------------------------------------------------------------------------
@@ -661,7 +706,9 @@ const doc = new Document({
   ],
 });
 
-const outDir = path.join(__dirname, "..", "public");
+// Canonical location: docs/intern/ (the version referenced/committed for internal
+// review), not public/ (which would ship the docx as a public static asset).
+const outDir = path.join(__dirname, "..", "docs", "intern");
 fs.mkdirSync(outDir, { recursive: true });
 const outPath = path.join(outDir, "Anforderungsdokument_HastekGroup.docx");
 
