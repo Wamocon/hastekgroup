@@ -33,7 +33,7 @@ function TrustContent() {
 
   return (
     <>
-      <section className="bg-ink py-16 text-white md:py-24">
+      <section className="bg-[color:var(--obsidian)] py-16 text-white md:py-24">
         <div className="container-hastek">
           <h1 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
             {t("title")}

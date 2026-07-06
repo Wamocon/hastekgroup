@@ -2,9 +2,10 @@
 
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, X } from "lucide-react";
 import { SEGMENT_KEYS, SEGMENT_SLUGS } from "@/lib/segments";
 import { addDemoBooking } from "@/lib/demo-bookings";
+import { useDemoStore, clearConfiguratorResult } from "@/lib/demo-store";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
 
 const SERVICE_TYPES = ["consultation", "installation", "maintenance"] as const;
@@ -12,8 +13,34 @@ const SERVICE_TYPES = ["consultation", "installation", "maintenance"] as const;
 export function BookingForm() {
   const t = useTranslations("booking");
   const tSegments = useTranslations("segments");
+  const tServices = useTranslations("home.services");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const prefill = useDemoStore().configuratorResult;
+
+  // Only the three configurator-driven fields are controlled, so dismissing the
+  // prefill (or clearing it) never disturbs name/email/phone the user typed.
+  const [segment, setSegment] = useState("");
+  const [serviceType, setServiceType] = useState("");
+  const [message, setMessage] = useState("");
+  const [appliedId, setAppliedId] = useState<string | null>(null);
+
+  // Apply a freshly-arrived configurator result exactly once (adjusting state
+  // during render — the documented React pattern, no effect, no ref).
+  if (prefill && appliedId !== prefill.id) {
+    setAppliedId(prefill.id);
+    setSegment(prefill.segment);
+    setServiceType("consultation");
+    setMessage(`${t("configuratorLead")} ${prefill.systems.map((s) => tServices(s)).join(", ")}.`);
+  }
+
+  function dropPrefill() {
+    clearConfiguratorResult();
+    setAppliedId(null);
+    setSegment("");
+    setServiceType("");
+    setMessage("");
+  }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,11 +51,15 @@ export function BookingForm() {
       name: String(form.get("name") ?? ""),
       email: String(form.get("email") ?? ""),
       phone: String(form.get("phone") ?? ""),
-      segment: String(form.get("segment") ?? ""),
-      serviceType: String(form.get("serviceType") ?? ""),
+      segment,
+      serviceType,
       preferredDate: String(form.get("preferredDate") ?? ""),
-      message: String(form.get("message") ?? ""),
+      message,
+      systems: prefill?.systems,
+      source: prefill ? "configurator" : "form",
     });
+
+    if (prefill) clearConfiguratorResult();
 
     window.setTimeout(() => {
       setSubmitting(false);
@@ -47,7 +78,24 @@ export function BookingForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-border bg-surface p-6 md:p-8">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-5 rounded-2xl border border-border bg-surface p-6 md:p-8"
+    >
+      {prefill ? (
+        <div className="flex items-start justify-between gap-3 rounded-xl border border-[color:var(--border-gold)] bg-accent-soft/50 p-3 text-sm">
+          <p className="text-foreground/85">{t("configuratorBanner")}</p>
+          <button
+            type="button"
+            onClick={dropPrefill}
+            className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground hover:text-accent"
+          >
+            <X className="h-3.5 w-3.5" />
+            {t("configuratorClear")}
+          </button>
+        </div>
+      ) : null}
+
       <div className="grid gap-5 md:grid-cols-2">
         <Field label={t("fields.name")}>
           <input name="name" required className="form-input" />
@@ -62,7 +110,13 @@ export function BookingForm() {
           <input name="preferredDate" type="date" className="form-input" />
         </Field>
         <Field label={t("fields.segment")}>
-          <select name="segment" required defaultValue="" className="form-input">
+          <select
+            name="segment"
+            required
+            value={segment}
+            onChange={(e) => setSegment(e.target.value)}
+            className="form-input"
+          >
             <option value="" disabled>
               &nbsp;
             </option>
@@ -74,7 +128,13 @@ export function BookingForm() {
           </select>
         </Field>
         <Field label={t("fields.serviceType")}>
-          <select name="serviceType" required defaultValue="" className="form-input">
+          <select
+            name="serviceType"
+            required
+            value={serviceType}
+            onChange={(e) => setServiceType(e.target.value)}
+            className="form-input"
+          >
             <option value="" disabled>
               &nbsp;
             </option>
@@ -88,7 +148,13 @@ export function BookingForm() {
       </div>
 
       <Field label={t("fields.message")}>
-        <textarea name="message" rows={4} className="form-input resize-none" />
+        <textarea
+          name="message"
+          rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="form-input resize-none"
+        />
       </Field>
 
       <p className="text-xs text-muted-foreground">{t("demoNotice")}</p>

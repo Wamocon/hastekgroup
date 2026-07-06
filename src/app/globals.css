@@ -2,43 +2,93 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ===========================================================================
+   "Kara Elmas" (Black Diamond) design system.
+   NEW CREATIVE DIRECTION - not yet client-confirmed, see redesign brief.
+   =========================================================================== */
+
 :root {
-  --color-ink: #0e1a2b;
-  --color-ink-soft: #16273d;
-  --color-ink-line: #24374f;
+  /* base neutrals - warm, not blue/cool */
+  --color-ink: #17140f;
+  --color-paper: #faf8f4;
+  --color-paper-soft: #f3efe6;
+  --color-paper-line: #e4dcc9;
 
-  --color-paper: #faf9f6;
-  --color-paper-soft: #f1efe8;
-  --color-paper-line: #e4e1d6;
+  /* gold - two-tier system for accessibility */
+  --color-gold: #c9a54d;
+  --color-gold-text: #8a6423;
+  --color-gold-soft: #f3e7c9;
+  --color-gold-line: rgba(181, 135, 46, 0.35);
 
+  /* metallic gold ramp - a specular light-band raking across real metal */
+  --gold-lo: #7a5a1e;   /* antique bronze, deep */
+  --gold-mid: #b8892e;
+  --gold-base: #c9a54d; /* = --color-gold */
+  --gold-hi: #f6e7b4;   /* champagne highlight */
+  --gold-spec: #fff8e1; /* bright specular band */
+  --gradient-gold: linear-gradient(
+    115deg,
+    var(--gold-lo) 0%,
+    var(--gold-base) 18%,
+    var(--gold-hi) 40%,
+    var(--gold-spec) 50%,
+    var(--gold-hi) 60%,
+    var(--gold-base) 82%,
+    var(--gold-lo) 100%
+  );
+
+  /* signal red - reused verbatim from the existing brand/logo tokens */
   --color-brand: #c1272d;
   --color-brand-soft: #e2574f;
-  --color-brand-deep: #8c1d1d;
-
-  --color-slate-900: #10182a;
-  --color-slate-700: #2c384a;
-  --color-slate-500: #5b6b7f;
-  --color-slate-300: #a9b4c2;
 
   --background: var(--color-paper);
   --foreground: var(--color-ink);
   --surface: #ffffff;
   --surface-muted: var(--color-paper-soft);
   --border-color: var(--color-paper-line);
-  --accent: var(--color-brand);
-  --accent-contrast: #ffffff;
-  --muted-foreground: var(--color-slate-500);
+  --accent: var(--color-gold);
+  --accent-text-safe: var(--color-gold-text);
+  --accent-soft: var(--color-gold-soft);
+  --accent-contrast: #14120e;
+  --border-gold: var(--color-gold-line);
+  --muted-foreground: #6b6255;
+  --signal-live: var(--color-brand);
+
+  /* obsidian - fixed dark surface used for premium panels regardless of theme */
+  --obsidian: #0a0908;
+  --obsidian-surface: #14120e;
+  --obsidian-line: #262119;
 }
 
 .dark {
-  --background: var(--color-ink);
-  --foreground: #f4f1e9;
-  --surface: var(--color-ink-soft);
-  --surface-muted: #122031;
-  --border-color: var(--color-ink-line);
-  --accent: var(--color-brand-soft);
-  --accent-contrast: var(--color-ink);
-  --muted-foreground: var(--color-slate-300);
+  --color-ink: #f5efe1;
+  --color-paper: #0a0908;
+  --color-paper-soft: #1c1914;
+  --color-paper-line: #262119;
+
+  --color-gold: #d8b45c;
+  --color-gold-soft: #241d10;
+  --color-gold-line: rgba(216, 180, 92, 0.35);
+
+  /* brighter metal on obsidian (gradient token itself references these vars) */
+  --gold-lo: #8a6a26;
+  --gold-mid: #c9a54d;
+  --gold-base: #d8b45c;
+  --gold-hi: #f6e7b4;
+  --gold-spec: #fff8e1;
+
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --surface: #14120e;
+  --surface-muted: var(--color-paper-soft);
+  --border-color: var(--color-paper-line);
+  --accent: var(--color-gold);
+  --accent-text-safe: var(--color-gold);
+  --accent-soft: var(--color-gold-soft);
+  --accent-contrast: #14120e;
+  --border-gold: var(--color-gold-line);
+  --muted-foreground: #a79a82;
+  --signal-live: var(--color-brand-soft);
 }
 
 @theme inline {
@@ -48,13 +98,21 @@
   --color-surface-muted: var(--surface-muted);
   --color-border: var(--border-color);
   --color-accent: var(--accent);
+  --color-accent-text-safe: var(--accent-text-safe);
+  --color-accent-soft: var(--accent-soft);
   --color-accent-contrast: var(--accent-contrast);
+  --color-border-gold: var(--border-gold);
   --color-muted-foreground: var(--muted-foreground);
-  --color-ink: #0e1a2b;
+  --color-signal-live: var(--signal-live);
+  --color-ink: #17140f;
   --color-brand: #c1272d;
   --color-brand-soft: #e2574f;
+  --color-obsidian: #0a0908;
+  --color-obsidian-surface: #14120e;
+  --color-obsidian-line: #262119;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair);
 }
 
 * {
@@ -98,4 +156,764 @@ body {
 
 .form-input:focus {
   border-color: var(--accent);
+}
+
+/* ── Metallic gold: text clip, gradient hairline, foil ───────────────────── */
+
+.text-gold-metallic {
+  background: var(--gradient-gold);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--accent-text-safe); /* fallback where clip unsupported */
+}
+
+@keyframes goldShimmer {
+  to {
+    background-position: 220% 0;
+  }
+}
+
+.text-gold-metallic--sheen {
+  animation: goldShimmer 6s linear infinite;
+}
+
+.border-gold-metallic {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    var(--gradient-gold) border-box;
+  background-size: auto, 220% 100%;
+}
+
+.border-gold-metallic--obsidian {
+  border: 1px solid transparent;
+  background:
+    radial-gradient(130% 130% at 50% -10%, var(--obsidian-surface), var(--obsidian)) padding-box,
+    var(--gradient-gold) border-box;
+  background-size: auto, 220% 100%;
+}
+
+/* ── Surface depth: black-card panels, elevated cards, grain ─────────────── */
+
+.panel-obsidian {
+  position: relative;
+  background: radial-gradient(130% 130% at 50% -10%, var(--obsidian-surface), var(--obsidian));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--gold-hi) 22%, transparent),
+    0 24px 60px -24px rgba(0, 0, 0, 0.75);
+}
+
+.card-elevated {
+  background: linear-gradient(180deg, var(--surface), var(--surface-muted));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--gold-hi) 14%, transparent),
+    0 18px 40px -24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-elevated:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--gold-hi) 30%, transparent),
+    0 26px 56px -22px rgba(0, 0, 0, 0.6);
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Buttons: pressed-gold plate + hairline sibling ──────────────────────── */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: var(--gradient-gold);
+  background-size: 220% 100%;
+  color: #14120e;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    0 8px 20px -8px rgba(201, 165, 77, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.5) 50%, transparent 60%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 12px 26px -10px rgba(201, 165, 77, 0.6);
+}
+
+.btn-primary:hover::after {
+  transform: translateX(120%);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  color: var(--accent-text-safe);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.dark .btn-secondary {
+  color: var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--gold-base) 55%, transparent);
+}
+
+/* ── Motion primitives ────────────────────────────────────────────────────── */
+
+@keyframes facet-draw {
+  from {
+    stroke-dashoffset: var(--facet-length, 1200);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Scroll reveal: content is always fully visible/accessible (never opacity:0
+   by default) - JS only adds a subtle settle-in transform, degrades safely
+   with no JS or no IntersectionObserver support. */
+.reveal-pending {
+  transform: translateY(14px);
+  transition: transform 0.6s ease-out;
+}
+
+.reveal-pending.is-visible {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-pending {
+    transform: none;
+    transition: none;
+  }
+}
+
+.facet-line {
+  stroke-dasharray: var(--facet-length, 1200);
+  animation: facet-draw 2.4s ease-out forwards;
+}
+
+.facet-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: node-pulse 3.6s ease-in-out infinite;
+}
+
+.reveal-up {
+  animation: reveal-up 0.7s ease-out both;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ornament-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ornament-spin {
+  animation: ornament-spin 60s linear infinite;
+}
+
+@keyframes hero-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-float {
+  animation: hero-float 6s ease-in-out infinite;
+}
+
+/* ── Hero night scene (Alanya panorama) ──────────────────────────────────── */
+
+/* Smart scenario: windows light up in sequence and stay lit. */
+@keyframes scene-window-on {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes window-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.scene-window {
+  opacity: 0;
+  animation: scene-window-on 1.6s ease-out forwards;
+}
+
+.scene-window--breathe {
+  animation:
+    scene-window-on 1.6s ease-out forwards,
+    window-breathe 6s ease-in-out infinite;
+}
+
+/* Security camera cone sweeping across the courtyard. */
+@keyframes cam-sweep {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+.cam-sweep {
+  transform-box: fill-box;
+  transform-origin: 0% 0%;
+  animation: cam-sweep 5.5s ease-in-out infinite alternate;
+}
+
+/* Expanding signal rings from the roof sensor mast. */
+@keyframes ring-expand {
+  0% {
+    transform: scale(0.25);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.signal-ring {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring-expand 3.6s ease-out infinite;
+}
+
+/* Perimeter scan beam gliding across the facade. */
+@keyframes beam-scan {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  6% {
+    opacity: 0.45;
+  }
+  46% {
+    opacity: 0.45;
+  }
+  54% {
+    transform: translateX(340px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(340px);
+    opacity: 0;
+  }
+}
+
+.scan-beam {
+  opacity: 0;
+  animation: beam-scan 9s ease-in-out 2.4s infinite;
+}
+
+/* Moon glint on the sea / pool water shimmer — drifting dashes. */
+@keyframes glint-drift {
+  to {
+    stroke-dashoffset: -56;
+  }
+}
+
+.glint-line {
+  animation: glint-drift 3.8s linear infinite;
+}
+
+/* Foreground palms swaying in the evening breeze. */
+@keyframes palm-sway {
+  from {
+    transform: rotate(-1.1deg);
+  }
+  to {
+    transform: rotate(1.3deg);
+  }
+}
+
+.palm-sway {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: palm-sway 7s ease-in-out infinite alternate;
+}
+
+/* Occasional shooting star. */
+@keyframes comet-run {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  16% {
+    transform: translate(300px, 132px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(300px, 132px);
+    opacity: 0;
+  }
+}
+
+.comet-star {
+  opacity: 0;
+  animation: comet-run 13s ease-in 5s infinite;
+}
+
+/* Protective dome breathing softly. */
+@keyframes shield-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.shield-pulse {
+  animation: shield-pulse 5.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .facet-line,
+  .facet-node,
+  .reveal-up,
+  .marquee-track,
+  .text-gold-metallic--sheen,
+  .ornament-spin,
+  .hero-float,
+  .cam-sweep,
+  .palm-sway,
+  .glint-line,
+  .shield-pulse {
+    animation: none !important;
+  }
+
+  /* Windows stay lit without the sequence... */
+  .scene-window,
+  .scene-window--breathe {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  /* ...while purely kinetic layers disappear entirely. */
+  .signal-ring,
+  .scan-beam,
+  .comet-star {
+    display: none;
+  }
+
+  /* Tailwind's infinite utilities (live-signal ping, loading pulse) must
+     also stop for users who ask for reduced motion. */
+  .animate-ping,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .btn-primary::after {
+    display: none;
+  }
+}
+
+/* ── Hero scroll choreography (dusk -> night, systems arming) ─────────────── */
+
+.scene-choreo {
+  position: relative;
+}
+
+/* Darkening veil deepens as you scroll the hero into view. */
+.scene-nightfall {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--obsidian) 65%, transparent),
+    color-mix(in srgb, var(--obsidian) 20%, transparent) 60%,
+    transparent
+  );
+  opacity: calc(var(--scene-progress, 0) * 0.55);
+  transition: opacity 0.1s linear;
+}
+
+/* "Systems armed" confirmation fades in past the mid-point of the scroll. */
+.scene-armed {
+  opacity: clamp(0, calc((var(--scene-progress, 0) - 0.45) * 3.2), 1);
+  transform: translateY(calc((1 - clamp(0, calc((var(--scene-progress, 0) - 0.45) * 3.2), 1)) * 8px));
+  transition: opacity 0.12s linear, transform 0.12s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-nightfall,
+  .scene-armed {
+    transition: none;
+  }
+}
+
+/* ── Before/after reveal slider (visual proof) ───────────────────────────── */
+
+.ba-range {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-range::-moz-range-thumb {
+  width: 30px;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.ba-range:focus-visible {
+  outline: none;
+}
+
+/* The visible divider line + knob, positioned by the component via --ba-pos. */
+.ba-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--ba-pos, 50%);
+  width: 2px;
+  transform: translateX(-1px);
+  background: var(--gradient-gold);
+  pointer-events: none;
+}
+
+.ba-knob {
+  position: absolute;
+  top: 50%;
+  left: var(--ba-pos, 50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  height: 2.25rem;
+  width: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--gold-hi);
+  background: color-mix(in srgb, var(--obsidian) 78%, transparent);
+  color: var(--accent);
+  pointer-events: none;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--obsidian) 40%, transparent);
+}
+
+/* ── Live showroom (simulated CCTV) ──────────────────────────────────────── */
+
+@keyframes cctv-scanline {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.55;
+  }
+  88% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+}
+
+.cctv-scan {
+  animation: cctv-scanline 4.5s linear infinite;
+}
+
+@keyframes rec-blink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.rec-blink {
+  animation: rec-blink 1.4s steps(1, end) infinite;
+}
+
+@keyframes track-box {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--track-x, 8px), var(--track-y, -6px));
+  }
+}
+
+.track-box {
+  animation: track-box 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cctv-scan,
+  .rec-blink,
+  .track-box {
+    animation: none !important;
+  }
+}
+
+/* ── Animated mockups (dashboard + concierge phone) ──────────────────────── */
+
+/* Chat bubbles arriving in sequence (delay set inline per bubble). */
+@keyframes bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bubble-in {
+  opacity: 0;
+  animation: bubble-in 0.55s ease-out forwards;
+}
+
+/* Live "typing…" dots. */
+@keyframes typing-dot {
+  0%,
+  60%,
+  100% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}
+
+.typing-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: typing-dot 1.3s ease-in-out infinite;
+}
+
+/* Presence / signal arcs breathing. */
+@keyframes arc-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.arc-pulse {
+  animation: arc-pulse 2.8s ease-in-out infinite;
+}
+
+/* Gentle opacity breathing for soft washes (window glow, ground). */
+@keyframes soft-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.soft-breathe {
+  animation: soft-breathe 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble-in {
+    animation: none !important;
+    opacity: 1;
+  }
+  .typing-dot,
+  .arc-pulse,
+  .soft-breathe {
+    animation: none !important;
+  }
+}
+
+/* ── Floating action buttons (WhatsApp + KI concierge) ───────────────────── */
+
+@keyframes float-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.float-bob {
+  animation: float-bob 3.4s ease-in-out infinite;
+}
+
+.float-bob--offset {
+  animation: float-bob 3.4s ease-in-out infinite;
+  animation-delay: -1.7s;
+}
+
+/* Soft expanding halo so the buttons read as live/interactive. */
+@keyframes float-halo {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.55;
+  }
+  70%,
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.float-halo {
+  animation: float-halo 2.6s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-bob,
+  .float-bob--offset,
+  .float-halo {
+    animation: none !important;
+  }
+}
+
+/* ── Page transition (premium cross-fade on route change) ────────────────── */
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 320ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none !important;
+  }
 }

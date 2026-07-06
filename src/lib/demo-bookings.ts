@@ -8,6 +8,12 @@ export type DemoBooking = {
   preferredDate: string;
   message: string;
   createdAt: string;
+  /** Optional: systems pre-selected via the configurator (ServiceKey[]). */
+  systems?: string[];
+  /** Where the booking originated, for the admin view. */
+  source?: "form" | "configurator" | "chat";
+  /** Optional link to a demo customer account (portal journey). */
+  accountId?: string;
 };
 
 const STORAGE_KEY = "hastek-demo-bookings";

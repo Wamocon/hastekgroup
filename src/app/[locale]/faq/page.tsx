@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import type { Metadata } from "next";
 import { FaqAccordion } from "@/components/faq/faq-accordion";
+import { FaqSchema } from "@/components/seo/faq-schema";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -16,7 +17,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function FaqPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <FaqContent />;
+  return (
+    <>
+      <FaqSchema locale={locale} />
+      <FaqContent />
+    </>
+  );
 }
 
 function FaqContent() {

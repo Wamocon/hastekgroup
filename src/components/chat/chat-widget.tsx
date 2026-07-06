@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { MessageSquareText, Send, X } from "lucide-react";
+import { FloatingWhatsApp } from "@/components/layout/floating-whatsapp";
+import { subscribeConsent, hasConsent, hasConsentServer } from "@/lib/cookie-consent";
 
 type ChatMessage = { role: "user" | "assistant"; content: string };
+
+export const OPEN_CHAT_EVENT = "hastek-open-chat";
 
 export function ChatWidget() {
   const t = useTranslations("chat");
@@ -16,6 +20,18 @@ export function ChatWidget() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     { role: "assistant", content: t("greeting") },
   ]);
+  // Lift the floating cluster above the cookie bar while it is still showing.
+  const consented = useSyncExternalStore(subscribeConsent, hasConsent, hasConsentServer);
+
+  useEffect(() => {
+    function handleOpenRequest(event: Event) {
+      setOpen(true);
+      const prefill = (event as CustomEvent<{ prefill?: string }>).detail?.prefill;
+      if (prefill) setInput(prefill);
+    }
+    window.addEventListener(OPEN_CHAT_EVENT, handleOpenRequest);
+    return () => window.removeEventListener(OPEN_CHAT_EVENT, handleOpenRequest);
+  }, []);
 
   async function sendMessage(text: string) {
     const trimmed = text.trim();
@@ -47,10 +63,14 @@ export function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div
+      className={`fixed right-5 z-50 flex flex-col items-end gap-3 transition-[bottom] duration-300 ${
+        consented ? "bottom-5" : "bottom-32 sm:bottom-20"
+      }`}
+    >
       {open ? (
-        <div className="flex h-[28rem] w-[22rem] max-w-[90vw] flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl">
-          <div className="flex items-center justify-between border-b border-border bg-ink px-4 py-3 text-white">
+        <div className="flex h-[28rem] max-h-[70vh] w-[22rem] max-w-[90vw] flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl">
+          <div className="flex items-center justify-between border-b border-[color:var(--obsidian-line)] bg-[color:var(--obsidian)] px-4 py-3 text-white">
             <div>
               <p className="text-sm font-semibold">{t("windowTitle")}</p>
               <span className="rounded-full bg-white/15 px-2 py-0.5 text-[0.6rem] uppercase tracking-wide">
@@ -125,14 +145,22 @@ export function ChatWidget() {
         </div>
       ) : null}
 
-      <button
-        type="button"
-        onClick={() => setOpen((value) => !value)}
-        aria-label={t("launcherLabel")}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-ink text-accent shadow-xl transition-transform hover:scale-105"
-      >
-        {open ? <X className="h-5 w-5" /> : <MessageSquareText className="h-5 w-5" />}
-      </button>
+      {open ? null : <FloatingWhatsApp />}
+
+      <div className="float-bob--offset relative h-14 w-14">
+        <span
+          aria-hidden="true"
+          className="float-halo absolute inset-0 rounded-full bg-[color:var(--accent)] opacity-40"
+        />
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-label={t("launcherLabel")}
+          className="relative z-10 flex h-full w-full items-center justify-center rounded-full border border-[color:var(--border-gold)] bg-[color:var(--obsidian)] text-accent shadow-xl transition-transform duration-200 hover:scale-110"
+        >
+          {open ? <X className="h-5 w-5" /> : <MessageSquareText className="h-5 w-5" />}
+        </button>
+      </div>
     </div>
   );
 }

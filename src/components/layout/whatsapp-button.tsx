@@ -17,15 +17,7 @@ export function WhatsAppButton({ className, label }: WhatsAppButtonProps) {
 
   if (href) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={
-          className ??
-          "inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-[1.02]"
-        }
-      >
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className ?? "btn-secondary"}>
         <MessageCircle className="h-4 w-4" />
         {label ?? t("whatsapp")}
       </a>
@@ -37,17 +29,14 @@ export function WhatsAppButton({ className, label }: WhatsAppButtonProps) {
       <button
         type="button"
         onClick={() => setShowNotice((value) => !value)}
-        className={
-          className ??
-          "inline-flex items-center gap-2 rounded-full bg-[#25D366]/90 px-5 py-2.5 text-sm font-medium text-white"
-        }
+        className={className ?? "btn-secondary"}
       >
         <MessageCircle className="h-4 w-4" />
         {label ?? t("whatsapp")}
       </button>
       {showNotice ? (
         <span className="absolute left-1/2 top-full z-20 mt-2 w-64 -translate-x-1/2 rounded-lg border border-border bg-surface p-3 text-xs text-muted-foreground shadow-lg">
-          Demo: WhatsApp-Zielnummer wird nach Kundenbestätigung verknüpft.
+          {t("whatsappPending")}
         </span>
       ) : null}
     </span>

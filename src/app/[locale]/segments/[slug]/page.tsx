@@ -13,6 +13,13 @@ import {
 } from "@/lib/segments";
 import { SERVICE_ICONS } from "@/lib/service-icons";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { getAidasLoveContent } from "@/lib/aidaslove-content";
+import { SEGMENT_SCENES } from "@/lib/segment-scenes";
+import { FacetHero } from "@/components/marketing/facet-hero";
+import { AidasLoveSections } from "@/components/content/aidaslove-sections";
+import { BeforeAfterShowcase } from "@/components/proof/before-after-showcase";
+import { ServiceSchema } from "@/components/seo/service-schema";
+import { Reveal } from "@/components/ui/reveal";
 
 type PageProps = {
   params: Promise<{ locale: string; slug: string }>;
@@ -29,9 +36,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const key = segmentKeyFromSlug(slug);
   if (!key) return {};
   const t = await getTranslations({ locale, namespace: "segments" });
+  const content = getAidasLoveContent(locale, slug);
   return {
     title: t(`${key}.label`),
-    description: t(`${key}.heroSubtitle`),
+    description: content.heroSubtitle,
   };
 }
 
@@ -41,87 +49,81 @@ export default async function SegmentPage({ params }: PageProps) {
   const key = segmentKeyFromSlug(slug);
   if (!key) notFound();
 
-  return <SegmentContent segmentKey={key} />;
+  return <SegmentContent segmentKey={key} slug={slug} locale={locale} />;
 }
 
-function SegmentContent({ segmentKey }: { segmentKey: (typeof SEGMENT_KEYS)[number] }) {
+function SegmentContent({
+  segmentKey,
+  slug,
+  locale,
+}: {
+  segmentKey: (typeof SEGMENT_KEYS)[number];
+  slug: string;
+  locale: string;
+}) {
   const t = useTranslations("segments");
   const tServices = useTranslations("home.services");
   const tCommon = useTranslations("common");
   const solutions = t.raw(`${segmentKey}.solutions`) as ServiceKey[];
-  const painPoints = t.raw(`${segmentKey}.painPoints`) as string[];
+  const content = getAidasLoveContent(locale, slug);
+  const Scene = SEGMENT_SCENES[slug];
+  const proofPair = segmentKey === "retail" || segmentKey === "gastronomy" ? "storefront" : "villa";
 
   return (
     <>
-      <section className="bg-ink py-16 text-white md:py-24">
-        <div className="container-hastek">
-          <Link
-            href="/"
-            className="mb-6 inline-flex items-center gap-1 text-xs uppercase tracking-wide text-white/60 hover:text-accent"
-          >
-            {tCommon("backToSegments")}
+      <ServiceSchema locale={locale} segmentKey={segmentKey} />
+      <FacetHero
+        eyebrow={content.heroEyebrow}
+        title={content.heroTitle}
+        subtitle={content.heroSubtitle}
+        statusItems={[t(`${segmentKey}.shortLabel`)]}
+        showConciergeSignal={false}
+        visual={Scene ? <Scene className="max-h-[26rem] max-w-[32rem]" /> : undefined}
+        primaryCta={
+          <Link href="/booking" className="btn-primary">
+            {content.ctaPrimary}
+            <ArrowRight className="h-4 w-4" />
           </Link>
-          <span className="w-fit rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-soft">
-            {t(`${segmentKey}.shortLabel`)}
-          </span>
-          <h1 className="mt-5 max-w-2xl text-3xl font-semibold leading-tight tracking-tight md:text-5xl">
-            {t(`${segmentKey}.heroTitle`)}
-          </h1>
-          <p className="mt-4 max-w-xl text-lg text-white/75">
-            {t(`${segmentKey}.heroSubtitle`)}
-          </p>
+        }
+        secondaryCta={<WhatsAppButton className="btn-secondary" label={content.ctaSecondary} />}
+      />
+
+      <section className="container-hastek py-14">
+        <Reveal>
+          <h2 className="font-display text-xl font-semibold">{t("sectionTitle")}</h2>
+        </Reveal>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {solutions.map((serviceKey) => {
+            const Icon = SERVICE_ICONS[serviceKey];
+            return (
+              <div
+                key={serviceKey}
+                className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4"
+              >
+                <Icon className="h-5 w-5 shrink-0 text-accent" />
+                <span className="text-sm font-medium">{tServices(serviceKey)}</span>
+                <Check className="ml-auto h-4 w-4 text-accent" />
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      <section className="container-hastek grid gap-12 py-16 md:grid-cols-2 md:py-20">
-        <div>
-          <h2 className="text-xl font-semibold">
-            {tCommon("readMore")}
-          </h2>
-          <ul className="mt-5 space-y-4">
-            {painPoints.map((point) => (
-              <li key={point} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                {point}
-              </li>
-            ))}
-          </ul>
-        </div>
+      <AidasLoveSections sections={content.sections} />
 
-        <div>
-          <h2 className="text-xl font-semibold">{t("sectionTitle")}</h2>
-          <ul className="mt-5 space-y-3">
-            {solutions.map((serviceKey) => {
-              const Icon = SERVICE_ICONS[serviceKey];
-              return (
-                <li
-                  key={serviceKey}
-                  className="flex items-center gap-3 rounded-xl border border-border bg-surface p-4"
-                >
-                  <Icon className="h-5 w-5 shrink-0 text-accent" />
-                  <span className="text-sm font-medium">{tServices(serviceKey)}</span>
-                  <Check className="ml-auto h-4 w-4 text-accent" />
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
+      <BeforeAfterShowcase pair={proofPair} />
 
-      <section className="bg-surface-muted py-16">
+      <section className="bg-[color:var(--obsidian)] py-16 text-white">
         <div className="container-hastek flex flex-col items-start gap-6">
-          <h2 className="max-w-lg text-2xl font-semibold tracking-tight md:text-3xl">
-            {t(`${segmentKey}.cta`)}
+          <h2 className="font-display max-w-lg text-2xl font-semibold tracking-tight md:text-3xl">
+            {content.ctaPrimary}
           </h2>
           <div className="flex flex-wrap gap-4">
-            <Link
-              href="/booking"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-transform hover:scale-[1.02]"
-            >
+            <Link href="/booking" className="btn-primary">
               {tCommon("bookNow")}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <WhatsAppButton />
+            <WhatsAppButton className="btn-secondary !border-[color:var(--border-gold)] !text-accent" />
           </div>
         </div>
       </section>

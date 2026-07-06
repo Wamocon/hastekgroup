@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -11,6 +11,9 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import { ChatWidget } from "@/components/chat/chat-widget";
 import { LocalBusinessSchema } from "@/components/seo/local-business-schema";
+import { WebsiteSchema } from "@/components/seo/website-schema";
+import { PageTransition } from "@/components/layout/page-transition";
+import { GoldDefs } from "@/components/ornament/gold-defs";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -21,6 +24,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
 });
 
 export function generateStaticParams() {
@@ -60,17 +70,22 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <head>
         <ThemeScript />
         <LocalBusinessSchema locale={locale} name="HAS Teknoloji (Hastek Group)" description={t("hero.subtitle")} />
+        <WebsiteSchema locale={locale} />
       </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <GoldDefs />
+        <div aria-hidden="true" className="grain-overlay" />
         <NextIntlClientProvider>
           <ThemeProvider>
             <SiteHeader />
-            <main className="flex-1">{children}</main>
+            <main className="flex-1">
+              <PageTransition>{children}</PageTransition>
+            </main>
             <SiteFooter />
             <CookieBanner />
             <ChatWidget />

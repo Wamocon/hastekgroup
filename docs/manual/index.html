@@ -8,8 +8,8 @@
     APP_NAME        : HAS Teknoloji - Website & Demo-Plattform (Hastek Group)
     APP_VERSION     : 0.1.0
     LAST_UPDATED    : Juli 2026
-    PRIMARY_COLOR   : #b9975b   (Gold-Akzent, siehe --color-gold in src/app/globals.css)
-    PRIMARY_DARK    : #8f7238   (Gold-Deep, siehe --color-gold-deep)
+    PRIMARY_COLOR   : #c9a54d   (Gold-Akzent "Kara Elmas", siehe --color-gold in src/app/globals.css)
+    PRIMARY_DARK    : #8a6423   (AA-sicherer Text-Gold, siehe --color-gold-text)
     LOGO_EMOJI      : &#128737; (Schild - Sicherheitssysteme + Smart Home)
   -->
   <title>HAS Teknoloji &ndash; Website &amp; Demo-Plattform &ndash; Produkthandbuch | WAMOCON</title>
@@ -18,16 +18,16 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Brand colors - Hastek Group / HAS Teknoloji: navy + gold */
-      --primary:      #b9975b;
-      --primary-dark: #8f7238;
-      --primary-glow: rgba(185,151,91,0.18);
+      /* Brand colors - Hastek Group / HAS Teknoloji: "Kara Elmas" (Schwarz/Gold) */
+      --primary:      #c9a54d;
+      --primary-dark: #8a6423;
+      --primary-glow: rgba(201,165,77,0.18);
       --success:      #10b981;
       --warning:      #f59e0b;
       --danger:       #ef4444;
 
-      /* Dark-theme background layers */
-      --bg-page:   #0e1a2b;
+      /* Dark-theme background layers - warmes Obsidian (Kara Elmas) */
+      --bg-page:   #0a0908;
       --bg-card:   rgba(255,255,255,0.03);
       --bg-code:   rgba(255,255,255,0.06);
 
@@ -63,10 +63,10 @@
       body { background: #fff !important; color: #000 !important; }
       :root {
         --text: #000; --text-muted: #333; --bg-page: #fff;
-        --bg-card: #f5f5f5; --border: #ddd; --primary: #8f7238;
+        --bg-card: #f5f5f5; --border: #ddd; --primary: #8a6423;
       }
-      .cover { background: #faf6ec !important; border-color: #8f7238 !important; }
-      h2 { color: #8f7238 !important; border-color: #8f7238 !important; }
+      .cover { background: #faf8f4 !important; border-color: #8a6423 !important; }
+      h2 { color: #8a6423 !important; border-color: #8a6423 !important; }
       .page-footer { position: static !important; border-top: 1px solid #ddd; }
     }
 
@@ -76,7 +76,7 @@
       top: 0;
       z-index: 100;
       height: 70px;
-      background: rgba(13,21,38,0.95);
+      background: rgba(10,9,8,0.95);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
       display: flex;
@@ -125,8 +125,8 @@
     /* ── PDF download / OneDrive buttons ─────────────────────────── */
     .download-bar {
       display: flex; align-items: center; gap: 0.5rem;
-      background: rgba(185,151,91,0.06);
-      border: 1px solid rgba(185,151,91,0.2);
+      background: rgba(201,165,77,0.06);
+      border: 1px solid rgba(201,165,77,0.2);
       border-radius: 10px; padding: 0.5rem 1rem;
       font-size: 0.8rem; color: var(--text-muted);
     }
@@ -149,7 +149,7 @@
       overflow-y: auto;
       padding: 2rem 1.5rem;
       border-right: 1px solid var(--border);
-      background: rgba(13,21,38,0.4);
+      background: rgba(10,9,8,0.4);
     }
 
     .toc-title {
@@ -177,8 +177,8 @@
 
     /* ── Cover page ───────────────────────────────────────────────── */
     .cover {
-      background: linear-gradient(160deg, rgba(30,60,130,0.2) 0%, rgba(13,21,38,0.9) 100%);
-      border: 1px solid rgba(185,151,91,0.25);
+      background: linear-gradient(160deg, rgba(201,165,77,0.12) 0%, rgba(10,9,8,0.9) 100%);
+      border: 1px solid rgba(201,165,77,0.25);
       border-radius: 24px; padding: 4rem;
       margin-bottom: 4rem; position: relative; overflow: hidden;
     }
@@ -186,7 +186,7 @@
       content: '';
       position: absolute; top: -40px; right: -40px;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(185,151,91,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(201,165,77,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -231,13 +231,13 @@
       font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;
     }
     .badge-success { background: rgba(16,185,129,0.1); color: var(--success); border: 1px solid rgba(16,185,129,0.2); }
-    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(185,151,91,0.2); }
+    .badge-primary { background: var(--primary-glow); color: var(--primary); border: 1px solid rgba(201,165,77,0.2); }
     .badge-warning { background: rgba(245,158,11,0.1); color: var(--warning); border: 1px solid rgba(245,158,11,0.2); }
     .badge-danger  { background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.2); }
 
     .info-box {
       padding: 1.2rem 1.5rem; border-radius: 12px; margin: 2rem 0;
-      border-left: 4px solid var(--primary); background: rgba(185,151,91,0.05);
+      border-left: 4px solid var(--primary); background: rgba(201,165,77,0.05);
     }
     .info-box-title { font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary); margin-bottom: 0.5rem; }
 
@@ -263,7 +263,7 @@
       font-weight: 800; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.1em;
     }
     td { padding: 1rem; border-top: 1px solid var(--border); vertical-align: top; }
-    tr:hover td { background: rgba(185,151,91,0.02); }
+    tr:hover td { background: rgba(201,165,77,0.02); }
 
     .yes { color: var(--success); font-weight: 700; }
     .no  { color: var(--text-dim); }
@@ -323,7 +323,7 @@
 
 <!-- ── OneDrive instructions modal ─────────────────────────────────── -->
 <div id="onedrive-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:200; align-items:center; justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:#1e2a42; border:1px solid var(--border); border-radius:20px; padding:2.5rem; max-width:480px; width:90%;">
+  <div style="background:#17140f; border:1px solid var(--border); border-radius:20px; padding:2.5rem; max-width:480px; width:90%;">
     <h3 style="color:var(--primary); margin-bottom:1rem;">&#9729; In OneDrive speichern</h3>
     <ol style="color:var(--text-muted); font-size:0.9rem; line-height:1.8;">
       <li>Klicke auf <strong style="color:#fff;">&#128196; PDF speichern</strong></li>
@@ -364,6 +364,7 @@
     <a class="toc-link l1" href="#tech">06 Technische Architektur</a>
     <a class="toc-link l2" href="#tech-stack">6.1 Stack</a>
     <a class="toc-link l2" href="#tech-schema">6.2 Datenhaltung (Demo)</a>
+    <a class="toc-link l2" href="#tech-design">6.3 Designsystem &bdquo;Kara Elmas&ldquo;</a>
     <a class="toc-link l1" href="#ci-cd">07 CI/CD &amp; Tests</a>
     <a class="toc-link l1" href="#compliance">08 KVKK &amp; DSGVO</a>
     <a class="toc-link l1" href="#glossar">09 Glossar</a>
@@ -393,7 +394,9 @@
         (Markenname <strong>HAS Teknoloji</strong>), einen seit 2017 in Alanya t&auml;tigen Installateur f&uuml;r
         Smart-Home- und Sicherheitssysteme. Sie f&uuml;hrt Interessenten anhand von sechs Kundensegmenten zur
         passenden L&ouml;sung aus elf Service-Disziplinen und erm&ouml;glicht die Anfrage einer kostenlosen
-        Besichtigung &ndash; auf T&uuml;rkisch, Englisch, Russisch und Deutsch.
+        Besichtigung &ndash; auf T&uuml;rkisch, Englisch, Russisch und Deutsch. Seit Juli 2026 tritt die Website
+        in der Designrichtung <strong>&bdquo;Kara Elmas&ldquo;</strong> (Schwarz/Gold, siehe Abschnitt 6.3) auf;
+        das rote Kundenlogo bleibt als Markenzeichen erhalten.
       </p>
       <div class="info-box">
         <div class="info-box-title">Wichtig: Demo-/Vorschau-Build</div>
@@ -415,7 +418,7 @@
         <div class="feature-card">
           <div class="feature-icon">&#127968;</div>
           <div class="feature-title">Segment-gef&uuml;hrte Navigation</div>
-          <div class="feature-desc">6 statische Landingpages (Privathaushalte, Neubau/Bautr&auml;ger, Hotellerie, Handel, Gastronomie, Gewerbe/Parkfl&auml;chen) mit jeweils eigenen Pain Points, empfohlenen Systemen und CTA.</div>
+          <div class="feature-desc">6 statische Landingpages (Privathaushalte, Neubau/Bautr&auml;ger, Hotellerie, Handel, Gastronomie, Gewerbe/Parkfl&auml;chen) mit eigener Szenen-Illustration im Facet-Hero, empfohlenen Systemen und segmentspezifischen AIDASLove-Sektionen.</div>
         </div>
         <div class="feature-card">
           <div class="feature-icon">&#128172;</div>
@@ -431,6 +434,16 @@
           <div class="feature-icon">&#127760;</div>
           <div class="feature-title">Viersprachige Lokalisierung</div>
           <div class="feature-desc">next-intl mit 4 Locales (tr Standard, en, ru, de), Locale-Pr&auml;fix immer in der URL, plus nutzergesteuerter Hell-/Dunkelmodus.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128142;</div>
+          <div class="feature-title">Kara-Elmas-Designsystem</div>
+          <div class="feature-desc">Schwarz/Gold-Designrichtung mit Facet-Hero, Display-Schrift Playfair Display und handgefertigter SVG-Illustrationssuite &ndash; das rote Logo bleibt als Markenzeichen.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#128273;</div>
+          <div class="feature-title">Concierge &bdquo;İki Kapı, Tek Anahtar&ldquo;</div>
+          <div class="feature-desc">KI-Assistent-Eingabe (&ouml;ffnet das Chat-Widget) und WhatsApp-Panel nebeneinander; Telefon-Mockup als &bdquo;&Ouml;rnek G&ouml;r&uuml;n&uuml;m&ldquo; gekennzeichnet.</div>
         </div>
       </div>
       <div class="table-wrap">
@@ -452,14 +465,19 @@
       <h3 id="feature-list">2.1 Feature-Liste</h3>
       <p>Die folgenden Funktionen sind in der aktuellen Demo-Version vollst&auml;ndig implementiert und pr&auml;sentationsbereit:</p>
       <ul>
-        <li><strong>AIDA-Startseite:</strong> Hero, Trust-Bar, 11 Service-Kacheln, Differenzierungsargumente, 6 Segment-Kacheln, Beispiel-Testimonials, Abschluss-CTA.</li>
-        <li><strong>6 Segment-Landingpages</strong> mit segmentspezifischen Pain Points, empfohlenen Systemen und eigenem CTA.</li>
+        <li><strong>AIDASLove-Startseite:</strong> Facet-Hero, Capability-Marquee mit Live-Uhr (Alanya-Zeit), AIDASLove-Sektionen, Dashboard-Mockup (&bdquo;&Ouml;rnek G&ouml;r&uuml;n&uuml;m&ldquo;), Segment-Bento-Grid mit Illustrations-Headern, Concierge-Spotlight, Abschluss-CTA.</li>
+        <li><strong>Facet-Hero</strong> mit selbstzeichnender Gold-SVG-Animation und cursorfolgendem Glanzlicht &ndash; bei <code>prefers-reduced-motion</code> (und Touch-Ger&auml;ten) deaktiviert; auf Segmentseiten ersetzt eine Szenen-Illustration den Standard-Diamanten.</li>
+        <li><strong>6 Segment-Landingpages</strong> mit eigener Szenen-Illustration, empfohlenen Systemen und segmentspezifischen AIDASLove-Sektionen.</li>
+        <li><strong>AIDASLove-Content-System:</strong> Inhalte f&uuml;r Startseite, 6 Segmentseiten und Concierge-Bereich in allen 4 Sprachen, strukturiert &uuml;ber die 8 AIDASLove-Stufen (Attention, Interest, Search, Desire, Action, Like/Dislike, Share, Love/Hate).</li>
+        <li><strong>Concierge-Spotlight &bdquo;İki Kapı, Tek Anahtar&ldquo;:</strong> KI-Assistent-Eingabe (&ouml;ffnet das Chat-Widget per Window-Event und &uuml;bergibt den Entwurf), WhatsApp-Panel und Telefon-Mockup (&bdquo;&Ouml;rnek G&ouml;r&uuml;n&uuml;m&ldquo;).</li>
+        <li><strong>Illustrationssuite:</strong> 8 handgefertigte SVG-Komponenten (6 Segment-Szenen im Gold-Gravur-Stil, Concierge-Telefon- und Dashboard-Mockup) &ndash; bewusst keine Stockfotos, da noch keine echten Projektfotos vorliegen (Zero-Fabrication).</li>
         <li><strong>Trust Center</strong> (<code>/trust</code>): &Uuml;ber uns, KVKK/DSGVO-Datenschutzhinweis, Zertifikate-Platzhalter, Bewertungs-Platzhalter, Kontakt.</li>
         <li><strong>FAQ-Akkordeon</strong> mit den h&auml;ufigsten Kundenfragen.</li>
         <li><strong>Terminbuchung (Demo)</strong> inkl. WhatsApp-Alternative, Speicherung nur in <code>localStorage</code>.</li>
         <li><strong>Team-Login + Admin-Dashboard (Demo)</strong> mit Buchungsliste und Beispiel-Bewertungen.</li>
         <li><strong>KI-Chat-Widget</strong> auf jeder Seite, mit lokalisiertem Demo-Fallback ohne API-Schl&uuml;ssel.</li>
-        <li><strong>Hell-/Dunkelmodus</strong>, nutzergesteuert per Umschalter im Header (nicht nur OS-basiert).</li>
+        <li><strong>Hell-/Dunkelmodus und Sprachwahl</strong> als Tastenfeld-artige segmentierte Steuerelemente im Header &ndash; nutzergesteuert (nicht nur OS-basiert).</li>
+        <li><strong>Native-Speaker-Feinschliff</strong> aller vier Sprachfassungen: TR im t&uuml;rkischen Private-Banking-Register, RU mit &laquo;Алания&raquo;, EN britisch/international, DE mit vereinheitlichter Typografie.</li>
         <li><strong>SEO/GEO-Grundlagen:</strong> <code>sitemap.xml</code>, <code>robots.txt</code>, site-weites <code>LocalBusiness</code>-JSON-LD.</li>
         <li><strong>3 Rechtsseiten je Sprache</strong> (Impressum, AGB, Datenschutz) &ndash; klar als Entwurf gekennzeichnet.</li>
       </ul>
@@ -498,15 +516,15 @@
       <ol>
         <li>Startseite <code>/[locale]</code> besuchen &ndash; Hero mit Hauptangebot, Sprachumschalter und Theme-Toggle oben im Header</li>
         <li>Passenden Bereich unter &bdquo;Bereiche&ldquo; im Men&uuml; w&auml;hlen oder direkt zu <code>/segments/[slug]</code> navigieren (6 Optionen)</li>
-        <li>Auf der Segmentseite Pain Points und empfohlene Systeme lesen</li>
+        <li>Auf der Segmentseite Szenen-Illustration, empfohlene Systeme und AIDASLove-Sektionen ansehen</li>
         <li>&Uuml;ber den KI-Chat-Assistenten (unten rechts) Fragen stellen oder direkt <strong>&bdquo;Kostenlose Besichtigung buchen&ldquo;</strong> klicken</li>
         <li>Buchungsformular unter <code>/[locale]/booking</code> ausf&uuml;llen und absenden (Demo: nur lokal gespeichert, keine echte &Uuml;bertragung)</li>
       </ol>
 
       <h3 id="tut-sprache-theme">3.3 Sprache &amp; Darstellung wechseln</h3>
       <ol>
-        <li>Sprachumschalter im Header nutzen, um zwischen T&uuml;rkisch (Standard), Englisch, Russisch und Deutsch zu wechseln &ndash; die URL wechselt entsprechend zu <code>/tr/...</code>, <code>/en/...</code>, <code>/ru/...</code> bzw. <code>/de/...</code></li>
-        <li>Theme-Toggle im Header nutzen, um manuell zwischen Hell- und Dunkelmodus zu wechseln (nutzergesteuert &uuml;ber die <code>.dark</code>-Klasse auf <code>&lt;html&gt;</code>, nicht nur OS-Einstellung)</li>
+        <li>Sprachumschalter im Header (Tastenfeld-artiges segmentiertes Steuerelement) nutzen, um zwischen T&uuml;rkisch (Standard), Englisch, Russisch und Deutsch zu wechseln &ndash; die URL wechselt entsprechend zu <code>/tr/...</code>, <code>/en/...</code>, <code>/ru/...</code> bzw. <code>/de/...</code></li>
+        <li>Theme-Umschalter im Header (ebenfalls segmentiertes Steuerelement) nutzen, um manuell zwischen Hell- und Dunkelmodus zu wechseln (nutzergesteuert &uuml;ber die <code>.dark</code>-Klasse auf <code>&lt;html&gt;</code>, nicht nur OS-Einstellung)</li>
         <li>Beide Einstellungen bleiben f&uuml;r die laufende Sitzung erhalten</li>
       </ol>
     </section>
@@ -547,8 +565,8 @@
         <table>
           <thead><tr><th>Route</th><th>Beschreibung</th><th>Zugriff</th></tr></thead>
           <tbody>
-            <tr><td><code>/[locale]</code></td><td>Startseite &ndash; AIDA-Aufbau: Hero, Trust-Bar, Service-Grid, Differenzierung, 6-Segment-Grid, Testimonials, Abschluss-CTA</td><td>Alle</td></tr>
-            <tr><td><code>/[locale]/segments/[slug]</code></td><td>6 statische Segmentseiten: private-homes, new-build-developers, hospitality, retail-markets, gastronomy, commercial-parking</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]</code></td><td>Startseite &ndash; AIDASLove-Aufbau: Facet-Hero, Capability-Marquee mit Live-Uhr, AIDASLove-Sektionen, Dashboard-Mockup, Segment-Bento-Grid, Concierge-Spotlight, Abschluss-CTA</td><td>Alle</td></tr>
+            <tr><td><code>/[locale]/segments/[slug]</code></td><td>6 statische Segmentseiten (je mit Szenen-Illustration im Facet-Hero, System-Empfehlungen und AIDASLove-Sektionen): private-homes, new-build-developers, hospitality, retail-markets, gastronomy, commercial-parking</td><td>Alle</td></tr>
             <tr><td><code>/[locale]/trust</code></td><td>Trust Center: &Uuml;ber uns, KVKK/DSGVO-Datenschutzhinweis, Zertifikate-Platzhalter, Bewertungen-Platzhalter, Kontakt</td><td>Alle</td></tr>
             <tr><td><code>/[locale]/faq</code></td><td>FAQ-Akkordeon</td><td>Alle</td></tr>
             <tr><td><code>/[locale]/booking</code></td><td>Terminbuchung (Demo, Speicherung in <code>localStorage</code>)</td><td>Alle</td></tr>
@@ -589,8 +607,10 @@
           <thead><tr><th>Schicht</th><th>Technologie</th><th>Aufgabe</th></tr></thead>
           <tbody>
             <tr><td>Frontend &amp; Backend</td><td>Next.js 16.2.1 (App Router), TypeScript, React 19.2</td><td>SSR, eine API-Route (<code>/api/chat</code>), Locale-Middleware (<code>src/proxy.ts</code>)</td></tr>
-            <tr><td>Styling</td><td>Tailwind CSS v4</td><td>Utility-First, nutzergesteuerter Hell-/Dunkelmodus, Geist Sans/Mono &uuml;ber <code>next/font</code></td></tr>
+            <tr><td>Styling</td><td>Tailwind CSS v4 + Kara-Elmas-Token-System (<code>src/app/globals.css</code>)</td><td>Utility-First, nutzergesteuerter Hell-/Dunkelmodus; Schriften &uuml;ber <code>next/font/google</code>: Playfair Display (Display-Schrift f&uuml;r &Uuml;berschriften, inkl. Kyrillisch-Subset) sowie Geist Sans/Geist Mono</td></tr>
             <tr><td>i18n</td><td>next-intl v4.13</td><td>4 Locales (tr Standard, en, ru, de), Locale-Pr&auml;fix immer in der URL</td></tr>
+            <tr><td>Content-System</td><td>AIDASLove-Registry (<code>src/lib/aidaslove-content.ts</code> + <code>.de/.en/.ru/.tr</code>-Dateien)</td><td>Inhalte f&uuml;r Startseite, 6 Segmentseiten und Concierge-Bereich in 8 AIDASLove-Stufen; gerendert &uuml;ber <code>aidaslove-sections.tsx</code></td></tr>
+            <tr><td>Illustrationen</td><td>8 SVG-Komponenten (<code>src/components/illustrations/</code>)</td><td>6 Segment-Szenen im Gold-Gravur-Stil + Concierge-Telefon- und Dashboard-Mockup; keine Stockfotos (Zero-Fabrication), Beispielansichten als &bdquo;&Ouml;rnek G&ouml;r&uuml;n&uuml;m&ldquo; gekennzeichnet</td></tr>
             <tr><td>KI-Chat</td><td><code>@anthropic-ai/sdk</code> (Modell <code>claude-haiku-4-5</code>)</td><td>Optional aktiv &uuml;ber <code>ANTHROPIC_API_KEY</code>; ohne Schl&uuml;ssel l&auml;uft ein lokalisierter Scripted-Fallback</td></tr>
             <tr><td>Datenhaltung (Demo)</td><td>Browser <code>localStorage</code> / <code>sessionStorage</code></td><td>Buchungen, Admin-Session, Cookie-Zustimmung &ndash; <strong>kein Server-Backend, kein Supabase</strong> in dieser Demo-Version</td></tr>
             <tr><td>SEO/GEO</td><td><code>sitemap.ts</code>, <code>robots.ts</code>, <code>LocalBusinessSchema</code></td><td>JSON-LD (<code>LocalBusiness</code>) site-weit im <code>&lt;head&gt;</code> jeder Locale-Seite</td></tr>
@@ -617,6 +637,22 @@
         </table>
       </div>
       <p>In einer sp&auml;teren Produktivversion w&uuml;rde dieser Abschnitt das reale Supabase-Schema (Tabellen, RLS-Policies, Schema-Namen) dokumentieren.</p>
+
+      <h3 id="tech-design">6.3 Designsystem &bdquo;Kara Elmas&ldquo;</h3>
+      <p>
+        Mit dem Redesign wurde die Designrichtung <strong>&bdquo;Kara Elmas&ldquo;</strong> (t&uuml;rkisch f&uuml;r
+        &bdquo;Schwarzer Diamant&ldquo;) eingef&uuml;hrt: ein Schwarz/Gold-Token-System in
+        <code>src/app/globals.css</code>. Rot ist nicht mehr Akzentfarbe der Website &ndash; das reale rote
+        Kundenlogo bleibt ausschlie&szlig;lich als Logo-Chip und als einzelner &bdquo;Live-Signal&ldquo;-Punkt
+        erhalten und wirkt so als Markenzeichen.
+      </p>
+      <ul>
+        <li><strong>Hellmodus:</strong> warmes Elfenbein <code>#faf8f4</code> als Hintergrund, Tinte <code>#17140f</code> als Textfarbe, Gold-Akzent <code>#c9a54d</code>, AA-sicherer Text-Gold <code>#8a6423</code>.</li>
+        <li><strong>Dunkelmodus:</strong> warmes Obsidian <code>#0a0908</code> als Hintergrund, Gold <code>#d8b45c</code>.</li>
+        <li><strong>Markenrot</strong> <code>#c1272d</code>: nur als Logo-Chip und Live-Signal-Punkt &ndash; nicht als Fl&auml;chen- oder Akzentfarbe.</li>
+        <li><strong>Typografie:</strong> Playfair Display als Display-Schrift f&uuml;r &Uuml;berschriften (via <code>next/font/google</code>, inkl. Kyrillisch-Subset f&uuml;r Russisch), Geist Sans f&uuml;r Flie&szlig;text, Geist Mono f&uuml;r technische Auszeichnungen.</li>
+        <li><strong>Bewegung:</strong> Facet-Hero mit selbstzeichnender Gold-SVG-Animation und cursorfolgendem Glanzlicht; bei <code>prefers-reduced-motion</code> und auf Touch-Ger&auml;ten deaktiviert.</li>
+      </ul>
     </section>
 
     <!-- ── 7. CI/CD & Tests ───────────────────────────────────────── -->
@@ -684,7 +720,11 @@
         <table>
           <thead><tr><th>Begriff</th><th>Erkl&auml;rung</th></tr></thead>
           <tbody>
-            <tr><td><strong>AIDA</strong></td><td>Attention &ndash; Interest &ndash; Desire &ndash; Action: Marketing-Struktur, nach der die Startseite aufgebaut ist</td></tr>
+            <tr><td><strong>AIDASLove</strong></td><td>Erweiterte Marketing-Struktur mit acht Stufen &ndash; Attention, Interest, Search, Desire, Action, Like/Dislike, Share, Love/Hate &ndash; nach der die Inhalte von Startseite, Segmentseiten und Concierge-Bereich strukturiert sind</td></tr>
+            <tr><td><strong>Kara Elmas</strong></td><td>T&uuml;rkisch f&uuml;r &bdquo;Schwarzer Diamant&ldquo; &ndash; Name der Schwarz/Gold-Designrichtung des Redesigns (siehe Abschnitt 6.3)</td></tr>
+            <tr><td><strong>Facet-Hero</strong></td><td>Hero-Komponente mit selbstzeichnender Gold-SVG-Animation und cursorfolgendem Glanzlicht; auf Segmentseiten ersetzt eine Szenen-Illustration den Standard-Diamanten</td></tr>
+            <tr><td><strong>İki Kapı, Tek Anahtar</strong></td><td>T&uuml;rkisch f&uuml;r &bdquo;Zwei T&uuml;ren, ein Schl&uuml;ssel&ldquo; &ndash; Concierge-Bereich der Startseite mit KI-Assistent-Eingabe und WhatsApp-Panel</td></tr>
+            <tr><td><strong>&Ouml;rnek G&ouml;r&uuml;n&uuml;m</strong></td><td>T&uuml;rkisch f&uuml;r &bdquo;Beispielansicht&ldquo; &ndash; Kennzeichnung aller Mockup-Illustrationen (Telefon- und Dashboard-Mockup), da noch keine echten Projektfotos vorliegen (Zero-Fabrication-Prinzip)</td></tr>
             <tr><td><strong>KVKK</strong></td><td>Kişisel Verilerin Korunması Kanunu &ndash; t&uuml;rkisches Datenschutzgesetz Nr. 6698, das t&uuml;rkische Pendant zur DSGVO</td></tr>
             <tr><td><strong>Segment</strong></td><td>Eines der sechs Kundensegmente (Privathaushalte, Neubau/Bautr&auml;ger, Hotellerie, Handel, Gastronomie, Gewerbe/Parkfl&auml;chen) mit eigener Landingpage unter <code>/segments/[slug]</code></td></tr>
             <tr><td><strong>Demo-Modus</strong></td><td>Zustand, in dem eine Funktion (Buchung, Admin-Login, KI-Chat) ohne echtes Backend rein clientseitig simuliert wird</td></tr>

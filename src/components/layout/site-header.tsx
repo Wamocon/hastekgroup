@@ -23,14 +23,20 @@ export function SiteHeader() {
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           <div
             className="relative"
             onMouseEnter={() => setSegmentsOpen(true)}
             onMouseLeave={() => setSegmentsOpen(false)}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") setSegmentsOpen(false);
+            }}
           >
             <button
               type="button"
+              aria-expanded={segmentsOpen}
+              aria-haspopup="menu"
+              onClick={() => setSegmentsOpen((value) => !value)}
               className="flex items-center gap-1 text-sm font-medium text-foreground/85 hover:text-accent"
             >
               {t("services")}
@@ -53,6 +59,15 @@ export function SiteHeader() {
               </div>
             ) : null}
           </div>
+          <Link href="/configurator" className="text-sm font-medium text-foreground/85 hover:text-accent">
+            {t("configurator")}
+          </Link>
+          <Link href="/gallery" className="text-sm font-medium text-foreground/85 hover:text-accent">
+            {t("gallery")}
+          </Link>
+          <Link href="/showroom" className="text-sm font-medium text-foreground/85 hover:text-accent">
+            {t("showroom")}
+          </Link>
           <Link href="/trust" className="text-sm font-medium text-foreground/85 hover:text-accent">
             {t("trust")}
           </Link>
@@ -62,13 +77,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <Link href="/portal" className="text-sm font-medium text-foreground/85 hover:text-accent">
+            {t("portal")}
+          </Link>
           <LanguageSwitcher />
           <ThemeToggle />
-          <WhatsAppButton className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-[1.02]" />
-          <Link
-            href="/booking"
-            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-contrast transition-opacity hover:opacity-90"
-          >
+          <Link href="/booking" className="btn-primary !py-2">
             {t("booking")}
           </Link>
         </div>
@@ -77,14 +91,16 @@ export function SiteHeader() {
           type="button"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-border lg:hidden"
           onClick={() => setMobileOpen((value) => !value)}
-          aria-label="Menu"
+          aria-label={t("menu")}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
         >
           {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
 
       {mobileOpen ? (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div id="mobile-nav" className="border-t border-border bg-background lg:hidden">
           <div className="container-hastek flex flex-col gap-1 py-4">
             <p className="pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
               {t("services")}
@@ -99,23 +115,31 @@ export function SiteHeader() {
                 {tSegments(`${key}.shortLabel`)}
               </Link>
             ))}
+            <Link href="/configurator" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
+              {t("configurator")}
+            </Link>
+            <Link href="/gallery" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
+              {t("gallery")}
+            </Link>
+            <Link href="/showroom" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
+              {t("showroom")}
+            </Link>
             <Link href="/trust" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
               {t("trust")}
             </Link>
             <Link href="/faq" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
               {t("faq")}
             </Link>
+            <Link href="/portal" onClick={() => setMobileOpen(false)} className="rounded-md px-2 py-2 text-sm text-foreground/85 hover:bg-surface-muted">
+              {t("portal")}
+            </Link>
             <div className="mt-3 flex items-center gap-3">
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
             <div className="mt-3 flex flex-col gap-2">
-              <WhatsAppButton className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-medium text-white" />
-              <Link
-                href="/booking"
-                onClick={() => setMobileOpen(false)}
-                className="rounded-full bg-accent px-4 py-2.5 text-center text-sm font-semibold text-accent-contrast"
-              >
+              <WhatsAppButton className="btn-secondary justify-center" />
+              <Link href="/booking" onClick={() => setMobileOpen(false)} className="btn-primary justify-center">
                 {t("booking")}
               </Link>
             </div>

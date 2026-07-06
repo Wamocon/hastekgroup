@@ -5,21 +5,57 @@
   },
   "nav": {
     "home": "Ana Sayfa",
+    "menu": "Menü",
     "services": "Segmentler",
+    "gallery": "Galeri",
     "trust": "Güven Merkezi",
     "faq": "SSS",
     "booking": "Randevu alın",
     "contact": "İletişim",
-    "admin": "Ekip girişi"
+    "admin": "Ekip girişi",
+    "configurator": "Sisteminizi bulun",
+    "showroom": "Canlı showroom",
+    "portal": "Müşteri portalı"
+  },
+  "gallery": {
+    "title": "Referans Galerisi",
+    "intro": "Nasıl çalıştığımıza dair bir bakış - kullanım alanına göre düzenlendi. Kendi alanınıza göre filtreleyin ya da herhangi bir görünümü tam boyutta açın.",
+    "placeholderNotice": "Örnek Görünüm: Bu görünümler şu anda birer illüstrasyon olarak hazırlanmış ve açıkça bu şekilde işaretlenmiştir. Kurulumlarınıza ait gerçek proje fotoğrafları elimize ulaşır ulaşmaz, galerinin yapısında hiçbir değişiklik olmadan tam da bu alanlara yerleştireceğiz.",
+    "filterAll": "Tümü",
+    "categorySystems": "Sistemler ve görünümler",
+    "exampleBadge": "Örnek görünüm",
+    "close": "Kapat"
+  },
+  "instagram": {
+    "eyebrow": "Instagram",
+    "title": "Alanya'dan kareler, doğrudan akışınıza",
+    "subtitle": "Instagram hesabı onaylandıktan sonra HAS Teknoloji'nin en yeni paylaşımları burada otomatik olarak görünecek - projeler, referanslar ve günlük iş hayatından anlar.",
+    "follow": "Instagram'da takip edin ({handle})",
+    "followGeneric": "Instagram'da takip edin",
+    "pendingNotice": "Instagram entegrasyonu hazır olup, hesap sahipliği müşteri tarafından teyit edilir edilmez devreye girecektir. Burada gösterilen kareler örnek görünümlerdir.",
+    "exampleBadge": "Örnek"
+  },
+  "concierge": {
+    "advisorLabel": "Ön Değerlendirme Danışmanınız",
+    "placeholder": "Mülkünüz hakkında sorun…",
+    "whatsappLabel": "WhatsApp · doğrudan hattınız",
+    "whatsappBody": "Ekibimizden biri size kişisel olarak yanıt verir.",
+    "sampleView": "Örnek Görünüm"
   },
   "common": {
     "whatsapp": "WhatsApp'tan yazın",
+    "whatsappPending": "Demo: WhatsApp numarası müşteri onayından sonra bağlanacaktır.",
     "callUs": "Bizi arayın",
     "bookNow": "Ücretsiz keşif randevusu alın",
     "learnMore": "Daha fazla bilgi",
     "backToSegments": "Tüm segmentlere dön",
     "language": "Dil",
-    "languages": { "tr": "Turkce", "en": "English", "ru": "Russkiy", "de": "Deutsch" },
+    "languages": {
+      "tr": "Türkçe",
+      "en": "English",
+      "ru": "Russkiy",
+      "de": "Deutsch"
+    },
     "since2017": "2017'den bu yana Alanya'da akıllı ev ve güvenlik sistemleri kuruyoruz",
     "readMore": "Devamını oku"
   },
@@ -44,11 +80,12 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Akıllı ev ve güvenlik sistemleri - Alanya",
-      "title": "Alanya'daki mülkünüzü güvence altına almanın ve otomatikleştirmenin sessiz ve hassas yolu",
+      "eyebrow": "Akıllı ev ve güvenlik sistemleri – Alanya",
+      "title": "Alanya'daki mülkünüzü güvence altına almanın ve akıllı hale getirmenin sessiz, zarif yolu",
       "subtitle": "Hastek Group, 2017'den bu yana Alanya genelinde akıllı ev, güvenlik ve bağlantı sistemleri kuruyor. Tek bir yerel ekip, on bir uzmanlık alanı, kendinizi güvende hissetmenin daha sakin bir yolu.",
       "primaryCta": "Ücretsiz keşif randevusu alın",
-      "secondaryCta": "Asistanımızla konuşun"
+      "secondaryCta": "Asistanımızla konuşun",
+      "armed": "Sistem devrede"
     },
     "trustBar": {
       "founded": "2017'de kuruldu",
@@ -59,7 +96,7 @@
     "interest": {
       "eyebrow": "Neler kuruyoruz",
       "title": "On bir uzmanlık alanı, tek sorumlu ekip",
-      "subtitle": "Tek bir akıllı kilitten, tam izlenen bir kapalı siteye kadar: her sistem aynı Hastek ekibi tarafından tasarlanır, kurulur ve bakımı yapılır."
+      "subtitle": "Tek bir akıllı kilitten, uçtan uca izlenen bir kapalı siteye kadar: her sistem aynı Hastek ekibi tarafından tasarlanır, kurulur ve bakımı yapılır."
     },
     "services": {
       "smartHome": "Akıllı ev otomasyonu",
@@ -76,11 +113,11 @@
     },
     "desire": {
       "eyebrow": "Neden Hastek",
-      "title": "Alanya için daha sakin, daha hassas bir standart",
+      "title": "Alanya için daha sakin, daha özenli bir standart",
       "items": [
         {
           "title": "Tek ekip, tam sorumluluk",
-          "body": "Taşeron devirleri yok. Sisteminizi tasarlayan mühendis, kuran ve bakımını yapan kişiyle aynıdır."
+          "body": "İş taşerona devredilmez. Sisteminizi tasarlayan mühendis, onu kuran ve bakımını üstlenen kişiyle aynıdır."
         },
         {
           "title": "Uluslararası mülk sahipleri için tasarlandı",
@@ -91,7 +128,7 @@
           "body": "Piyasadaki en gösterişli alarmı değil, mülkünüze uygun ekipmanı öneriyoruz. Sadelik de işimizin bir parçasıdır."
         },
         {
-          "title": "Çalışmaya devam eden bakım hizmeti",
+          "title": "Kurulumla bitmeyen bakım",
           "body": "Planlı bakım ve hızlı müdahale, kurulumdan uzun süre sonra bile sistemlerin güvenilir kalmasını sağlar."
         }
       ]
@@ -106,12 +143,18 @@
       "title": "Müşterilerimiz ne diyor",
       "demoNotice": "Bu demo için örnek alıntılar kullanılmıştır - yorum toplama süreci devreye girdiğinde doğrulanmış Google yorumlarıyla değiştirilecektir.",
       "quotes": [
-        { "quote": "Açık anlatımlı, düzenli bir kurulumdu; üstelik pazar günü telefonu gerçekten açtılar.", "author": "Örnek müşteri, ikinci konut sahibi" },
-        { "quote": "Artık tüm sitemiz (CCTV, bariyer, yangın paneli) üç ayrı tedarikçi yerine tek bir panelden yönetiliyor.", "author": "Örnek müşteri, ticari mülk sahibi" }
+        {
+          "quote": "Her adımı anlaşılır, derli toplu bir kurulumdu; üstelik pazar günü telefonu gerçekten açtılar.",
+          "author": "Örnek müşteri, ikinci konut sahibi"
+        },
+        {
+          "quote": "Artık tüm sitemiz (CCTV, bariyer, yangın paneli) üç ayrı tedarikçi yerine tek bir panelden yönetiliyor.",
+          "author": "Örnek müşteri, ticari mülk sahibi"
+        }
       ]
     },
     "finalCta": {
-      "title": "Kendi mülkünüzde görmeye hazır mısınız?",
+      "title": "Bunu kendi mülkünüzde görmeye hazır mısınız?",
       "subtitle": "Ücretsiz, taahhütsüz bir keşif randevusu alın ya da anında öneri almak için asistanımızla başlayın.",
       "primary": "Ücretsiz keşif randevusu alın",
       "secondary": "Hemen WhatsApp'tan yazın"
@@ -123,12 +166,12 @@
       "slug": "private-homes",
       "label": "Özel evler ve ikinci konut sahipleri",
       "shortLabel": "Özel evler",
-      "heroTitle": "Yakın ve uzaktaki sahipler için akıllı, güvenli yaşam",
-      "heroSubtitle": "Alanya'nın geniş yabancı ikinci konut sahibi topluluğu için tasarlandı: mülkünüzü her yerden, kendi dilinizde izleyin ve kontrol edin.",
+      "heroTitle": "Yakındaki ve uzaktaki mülk sahipleri için akıllı, güvenli yaşam",
+      "heroSubtitle": "Alanya'nın geniş uluslararası ikinci konut sahibi topluluğu düşünülerek tasarlandı: mülkünüzü dünyanın her yerinden, kendi dilinizde izleyin ve yönetin.",
       "painPoints": [
         "Mülk aylarca boş kalıyor - orada olmadan güvende olduğunu bilmeniz gerekiyor.",
         "Yerel firmalar sistemleri nadiren sizin dilinizde açıklıyor, bu yüzden neye imza attığınızdan hiçbir zaman tam olarak emin olamıyorsunuz.",
-        "Hazır DIY kitler ucuz hissettiriyor ve premium bir villaya veya daireye yakışmıyor."
+        "Piyasadaki hazır kurulum setleri ucuz durur; premium bir villaya ya da daireye yakışmaz."
       ],
       "solutions": [
         "smartHome",
@@ -141,12 +184,12 @@
     },
     "newBuild": {
       "slug": "new-build-developers",
-      "label": "Yeni yapım villalar, konut kompleksleri ve yapı geliştiriciler",
-      "shortLabel": "Yeni yapım ve geliştiriciler",
+      "label": "Yeni inşaat villalar, siteler ve müteahhitler",
+      "shortLabel": "Yeni inşaat ve müteahhitler",
       "heroTitle": "Tasarım aşamasında planlanan güvenlik ve otomasyon",
       "heroSubtitle": "Geliştiriciler ve kapalı siteler için: inşaat takviminizle koordineli, her bağımsız bölümde tutarlı akıllı ev ve güvenlik standartları.",
       "painPoints": [
-        "Teslimden sonra güvenlik sistemi eklemek pahalıdır ve tamamlanmış bağımsız bölümleri sekteye uğratır.",
+        "Teslimden sonra güvenlik sistemi eklemek pahalıdır ve tamamlanmış bağımsız bölümlerde yaşamı sekteye uğratır.",
         "Alıcılar artık akıllı ev altyapısını ek bir seçenek değil, standart bir özellik olarak bekliyor.",
         "Ortak alanlar (kapılar, girişler, paylaşımlı Wi-Fi) bağımsız bölüm bazında değil, tek ve koordineli bir sistem gerektirir."
       ],
@@ -164,7 +207,7 @@
       "slug": "hospitality",
       "label": "Oteller ve turizm işletmeleri",
       "shortLabel": "Konaklama",
-      "heroTitle": "Görünür karmaşa olmadan misafir güvenliği ve sorunsuz operasyon",
+      "heroTitle": "Göze batmayan misafir güvenliği, aksamayan operasyon",
       "heroSubtitle": "Kamera kapsamı, yangın güvenliği ve misafir bağlantısı, puanınızı mülkünüz kadar koruyacak şekilde tasarlanır.",
       "painPoints": [
         "Wi-Fi güvenilir değilse ya da güvenlik ihmal edilmiş gibi hissettiriyorsa misafir yorumları hemen olumsuz etkilenir.",
@@ -184,7 +227,7 @@
       "slug": "retail-markets",
       "label": "Perakende ve market işletmeleri",
       "shortLabel": "Perakende ve marketler",
-      "heroTitle": "Daha az kayıp, daha hızlı ödeme, tek bir destek hattı",
+      "heroTitle": "Daha az kayıp, daha hızlı kasa, tek bir destek hattı",
       "heroSubtitle": "Ayrı sözleşmelerle değil, birlikte çalışan kamera sistemleri, alarmlar ve satış noktası/barkod sistemleri.",
       "painPoints": [
         "Fire ve kasa tutarsızlıkları, güvenilir kamera görüntüsü olmadan araştırılması zor konulardır.",
@@ -251,8 +294,8 @@
     "certificatesNotice": "Sigorta sertifikaları, ticaret sicil kayıtları ve kurulumcu belgeleri, Hastek Group tarafından sağlanıp doğrulandıktan sonra burada listelenecektir. Bu bir yer tutucu bölümdür - onaylanana kadar herhangi bir bilgi gösterilmemektedir.",
     "reviewsTitle": "Yorumlar ve itibar",
     "reviewsBody": "Hastek Group, bu yeniden lansmanın bir parçası olarak doğrulanmış bir Google yorum profili oluşturmaktadır. Yayına alındığında, gerçek ve tarihli müşteri yorumlarına bu sayfadan doğrudan bağlantı verilecektir.",
-    "contactTitle": "Bizi doğrudan doğrulayın",
-    "contactBody": "Bizi kendiniz kontrol etmeyi mi tercih edersiniz? WhatsApp üzerinden bize mesaj atın ya da taahhütsüz, ücretsiz bir keşif randevusu alın."
+    "contactTitle": "Bizi bizzat doğrulayın",
+    "contactBody": "Bizi kendi gözünüzle görmek mi istersiniz? WhatsApp üzerinden bize mesaj atın ya da taahhütsüz, ücretsiz bir keşif randevusu alın."
   },
   "faq": {
     "title": "Sıkça sorulan sorular",
@@ -260,11 +303,11 @@
     "items": [
       {
         "q": "Hangi bölgelere hizmet veriyorsunuz?",
-        "a": "Alanya ve daha geniş Antalya ili genelinde sistemler kuruyor ve bakımını yapıyoruz. Mülkünüzün hizmet bölgemizde olup olmadığından emin değilseniz, konumunuzu belirterek WhatsApp'tan bize yazın."
+        "a": "Alanya'da ve Antalya ili genelinde sistemler kuruyor ve bakımını yapıyoruz. Mülkünüzün hizmet bölgemizde olup olmadığından emin değilseniz, konumunuzu belirterek WhatsApp'tan bize yazın."
       },
       {
         "q": "Şu anda Türkiye'de bulunmayan mülk sahipleriyle çalışıyor musunuz?",
-        "a": "Evet - müşterilerimizin büyük bir kısmı yurt dışında yaşayan ikinci konut sahipleridir. Varışınızdan önce bir projeyi kapsam olarak belirleyebilir, teknik özellikler üzerinde anlaşabilir ve kurulumu İngilizce, Rusça veya Almanca olarak uzaktan planlayabiliriz."
+        "a": "Evet - müşterilerimizin büyük bir kısmı yurt dışında yaşayan ikinci konut sahipleridir. Siz gelmeden önce projenin kapsamını birlikte netleştirebilir, teknik ayrıntılarda anlaşabilir ve kurulumu İngilizce, Rusça veya Almanca olarak uzaktan planlayabiliriz."
       },
       {
         "q": "Kamera, alarm ve akıllı kilit gibi birden fazla sistemi tek bir projede birleştirebilir misiniz?",
@@ -306,7 +349,10 @@
     "successTitle": "Talep alındı",
     "successBody": "Teşekkürler - bu bir demo yapı olduğundan henüz gerçek bir randevu planlanmadı. Canlı sistemde ekibimiz, bir iş günü içinde telefon veya WhatsApp üzerinden randevunuzu onaylayacaktır.",
     "demoNotice": "Demo modu: gönderilen bilgiler yalnızca bu tarayıcı oturumunda saklanır ve hiçbir yere iletilmez.",
-    "whatsappAlt": "WhatsApp'ı mı tercih edersiniz? Bunun yerine doğrudan bize mesaj atın."
+    "whatsappAlt": "WhatsApp'ı mı tercih edersiniz? Bunun yerine doğrudan bize mesaj atın.",
+    "configuratorBanner": "Yapılandırıcıdaki seçiminizi buraya aktardık; yalnızca bilgilerinizi ekleyip göndermeniz yeterli.",
+    "configuratorLead": "Yapılandırıcı üzerinden önerilen:",
+    "configuratorClear": "Seçimi kaldır"
   },
   "chat": {
     "launcherLabel": "Hastek ile sohbet edin",
@@ -317,7 +363,25 @@
     "disclaimer": "Bu asistan yalnızca Hastek Group hizmetleri ve randevular hakkındaki soruları yanıtlar.",
     "greeting": "Merhaba! Ben Hastek asistanıyım. Hizmetlerimizi anlatabilir ve bir keşif randevusu talep etmenize yardımcı olabilirim. Neyi korumak veya otomatikleştirmek istiyorsunuz?",
     "offlineNotice": "Demo modu: bu önizleme için canlı bir yapay zeka anahtarı tanımlanmadığından asistan, önceden hazırlanmış örnek yanıtlarla çalışmaktadır.",
-    "quickReplies": ["Hangi hizmetleri sunuyorsunuz?", "Alanya yakınlarında bir villam var", "CCTV kurulumu ne kadar tutar?"]
+    "quickReplies": [
+      "Hangi hizmetleri sunuyorsunuz?",
+      "Alanya yakınlarında bir villam var",
+      "CCTV kurulumu ne kadar tutar?"
+    ],
+    "answers": {
+      "greeting": "Merhaba! Ben Hastek asistanıyım. Akıllı ev ve güvenlik sistemlerimizi anlatabilir, mülkünüze uygun çözümü bulmanıza yardımcı olabilir veya ücretsiz bir yerinde keşif randevusu ayarlayabilirim. Neyi korumak ya da otomatikleştirmek istiyorsunuz?",
+      "services": "Hastek, altı mülk türü için on bir sistem kurar — akıllı ev otomasyonu, akıllı kapı kilitleri, görüntülü diafon, kamera (CCTV), alarm, yangın algılama, park bariyerleri, seslendirme, internet ve misafir Wi-Fi ile perakende ve restoranlar için kasa sistemleri. Mülk türünüzü söyleyin (ev, otel, mağaza, restoran, ofis), size uygun çözümü göstereyim — ya da 60 saniyelik konfigüratörü deneyin.",
+      "homeSecurity": "Evler için genellikle kamera, alarm, akıllı kapı kilidi ve görüntülü diafonu tek bir uygulamada birleştiririz; her yerden kontrol edebilirsiniz — mülk yılın bir kısmında boş kalıyorsa idealdir. Her şeyi tek bir ekip tasarlar, kurar ve bakımını yapar. Size özel bir öneri ister misiniz? Konfigüratörü kullanın veya ücretsiz keşif randevusu alın.",
+      "smartHome": "Akıllı ev otomasyonumuz aydınlatma, iklim, panjur ve senaryoları tek bir uygulamada toplar ve güvenlik sistemlerinizle uyumlu çalışır. Her şeyi kendi dilinizde, uzaktan kontrol edip görebilirsiniz. Ücretsiz keşifte her şeyi mülkünüze göre uyarlarız.",
+      "business": "Oteller, mağazalar, restoranlar ve ticari mekânlar için kamera, alarm, yangın algılama, park bariyerleri, seslendirme, misafir Wi-Fi ve kasa sistemlerini (perakende barkod veya Adisyon) tek ve sorumlu bir ekiple sağlarız — birden çok tedarikçi yerine. Sitede alanınızı seçin ya da ücretsiz bir değerlendirme randevusu alın.",
+      "pricing": "Fiyat tamamen mülke ve ihtiyaç duyulan sistemlere bağlıdır; bu yüzden önceden sabit fiyat vermiyoruz. Net bir rakam için en doğrusu ücretsiz ve bağlayıcı olmayan bir yerinde keşif — ya da birkaç ayrıntıyla WhatsApp'tan yazın, ilk bir tahmin verelim. Ayrıca konfigüratörle önerilen kurulumu görebilirsiniz.",
+      "booking": "Randevu almanıza memnuniyetle yardımcı olurum. „Ücretsiz keşif randevusu al“ butonunu kullanın ve mülkünüzü ve tercih ettiğiniz zamanı belirtin — bir Hastek çalışanı randevunuzu genellikle bir iş günü içinde onaylar. Önce konuşmak isterseniz WhatsApp'tan bize ulaşabilirsiniz.",
+      "whatsapp": "WhatsApp öncelikli iletişim kanalımızdır — ekibimizden gerçek bir kişi size genellikle aynı iş günü içinde bizzat yanıt verir. Sitedeki WhatsApp butonuyla sohbeti başlatın. Dilerseniz çevrimiçi olarak ücretsiz bir keşif randevusu da alabilirsiniz.",
+      "about": "HAS Teknoloji (Hastek Group), 2017'de Alanya'da Emre Altuntaş ve Harun Çoban tarafından kuruldu ve o günden beri Alanya ve Antalya ilinde akıllı ev ve güvenlik sistemleri kuruyor. Yerinde tek bir ekip tasarım, kurulum ve servisi üstlenir — Türkçe, İngilizce, Rusça ve Almanca.",
+      "coverage": "Alanya merkezliyiz ve tüm Antalya ilinde hizmet veriyoruz. Danışmanlık, sözleşme ve desteği dört dilde sunuyoruz — Türkçe, İngilizce, Rusça ve Almanca — bu yüzden müşterilerimizin çoğu yabancı ikinci konut sahipleridir. Konumunuzun kapsamda olup olmadığından emin değil misiniz? Adresinizi WhatsApp'tan yazın.",
+      "maintenance": "Bakım işimizin bir parçasıdır: planlı servis ve hızlı müdahale, sistemlerinizi kurulumdan çok sonra da güvenilir tutar — özellikle alarm ve yangın sistemlerinde önemlidir. Kurulan her cihaz, tüm bakım geçmişini açan bir QR etiketi taşıyabilir. Bakım için randevu alın ya da bize yazın.",
+      "fallback": "Hastek'in akıllı ev ve güvenlik sistemleri, mülkünüze uygun çözüm, fiyat yönlendirmesi veya ücretsiz keşif randevusu konularında yardımcı olabilirim. Biraz daha ayrıntı verebilir misiniz — örneğin mülk türünüz (ev, otel, mağaza, restoran, ofis) veya ilgilendiğiniz sistem? Konfigüratörü de kullanabilir ya da WhatsApp'tan yazabilirsiniz."
+    }
   },
   "admin": {
     "loginTitle": "Ekip girişi",
@@ -329,10 +393,191 @@
     "loginError": "Demo bilgileri hatalı.",
     "dashboardTitle": "Randevular ve talepler",
     "logout": "Çıkış yap",
-    "tabs": { "bookings": "Randevular", "reviews": "Yorumlar" },
+    "tabs": {
+      "bookings": "Randevular",
+      "reviews": "Yorumlar"
+    },
     "emptyBookings": "Bu oturumda henüz gönderilmiş bir randevu yok. Burada bir tane görmek için randevu formunu deneyin.",
     "reviewsDemoNotice": "Bu demo için örnek yorumlar gösterilmektedir - bağlantı kurulduğunda canlı Google İşletme Profili verileriyle değiştirin.",
-    "columns": { "name": "Ad", "contact": "İletişim", "segment": "Segment", "type": "Tür", "date": "Tercih edilen tarih", "status": "Durum" },
+    "columns": {
+      "name": "Ad",
+      "contact": "İletişim",
+      "segment": "Segment",
+      "type": "Tür",
+      "date": "Tercih edilen tarih",
+      "status": "Durum"
+    },
     "statusNew": "Yeni"
+  },
+  "configurator": {
+    "eyebrow": "Sistem yapılandırıcı",
+    "title": "Size uygun sistemi 60 saniyede bulun",
+    "intro": "Üç kısa soruyu yanıtlayın, mülkünüze uygun sistemleri önerelim ve tam projelendirme için sizi doğrudan ücretsiz yerinde keşif randevusuna yönlendirelim.",
+    "stepLabel": "Adım {current} / {total}",
+    "next": "Devam et",
+    "back": "Geri",
+    "restart": "Baştan başla",
+    "seeResult": "Önerimi göster",
+    "q1Title": "Nasıl bir mülkten söz ediyoruz?",
+    "q1Subtitle": "Binanızı veya projenizi en iyi tanımlayan seçeneği belirleyin.",
+    "q2Title": "Sizin için en önemlisi ne?",
+    "q2Subtitle": "En büyük önceliğinizi seçin. Önerimizi bunun üzerine kuralım.",
+    "q3Title": "Mülk nasıl kullanılıyor?",
+    "q3Subtitle": "Bu, sistemleri mekânı gerçekte nasıl yaşadığınıza ya da işlettiğinize göre ince ayarlamamıza yardımcı olur.",
+    "priority": {
+      "away": {
+        "label": "Uzaktayken içiniz rahat olsun",
+        "desc": "Mülkünüzü nerede olursanız olun gerçek zamanlı olarak izleyin ve yönetin."
+      },
+      "coverage": {
+        "label": "Eksiksiz kamera kapsamı",
+        "desc": "Her girişi, her köşeyi ve her kör noktayı gece gündüz görün."
+      },
+      "access": {
+        "label": "Girişleri siz kontrol edin",
+        "desc": "Fiziksel anahtar dağıtmadan anahtarları, kapıları ve ziyaretçileri yönetin."
+      },
+      "safety": {
+        "label": "Yangın ve can güvenliği",
+        "desc": "Önce insanı koruyan erken algılama ve hızlı uyarılar."
+      },
+      "connectivity": {
+        "label": "Güvenilir bağlantı",
+        "desc": "Mülkün her noktasında hızlı, kesintisiz internet ve misafir Wi-Fi'si."
+      },
+      "operations": {
+        "label": "Daha akıcı günlük işleyiş",
+        "desc": "İşletmenizi doğru operasyonel altyapıyla kesintisiz sürdürün."
+      }
+    },
+    "usage": {
+      "yearRound": {
+        "label": "Yıl boyu ikamet ediliyor",
+        "desc": "Her gün kullanılıyor; konfor, otomasyon ve gündelik güvenlikle."
+      },
+      "mostlyAway": {
+        "label": "Uzun süreler boş kalıyor",
+        "desc": "Çoğu zaman boş; bu nedenle uzaktan izleme ve anlık uyarılar öncelikli."
+      },
+      "seasonal": {
+        "label": "Sezonluk ya da kiraya veriliyor",
+        "desc": "Misafirler gelip gidiyor; bu yüzden kolay erişim ve güvenilir bağlantı önem taşıyor."
+      }
+    },
+    "resultEyebrow": "Size özel önerimiz",
+    "resultTitle": "Başlangıç olarak önereceğimiz sistem paketi",
+    "resultLead": "Yanıtlarınıza dayanarak, mülkünüz için önereceğimiz bileşim bu. Bu bir başlangıç noktası; ücretsiz yerinde keşif ise onu tam yerleşime göre keskinleştirir.",
+    "yourSegmentLabel": "Profiliniz",
+    "recommendedLabel": "Önerilen sistemler",
+    "packageLabel": "Paket ipucu",
+    "packageHint": "Bu sistemler tek bir entegre kurulum olarak çalışır; tek bir ekip tarafından, tek bir irtibat noktasıyla kurulur, bağlanır ve bakımı yapılır.",
+    "ctaBook": "Ücretsiz keşif randevumu al",
+    "ctaWhatsapp": "WhatsApp'tan soru sorun",
+    "disclaimer": "Bu, bağlayıcı olmayan bir yönlendirmedir, teklif değildir. Ücretsiz yerinde keşif; tam projelendirmeyi, yerleşimi ve fiyatı size sunar.",
+    "teaserEyebrow": "Nereden başlayacağınızdan emin değil misiniz?",
+    "teaserTitle": "Sisteminizi 60 saniyede bulun",
+    "teaserBody": "Üç kısa soruyu yanıtlayın, eviniz veya işletmeniz için size özel bir öneri alın; form yok, yükümlülük yok.",
+    "teaserCta": "Yapılandırıcıyı başlat"
+  },
+  "proof": {
+    "eyebrow": "Öncesi / Sonrası",
+    "title": "Korumanın yarattığı farkı görün",
+    "subtitle": "Kolu sürükleyin ve Hastek'in korumasız bir mülkü nasıl izlenen, otomasyonlu bir mülke dönüştürdüğünü görün — kameralar, sensörler ve aydınlatma bir arada çalışıyor.",
+    "beforeLabel": "Öncesi",
+    "afterLabel": "Hastek ile",
+    "dragHint": "Karşılaştırmak için sürükleyin",
+    "exampleBadge": "Örnek Görünüm",
+    "villaCaption": "Özel konut — açık, gözetimsiz bir girişten eksiksiz çevre güvenliğine.",
+    "storeCaption": "Perakende mağaza — korumasız bir vitrinden kamera izleme, alarm ve görünür bir varlığa.",
+    "ariaLabel": "Öncesi ve sonrası karşılaştırma sürgüsü"
+  },
+  "showroom": {
+    "eyebrow": "Canlı referans showroom",
+    "title": "İzlenen güvenliğin nasıl göründüğünü keşfedin",
+    "intro": "Sizi operatör koltuğuna oturtan, simüle edilmiş çok kameralı bir duvar. Kameraların, zaman damgalarının ve hareket takibinin gerçek bir Hastek kurulumundaki gibi nasıl birlikte çalıştığını izleyin, ardından bunu kendi mekânınızda hayal edin.",
+    "simulationBadge": "Simülasyon",
+    "recLabel": "REC",
+    "motionLabel": "Hareket algılandı",
+    "liveLabel": "Canlı simülasyon",
+    "camLabels": {
+      "entrance": "Ana giriş",
+      "drive": "Araç yolu ve kapı",
+      "pool": "Havuz terası",
+      "lobby": "Lobi"
+    },
+    "disclaimer": "Açıklayıcı bir simülasyondur, canlı kamera yayını değildir. Sahneler, zaman damgaları ve hareket çerçeveleri yalnızca gösterim amacıyla üretilmiştir; gerçek kamera, konum veya kayıt gösterilmemektedir.",
+    "ctaTitle": "Bunu kendi mülkünüzde görmeye hazır mısınız?",
+    "ctaBook": "Keşif randevusu al",
+    "ctaWhatsapp": "WhatsApp'tan sorun",
+    "teaserEyebrow": "Canlı referans showroom",
+    "teaserTitle": "Güvenlik duvarının başına geçin",
+    "teaserBody": "Simüle edilmiş çok kameralı bir görünümü keşfedin — REC, canlı zaman damgaları ve hareket takibi — ve tek bir kablo döşenmeden, yedi gün yirmi dört saat izlemenin nasıl bir şey olduğunu hissedin.",
+    "teaserCta": "Showroom'a girin"
+  },
+  "portal": {
+    "loginTitle": "Müşteri portalı",
+    "loginIntro": "Kurulu sistemlerinizi, bakım geçmişinizi ve hatırlatma ayarlarınızı görmek için giriş yapın. Bu, arka uç barındırmayan bir demo portaldır — bir demo e-posta girin ya da aşağıdaki örnek hesabı açın.",
+    "emailLabel": "E-posta adresi",
+    "emailPlaceholder": "siz@ornek.com",
+    "loginButton": "Giriş yap",
+    "loginError": "Bu e-posta için hesap bulunamadı. Aşağıdaki örnek hesabı deneyin.",
+    "viewDemo": "Örnek hesabı görüntüle",
+    "demoBadge": "Örnek Hesap",
+    "welcome": "Hoş geldiniz, {name}",
+    "accountSegmentLabel": "Segment",
+    "logout": "Çıkış yap",
+    "bookingsTitle": "Randevularım",
+    "bookingsEmpty": "Henüz randevu yok. Bir keşif planladığınızda burada görünür.",
+    "systemsTitle": "Sistemlerim",
+    "systemsEmpty": "Henüz kayıtlı sistem yok. İlk kurulumunuzun ardından cihazlarınız burada görünür.",
+    "installedOn": "Kurulum tarihi: {date}",
+    "nextService": "Sonraki bakım: {date}",
+    "statusOk": "Güncel",
+    "statusDue": "Bakım yakında",
+    "statusOverdue": "Bakım gecikti",
+    "viewDevice": "Cihaz sayfasını aç",
+    "locations": {
+      "entrance": "Giriş",
+      "livingRoom": "Oturma odası",
+      "kitchen": "Mutfak",
+      "garden": "Bahçe",
+      "carPark": "Otopark",
+      "reception": "Resepsiyon"
+    },
+    "maintenanceTitle": "Bakım geçmişi",
+    "maintenanceKind": {
+      "install": "Kurulum",
+      "inspection": "Denetim",
+      "service": "Bakım",
+      "reminderSent": "Hatırlatma gönderildi"
+    },
+    "technicianLabel": "Teknisyen",
+    "remindersTitle": "Bakım hatırlatmaları",
+    "remindersIntro": "Yaklaşan bir bakımı size nasıl ve ne zaman bildireceğimizi belirleyin. Demoda bu ayarlar yalnızca bu tarayıcıda saklanır.",
+    "reminderEnabled": "Hatırlatmalar etkin",
+    "channelLabel": "Kanal",
+    "channelWhatsapp": "WhatsApp",
+    "channelEmail": "E-posta",
+    "leadDaysLabel": "Hatırlatmayı gönder",
+    "leadDaysOption": "{days} gün önce",
+    "reminderPreviewTitle": "Hatırlatma önizlemesi",
+    "reminderPreviewLine": "Mesajın gönderileceği tarih: {date}",
+    "previewMessage": "Merhaba! Hastek Group'tan dostça bir hatırlatma: {system} sisteminizin bakımı {date} tarihinde yapılacak. Bu mesajı yanıtlamanız yeterli; size uygun bir randevu ayarlayalım.",
+    "noUpcoming": "Yaklaşan bir bakım yok — her şey yolunda. Bir bakım tarihi planlandığında burada bir önizleme görünür.",
+    "qrCaption": "Demo kodu",
+    "scanNote": "Gerçek kullanımda bu sayfa, kurulu cihazdaki QR etiketini taratarak açılır — teknisyen etiketi kurulum sırasında yerleştirir; böylece bakım geçmişiniz daima tek bir taramaya uzaklıktadır.",
+    "deviceTitle": "Cihaz ayrıntıları",
+    "deviceUnknownTitle": "Bilinmeyen kod",
+    "deviceUnknownBody": "Bu kodu bir cihazla eşleştiremedik. Canlı sistemde, gerçek bir Hastek QR etiketini taratmak burada ilgili cihazı açar.",
+    "backToPortal": "Portala dön",
+    "disclaimer": "Bu, arka uç barındırmayan bir gösterim portalıdır. Girdiğiniz tüm veriler yalnızca bu tarayıcıda kalır ve hiçbir zaman bir sunucuya gönderilmez.",
+    "teaserEyebrow": "Zaten müşteri misiniz?",
+    "teaserTitle": "Sistemleriniz, servis geçmişiniz ve hatırlatmalarınız tek bir yerde",
+    "teaserBody": "Hastek müşteri portalı; kurulu her cihazı, bakım geçmişini ve hatırlatma tercihlerinizi tek bir net görünümde toplar. Her cihaz bir QR etiketi taşır — taratın, tüm kaydını görün ve sonraki bakımı saniyeler içinde planlayın.",
+    "teaserCta": "Portalı aç"
+  },
+  "geo": {
+    "summaryTitle": "Kısaca",
+    "summaryBody": "HAS Teknoloji (Hastek Group), Alanya merkezli bir akıllı ev ve güvenlik sistemleri entegratörüdür ve 2017'den bu yana Antalya ilinin genelinde hizmet vermektedir. Emre Altuntaş ve Harun Çoban tarafından kurulan şirket; akıllı ev otomasyonu, kamera izleme ve alarm sistemlerinden yangın algılama, otopark geçiş ve satış noktası sistemlerine kadar on bir disiplini, altı mülk segmentinde kapsamaktadır. Ekibimiz dört dilde danışmanlık verir ve kurulum yapar: Türkçe, İngilizce, Rusça ve Almanca."
   }
 }

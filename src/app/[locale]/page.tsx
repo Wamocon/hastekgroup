@@ -2,9 +2,21 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { SERVICE_KEYS, SEGMENT_KEYS, SEGMENT_SLUGS } from "@/lib/segments";
-import { SERVICE_ICONS } from "@/lib/service-icons";
+import { getAidasLoveContent } from "@/lib/aidaslove-content";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { FacetHero } from "@/components/marketing/facet-hero";
+import { HeroSceneChoreo } from "@/components/marketing/hero-scene-choreo";
+import { CapabilityMarquee } from "@/components/marketing/capability-marquee";
+import { AidasLoveSections } from "@/components/content/aidaslove-sections";
+import { SegmentBentoGrid } from "@/components/content/segment-bento-grid";
+import { ConciergeSpotlight } from "@/components/content/concierge-spotlight";
+import { InstagramFeed } from "@/components/marketing/instagram-feed";
+import { BeforeAfterShowcase } from "@/components/proof/before-after-showcase";
+import { AiSummary } from "@/components/seo/ai-summary";
+import { MockupDashboard } from "@/components/illustrations/mockup-dashboard";
+import { Guilloche } from "@/components/ornament/guilloche";
+import { SeljukStar } from "@/components/ornament/seljuk-star";
+import { Reveal } from "@/components/ui/reveal";
 
 type PageProps = {
   params: Promise<{ locale: string }>;
@@ -14,169 +26,171 @@ export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <HomeContent />;
+  return <HomeContent locale={locale} />;
 }
 
-function HomeContent() {
-  const t = useTranslations("home");
+function HomeContent({ locale }: { locale: string }) {
   const tCommon = useTranslations("common");
-  const tServices = useTranslations("home.services");
-  const tSegments = useTranslations("segments");
+  const tHome = useTranslations("home");
+  const tCfg = useTranslations("configurator");
+  const tShow = useTranslations("showroom");
+  const tPortal = useTranslations("portal");
+  const tGallery = useTranslations("gallery");
+  const home = getAidasLoveContent(locale, "home");
+  const spotlight = getAidasLoveContent(locale, "ai-whatsapp-spotlight");
 
   return (
     <>
-      {/* Attention */}
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(60%_50%_at_80%_0%,rgba(185,151,91,0.25),transparent)]" />
-        <div className="container-hastek relative flex flex-col gap-8 py-20 md:py-28">
-          <span className="w-fit rounded-full border border-white/20 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-soft">
-            {t("hero.eyebrow")}
+      <FacetHero
+        eyebrow={home.heroEyebrow}
+        title={home.heroTitle}
+        subtitle={home.heroSubtitle}
+        statusItems={["SEIT 2017 IN ALANYA", "TR · EN · RU · DE", "6 EINSATZBEREICHE"]}
+        visual={<HeroSceneChoreo className="max-w-[46rem] md:w-[112%] md:max-w-none" armedLabel={tHome("hero.armed")} />}
+        visualOnMobile
+        primaryCta={
+          <Link href="/booking" className="btn-primary">
+            {home.ctaPrimary}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        }
+        secondaryCta={<WhatsAppButton className="btn-secondary" label={home.ctaSecondary} />}
+      />
+
+      <CapabilityMarquee
+        items={["SEIT 2017 IN ALANYA", "TR · EN · RU · DE", "6 EINSATZBEREICHE", "11 SYSTEME", "ALANYA · ANTALYA"]}
+      />
+
+      <AidasLoveSections sections={home.sections.slice(0, 4)} />
+
+      <BeforeAfterShowcase pair="villa" />
+
+      <section className="border-y border-border bg-surface py-14">
+        <div className="container-hastek flex flex-col items-center gap-3">
+          <Reveal className="w-full max-w-3xl">
+            <div className="card-elevated border-gold-metallic rounded-2xl p-4 md:p-6">
+              <MockupDashboard className="text-foreground/60" />
+            </div>
+          </Reveal>
+          <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-muted-foreground">
+            {tGallery("exampleBadge")}
           </span>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-[1.1] tracking-tight md:text-6xl">
-            {t("hero.title")}
-          </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-white/75">
-            {t("hero.subtitle")}
-          </p>
-          <div className="flex flex-wrap items-center gap-4 pt-2">
-            <Link
-              href="/booking"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-transform hover:scale-[1.02]"
-            >
-              {t("hero.primaryCta")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <WhatsAppButton label={t("hero.secondaryCta")} />
-          </div>
         </div>
       </section>
 
-      {/* Trust bar */}
-      <section className="border-b border-border bg-surface-muted">
-        <div className="container-hastek grid grid-cols-2 gap-6 py-8 text-sm text-muted-foreground md:grid-cols-4">
-          <p>{t("trustBar.founded")}</p>
-          <p>{t("trustBar.segments")}</p>
-          <p>{t("trustBar.local")}</p>
-          <p>{t("trustBar.languages")}</p>
-        </div>
-      </section>
-
-      {/* Interest */}
-      <section className="container-hastek py-20">
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          {t("interest.eyebrow")}
-        </span>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-          {t("interest.title")}
-        </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">{t("interest.subtitle")}</p>
-
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {SERVICE_KEYS.map((key) => {
-            const Icon = SERVICE_ICONS[key];
-            return (
-              <div
-                key={key}
-                className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-4"
-              >
-                <Icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                <span className="text-sm font-medium leading-snug">{tServices(key)}</span>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Desire */}
-      <section className="bg-surface-muted py-20">
+      <section className="bg-surface-muted py-16 md:py-20">
         <div className="container-hastek">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            {t("desire.eyebrow")}
-          </span>
-          <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-            {t("desire.title")}
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {t.raw("desire.items").map((item: { title: string; body: string }) => (
-              <div key={item.title} className="rounded-2xl border border-border bg-surface p-6">
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              </div>
-            ))}
+          <Reveal>
+            <span className="font-mono text-xs uppercase tracking-[0.14em] text-accent-text-safe dark:text-accent">
+              {tCommon("readMore")}
+            </span>
+            <h2 className="font-display mt-2 max-w-2xl text-2xl font-semibold md:text-3xl">
+              {home.sections[4]?.heading}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{home.sections[4]?.body}</p>
+          </Reveal>
+          <div className="mt-8">
+            <SegmentBentoGrid locale={locale} />
           </div>
         </div>
       </section>
 
-      {/* Action: segments */}
-      <section className="container-hastek py-20">
-        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          {t("segmentsCta.eyebrow")}
-        </span>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">
-          {t("segmentsCta.title")}
-        </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground">{t("segmentsCta.subtitle")}</p>
+      {/* Configurator teaser — the interactive "find your system" funnel */}
+      <section className="relative overflow-hidden border-y border-[color:var(--obsidian-line)] bg-[color:var(--obsidian)] py-16 text-white md:py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-24 top-1/2 hidden h-[30rem] w-[30rem] -translate-y-1/2 text-accent opacity-[0.06] md:block [mask-image:radial-gradient(closest-side,black,transparent)]"
+        >
+          <Guilloche className="ornament-spin" />
+        </div>
+        <div className="container-hastek relative flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+          <Reveal className="max-w-xl">
+            <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+              <SeljukStar className="h-3.5 w-3.5" />
+              {tCfg("teaserEyebrow")}
+            </span>
+            <h2 className="text-gold-metallic font-display mt-3 text-2xl font-semibold tracking-tight md:text-4xl">
+              {tCfg("teaserTitle")}
+            </h2>
+            <p className="mt-3 text-sm text-white/70 md:text-base">{tCfg("teaserBody")}</p>
+          </Reveal>
+          <Link href="/configurator" className="btn-primary shrink-0">
+            {tCfg("teaserCta")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SEGMENT_KEYS.map((key) => (
+      <ConciergeSpotlight content={spotlight} />
+
+      <AidasLoveSections sections={home.sections.slice(5, 8)} startIndex={5} />
+
+      {/* Showroom + Portal teasers — experience monitoring, then retention */}
+      <section className="bg-surface-muted py-16 md:py-20">
+        <div className="container-hastek grid gap-5 md:grid-cols-2">
+          <Reveal>
             <Link
-              key={key}
-              href={`/segments/${SEGMENT_SLUGS[key]}`}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-surface p-6 transition-colors hover:border-accent"
+              href="/showroom"
+              className="card-elevated border-gold-metallic group flex h-full flex-col justify-between gap-6 rounded-2xl p-7 md:p-8"
             >
               <div>
-                <h3 className="font-semibold">{tSegments(`${key}.shortLabel`)}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {tSegments(`${key}.heroSubtitle`)}
-                </p>
+                <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-accent-text-safe dark:text-accent">
+                  <SeljukStar className="h-3.5 w-3.5" />
+                  {tShow("teaserEyebrow")}
+                </span>
+                <h3 className="font-display mt-3 text-xl font-semibold md:text-2xl">{tShow("teaserTitle")}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{tShow("teaserBody")}</p>
               </div>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
-                {tCommon("learnMore")}
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              <span className="flex items-center gap-1.5 text-sm font-medium text-accent-text-safe dark:text-accent">
+                {tShow("teaserCta")}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Love/Share */}
-      <section className="bg-surface-muted py-20">
-        <div className="container-hastek">
-          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            {t("loveShare.eyebrow")}
-          </span>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-            {t("loveShare.title")}
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">{t("loveShare.demoNotice")}</p>
-
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {t.raw("loveShare.quotes").map((item: { quote: string; author: string }) => (
-              <blockquote key={item.author} className="rounded-2xl border border-border bg-surface p-6">
-                <p className="text-lg leading-relaxed">&ldquo;{item.quote}&rdquo;</p>
-                <footer className="mt-4 text-sm text-muted-foreground">{item.author}</footer>
-              </blockquote>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final action */}
-      <section className="bg-ink py-20 text-white">
-        <div className="container-hastek flex flex-col items-start gap-6">
-          <h2 className="max-w-xl text-3xl font-semibold tracking-tight md:text-4xl">
-            {t("finalCta.title")}
-          </h2>
-          <p className="max-w-xl text-white/75">{t("finalCta.subtitle")}</p>
-          <div className="flex flex-wrap gap-4">
+          </Reveal>
+          <Reveal>
             <Link
-              href="/booking"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-contrast transition-transform hover:scale-[1.02]"
+              href="/portal"
+              className="card-elevated border-gold-metallic group flex h-full flex-col justify-between gap-6 rounded-2xl p-7 md:p-8"
             >
-              {t("finalCta.primary")}
+              <div>
+                <span className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.16em] text-accent-text-safe dark:text-accent">
+                  <SeljukStar className="h-3.5 w-3.5" />
+                  {tPortal("teaserEyebrow")}
+                </span>
+                <h3 className="font-display mt-3 text-xl font-semibold md:text-2xl">{tPortal("teaserTitle")}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{tPortal("teaserBody")}</p>
+              </div>
+              <span className="flex items-center gap-1.5 text-sm font-medium text-accent-text-safe dark:text-accent">
+                {tPortal("teaserCta")}
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <InstagramFeed />
+
+      <AiSummary locale={locale} />
+
+      <section className="relative overflow-hidden bg-[color:var(--obsidian)] py-24 text-white">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[40rem] w-[40rem] -translate-x-1/2 -translate-y-1/2 text-accent opacity-[0.05] [mask-image:radial-gradient(closest-side,black,transparent)]"
+        >
+          <Guilloche className="ornament-spin" />
+        </div>
+        <div className="container-hastek relative flex flex-col items-center gap-6 text-center">
+          <SeljukStar className="h-8 w-8 text-accent" />
+          <h2 className="text-gold-metallic font-display max-w-xl text-3xl font-semibold tracking-tight md:text-5xl">
+            {home.ctaPrimary}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/booking" className="btn-primary">
+              {home.ctaPrimary}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <WhatsAppButton label={t("finalCta.secondary")} />
+            <WhatsAppButton className="btn-secondary !text-accent" label={home.ctaSecondary} />
           </div>
         </div>
       </section>

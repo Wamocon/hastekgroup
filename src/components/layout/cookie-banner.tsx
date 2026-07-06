@@ -3,31 +3,14 @@
 import { useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-
-const STORAGE_KEY = "hastek-cookie-consent";
-
-const CHANGE_EVENT = "hastek-cookie-consent-changed";
-
-function subscribe(onStoreChange: () => void) {
-  window.addEventListener(CHANGE_EVENT, onStoreChange);
-  return () => window.removeEventListener(CHANGE_EVENT, onStoreChange);
-}
-
-function hasStoredConsent() {
-  return window.localStorage.getItem(STORAGE_KEY) !== null;
-}
-
-function hasStoredConsentServer() {
-  return true;
-}
+import { subscribeConsent, hasConsent, hasConsentServer, setConsent } from "@/lib/cookie-consent";
 
 export function CookieBanner() {
   const t = useTranslations("cookie");
-  const consentStored = useSyncExternalStore(subscribe, hasStoredConsent, hasStoredConsentServer);
+  const consentStored = useSyncExternalStore(subscribeConsent, hasConsent, hasConsentServer);
 
   function handleChoice(choice: "accepted" | "declined") {
-    window.localStorage.setItem(STORAGE_KEY, choice);
-    window.dispatchEvent(new Event(CHANGE_EVENT));
+    setConsent(choice);
   }
 
   if (consentStored) return null;
